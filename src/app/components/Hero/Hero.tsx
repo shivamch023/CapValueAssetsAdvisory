@@ -1,0 +1,227 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { FaCalendarCheck } from "react-icons/fa";
+import { GrFormNext } from "react-icons/gr";
+
+export default function HeroSection() {
+  return (
+    <section className="relative w-full text-white overflow-hidden md:mt-[3rem] mt-[3rem] ">
+      {/* 🔆 Background abstract light shape */}
+      <div className="absolute top-1/2 left-1/2 w-[120px] h-[120px] -translate-x-1/2 -translate-y-1/2  rounded-full blur-[100px] z-0" />
+
+      <div className="relative z-10 container mx-auto px-6 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+        {/* Left: Content */}
+        <div className="lg:w-1/2 w-full">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight 
+    text-white tracking-tight font-sans text-start"
+          >
+            Be{" "}
+            <motion.span
+              animate={{
+                y: [0, -8, 0],
+                opacity: [1, 0.9, 1],
+                textShadow: [
+                  "0px 0px 5px rgba(255,255,0,0.3)",
+                  "0px 0px 12px rgba(255,255,0,0.5)",
+                  "0px 0px 5px rgba(255,255,0,0.3)",
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="text-yellow-400 font-light italic tracking-wide inline-block"
+            >
+              Bold
+            </motion.span>{" "}
+            , Be{" "}
+            <motion.span
+              animate={{
+                y: [0, 8, 0],
+                opacity: [1, 0.9, 1],
+                textShadow: [
+                  "0px 0px 5px rgba(200,200,200,0.3)",
+                  "0px 0px 12px rgba(200,200,200,0.4)",
+                  "0px 0px 5px rgba(200,200,200,0.3)",
+                ],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="text-gray-300 inline-block font-serif"
+            >
+              Beautiful
+            </motion.span>{" "}
+            ,<br />
+            Stay <span className="text-white">You</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1 }}
+            className="text-base lg:text-lg text-gray-400 max-w-xl mb-6"
+          >
+            Discover premium hair and skin services, tailored to your beauty —
+            in a calm and elegant space.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6"
+          >
+            {/* Learn More Button */}
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="relative group overflow-hidden cursor-pointer rounded-2xl px-6 py-4 text-center sm:px-7 sm:py-3 font-medium w-full sm:w-auto shadow-lg text-white text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-gray-800 to-gray-800"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-300 group-hover:text-gray-900">
+                Learn More <GrFormNext />
+              </span>
+              {/* Tarang-style Animated BG */}
+              <span className="absolute -top-full -left-full w-full h-full bg-blue-100 group-hover:top-0 group-hover:left-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
+            </motion.button>
+
+            {/* Book Appointment Button */}
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              className="relative group overflow-hidden justify-center items-center cursor-pointer rounded-2xl px-6 py-4 sm:px-7 sm:py-3 font-medium w-full sm:w-auto shadow-md border border-gray-700 text-gray-200  text-sm sm:text-base text-center  transition-all duration-300"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-400 group-hover:text-gray-800">
+                Book Appointment <FaCalendarCheck />
+              </span>
+              {/* Tarang-style Animated BG */}
+              <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
+            </motion.button>
+          </motion.div>
+        </div>
+
+        {/* Right: Image with glow and effects */}
+        <motion.div className="relative lg:w-1/2 w-full flex items-center justify-center">
+          {/* 🔆 Background blur glow */}
+          <div className="absolute " />
+
+          {/* 🎖️ Tag sticker */}
+          <motion.div
+            className="absolute lg:top-14 top-8 lg:right-24 right-7 border border-gray-700 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md z-20 "
+            animate={{
+              textShadow: [
+                "0 0 0px #fff",
+                "0 0 8px #facc15",
+                "0 0 12px #facc15",
+                "0 0 8px #facc15",
+                "0 0 12px #facc15",
+                "0 0 8px #facc15",
+                "0 0 0px #fff",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            #GlowUp
+          </motion.div>
+
+          {/* ✨ Sparkles */}
+          {/* ✨ Sparkles with 3s smooth ping via Framer Motion */}
+          <motion.div
+            className="absolute top-20 left-13 md:left-20 w-8 h-8 bg-white/30 rounded-full z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
+            transition={{
+              duration: 4,
+              delay: 0,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: ["easeOut", "easeIn"],
+            }}
+          />
+
+          <motion.div
+            className="absolute bottom-6 right-7 w-3 h-3 bg-yellow-300/40 rounded-full z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
+            transition={{
+              duration: 4,
+              delay: 0.8,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: ["easeOut", "easeIn"],
+            }}
+          />
+
+          <motion.div
+            className="absolute top-5 left-10 w-2 h-2 bg-white/30 rounded-full z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
+            transition={{
+              duration: 4,
+              delay: 1.6,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: ["easeOut", "easeIn"],
+            }}
+          />
+
+          <motion.div
+            className="absolute top-60 left-15 w-12 h-12 bg-yellow-500/10 rounded-full z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
+            transition={{
+              duration: 4,
+              delay: 1.6,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: ["easeOut", "easeIn"],
+            }}
+          />
+
+          <motion.div
+            className="absolute bottom-20 right-7 w-5 h-5 bg-yellow-300/40 rounded-full z-10"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
+            transition={{
+              duration: 4,
+              delay: 2.4,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: ["easeOut", "easeIn"],
+            }}
+          />
+
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative z-10 w-full"
+          >
+            <Image
+              src="/assets/banner/hairrr.png"
+              alt="Beauty Service"
+              width={600}
+              height={600}
+              className="rounded-2xl w-full h-auto object-contain drop-shadow-[0_10px_30px_rgba(156,163,175,0.4)]"
+              quality={100}
+              priority
+            />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
