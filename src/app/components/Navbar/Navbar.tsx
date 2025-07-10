@@ -10,7 +10,7 @@ import { GiScissors } from "react-icons/gi";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
+  { name: "Services", href: "/all-services" },
   { name: "Memberships", href: "/memberships" },
   { name: "Loyalty Program", href: "/loyalty-program" },
   { name: "Appointments", href: "/appointments" },
