@@ -30,7 +30,7 @@ export default function ServiceSection() {
     <section className="py-20 px-4 md:px-20 text-white container bg-[#010913] mt-5">
       <div className=" max-w-7xl mx-auto  px-4">
         {/* Animated Heading */}
-         <motion.h2
+        <motion.h2
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
