@@ -55,7 +55,7 @@ export default function ClientReviews() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="bg-[#010913] text-white py-16 px-4 md:px-10">
+    <section className="bg-[#010913] text-white pt-14 pb-8 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <motion.h2
