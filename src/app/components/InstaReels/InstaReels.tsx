@@ -43,18 +43,62 @@ const reels = [
 
 export default function InstaReels() {
   const swiperRef = useRef<SwiperType | null>(null);
+    const headingText = "Our Instgaram Feed";
+
 
   return (
     <section className="py-6 px-4 md:px-12 bg-[#010913] text-white">
-      <motion.h2
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-center text-4xl font-bold tracking-wide mb-10"
-      >
-        Our Instagram Reels
-      </motion.h2>
+       <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center text-3xl md:text-5xl font-extrabold mb-15"
+        >
+          {headingText.split("").map((char, index) => {
+            const color =
+              index % 3 === 0
+                ? "#FFD700" // Yellow
+                : index % 3 === 1
+                ? "#CCCCCC" // Light Gray
+                : "#FFFFFF"; // White
+
+            const showUnderline = color !== "#CCCCCC";
+
+            return (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
+                className={`relative inline-block ${char === " " ? "w-2" : ""}`}
+                style={{
+                  color,
+                }}
+              >
+                {char}
+                {showUnderline && (
+                  <motion.span
+                    className="absolute left-0 bottom-0 h-[2px] w-full"
+                    style={{
+                      backgroundColor: color,
+                      transformOrigin: "left",
+                    }}
+                    animate={{
+                      scaleX: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      delay: index * 0.05,
+                    }}
+                  />
+                )}
+              </motion.span>
+            );
+          })}
+        </motion.h2>
 
       <div className="relative">
         {/* Navigation Buttons */}
