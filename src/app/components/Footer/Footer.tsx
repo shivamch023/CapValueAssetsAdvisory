@@ -81,7 +81,7 @@ export default function Footer() {
           className="space-y-4"
         >
           <h3 className="text-2xl font-bold text-yellow-400 mb-3">
-            Contact Info
+            Contact Us
           </h3>
           <p className="flex items-center space-x-2 text-gray-300">
             <FaMapMarkerAlt /> <span>Main Market, Narela, Delhi - 110040</span>

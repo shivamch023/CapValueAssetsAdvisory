@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 export default function ContactInfo() {
-  const headingText = "Contact Info";
+  const headingText = "Contact Us";
 
   return (
     <section className="w-full px-4 md:px-12 py-10 bg-[#010913] text-white">
