@@ -1,0 +1,125 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaGlobe,
+  FaEnvelope,
+  FaPhone,
+  FaHeart,
+  FaYoutube,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gradient-to-b from-[#010913] to-[#1a1a2e] text-white pt-14 pb-8 px-4 md:px-16 font-sans">
+      {/* Top Border Line */}
+      <div className="max-w-7xl h-[2px] rounded-full bg-gradient-to-r from-gray-500 via-yellow-100 to-white mb-10 mx-auto"></div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Logo & Brand Info */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-4 text-center md:text-left"
+        >
+          <Image
+            src="/assets/your-logo.png"
+            alt="Salon Logo"
+            width={120}
+            height={120}
+            className="mx-auto md:mx-0 rounded-full border-4 border-yellow-400"
+          />
+          <h2 className="text-3xl font-extrabold tracking-wide text-yellow-400">
+            Your Salon
+          </h2>
+          <p className="text-gray-300 leading-relaxed text-sm">
+            Experience premium salon services with modern trends and
+            professional care. Where style meets elegance.
+          </p>
+        </motion.div>
+
+        {/* Connect Links */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="space-y-4"
+        >
+          <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+            Connect With Us
+          </h3>
+          <div className="flex space-x-5 text-2xl text-gray-300">
+            <Link href="#" className="hover:text-yellow-400 transition-all">
+              <FaFacebook />
+            </Link>
+            <Link href="#" className="hover:text-yellow-400 transition-all">
+              <FaInstagram />
+            </Link>
+            <Link href="#" className="hover:text-yellow-400 transition-all">
+              <FaGlobe />
+            </Link>
+            <Link href="#" className="hover:text-yellow-400 transition-all">
+              <FaYoutube />
+            </Link>
+          </div>
+          <p className="text-sm text-gray-400">
+            Follow us for latest updates & offers!
+          </p>
+        </motion.div>
+
+        {/* Contact Info */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="space-y-4"
+        >
+          <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+            Contact Info
+          </h3>
+          <p className="flex items-center space-x-2 text-gray-300">
+            <FaMapMarkerAlt /> <span>Main Market, Narela, Delhi - 110040</span>
+          </p>
+          <p className="flex items-center space-x-2 text-gray-300">
+            <FaPhone /> <span>+91-9876543210</span>
+          </p>
+          <p className="flex items-center space-x-2 text-gray-300">
+            <FaEnvelope /> <span>info@salonwebsite.com</span>
+          </p>
+        </motion.div>
+
+        {/* Working Hours */}
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          transition={{ duration: 1.1, delay: 0.6 }}
+          className="space-y-4"
+        >
+          <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+            Working Hours
+          </h3>
+          <ul className="space-y-1 text-gray-300 text-sm">
+            <li>Mon-Fri: 9 AM - 8 PM</li>
+            <li>Saturday: 9 AM - 9 PM</li>
+            <li>Sunday: 10 AM - 6 PM</li>
+          </ul>
+        </motion.div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-700 mt-10 pt-6 text-center space-y-2 text-sm text-gray-400">
+        <p>
+          Made with <FaHeart className="inline text-pink-500 animate-pulse" />{" "}
+          by <span className="font-semibold text-white">The Beauty Baar</span>
+        </p>
+        <p>© {new Date().getFullYear()} Your Salon. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+}

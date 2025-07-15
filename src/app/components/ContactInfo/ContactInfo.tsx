@@ -68,34 +68,57 @@ export default function ContactInfo() {
         </div>
 
         {/* Right: Text with Background Image & Animation */}
-        <div className="flex items-center justify-center  shadow-md  p-2 border border-gray-700 rounded-lg  bg-cover bg-center bg-no-repeat ">
-            <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex w-full h-full items-center justify-center rounded-lg shadow-md  bg-cover bg-center bg-no-repeat p-2 border border-gray-700"
-          style={{
-            backgroundImage: `url('/assets/brands/conttt.jpg')`, // Replace with your image path
-          }}
-        >
-          <div className="p-6 rounded-md bg-yellow-500 text-gray-900 text-lg leading-relaxed text-center md:text-center shadow-lg backdrop-blur-sm">
-            <h3 className="text-2xl font-bold tracking-wide mb-2 drop-shadow-md">
-              Our Location
-            </h3>
-            <p className="text-gray-900/90 font-medium drop-shadow-sm">
-              Near Main Market,
-              <br />
-              Narela, Delhi - 110040
-              <br />
-              <span className="block mt-3">
+        <div className="flex items-center justify-center shadow-md p-2 border border-gray-700 rounded-lg bg-cover bg-center bg-no-repeat">
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="flex w-full h-full items-center justify-center rounded-lg shadow-md bg-cover bg-center bg-no-repeat p-2 border border-gray-700"
+            style={{
+              backgroundImage: `url('/assets/brands/conttt.jpg')`,
+            }}
+          >
+            <div className="p-6 text-gray-900 text-lg leading-relaxed text-center space-y-4">
+              <motion.h3
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                transition={{ duration: 0.7 }}
+                className="text-2xl font-bold tracking-wide drop-shadow-md"
+              >
+                Our Location
+              </motion.h3>
+
+              <motion.p
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="text-gray-900/90 font-medium drop-shadow-sm"
+              >
+                Near Main Market,
+                <br />
+                Narela, Delhi - 110040
+              </motion.p>
+
+              <motion.span
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                className="block mt-3 text-gray-900/90 font-medium drop-shadow-sm"
+              >
                 📞 <strong>+91-9876543210</strong>
-              </span>
-              <span className="block">
+              </motion.span>
+
+              <motion.span
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="block text-gray-900/90 font-medium drop-shadow-sm"
+              >
                 📧 <strong>info@yourwebsite.com</strong>
-              </span>
-            </p>
-          </div>
-        </motion.div>
+              </motion.span>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
