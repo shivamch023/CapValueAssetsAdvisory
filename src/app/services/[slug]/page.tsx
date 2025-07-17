@@ -47,13 +47,13 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
   return (
     <section className="min-h-screen py-12 px-2 md:px-14 mt-[4rem]">
       <div className="container mx-auto max-w-7xl flex flex-col items-center text-center">
-      <div className="relative w-full lg:min-h-[60vh] md:min-h-[45vh] h-[25vh] rounded-lg overflow-hidden mb-12 flex items-center justify-start px-6 md:px-12 border border-gray-700">
-  <Image
-    src={service.image}
-    alt={service.title}
-    fill
-    className="absolute inset-0 w-full h-full object-cover brightness-75 p-2 border border-gray-700 rounded-lg"
-  />
+        <div className="relative w-full lg:min-h-[60vh] md:min-h-[45vh] h-[25vh] rounded-lg overflow-hidden mb-12 flex items-center justify-start px-6 md:px-12 border border-gray-700">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="absolute inset-0 w-full h-full object-cover brightness-75 p-2 border border-gray-700 rounded-lg"
+          />
           <div className="relative z-10 max-w-4xl text-left">
             <motion.h2
               initial={{ opacity: 0, y: -40 }}
