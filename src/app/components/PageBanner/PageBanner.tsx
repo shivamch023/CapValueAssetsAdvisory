@@ -19,7 +19,7 @@ export default function PageBanner({
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 40 }}
       transition={{ duration: 0.8 }}
-      className={`w-full lg:min-h-[60vh] md:min-h-[45vh] h-[25vh] flex items-center  border border-gray-700 p-4 justify-center bg-cover bg-center bg-no-repeat text-white relative rounded-lg`}
+      className={`w-full lg:min-h-[60vh] md:min-h-[45vh] h-[25vh] flex brightness-75 items-center  border border-gray-700 p-4 justify-center bg-cover bg-center bg-no-repeat text-white relative rounded-lg`}
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="relative max-w-7xl w-full px-2 md:px-10 flex flex-col items-start text-left py-3 md:py-10 lg:py-14">

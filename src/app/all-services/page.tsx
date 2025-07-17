@@ -106,7 +106,7 @@ export default function ServiceSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.8 }}
             whileTap={{ scale: 1.1 }}
-            className=" mt-8 mx-auto flex cursor-pointer items-center justify-center px-6 py-2 rounded-lg border border-gray-700 text-gray-200 font-bold shadow-md transition-all"
+            className=" mt-8 mx-auto flex cursor-pointer items-center justify-center px-6 py-2 rounded-lg border border-gray-700 text-gray-200 hover:text-yellow-500 font-bold shadow-md transition-all"
           >
             {showAll ? "View Less" : "View More"}
           </motion.button>
