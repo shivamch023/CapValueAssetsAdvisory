@@ -125,14 +125,52 @@ export const services: Service[] = [
       { name: "Updo", price: 1000, image: "/assets/hair/updo.avif" },
     ],
   },
-  {
-    id: "2",
-    title: "Men Hair Styling",
-    slug: "hair-styling",
-    image: "/assets/service/beautymen.jpg",
-    description: "Professional hair styling and grooming for men and women.",
-    category: "Men",
-  },
+ {
+  id: "2",
+  title: "Men Hair Styling",
+  slug: "hair-styling-men",
+  image: "/assets/men-hair/men-hair.jpg",
+  description: "Professional hair styling and grooming for men with trendy cuts and styles by experts.",
+  category: "Men",
+  SaloonServices: [
+    {
+      name: "Classic Hair Cut",
+      price: 500,
+      image: "/assets/men-hair/classic-hair-cut.jpg",
+    },
+    {
+      name: "Beard Styling",
+      price: 350,
+      image: "/assets/men-hair/beard-styling.avif",
+    },
+    {
+      name: "Hair Spa (Men)",
+      price: 1200,
+      image: "/assets/men-hair/hair-spa.jpg",
+    },
+    {
+      name: "Hair Color (Global)",
+      price: 2500,
+      image: "/assets/men-hair/hair-color.jpg",
+    },
+    {
+      name: "Hair Straightening",
+      price: 3500,
+      image: "/assets/men-hair/hair-straightening.webp",
+    },
+    {
+      name: "Hair Wash & Conditioning",
+      price: 400,
+      image: "/assets/men-hair/hair-wash.jpg",
+    },
+    {
+      name: "Hair Styling with Gel",
+      price: 300,
+      image: "/assets/men-hair/hair-styling-gel.jpg",
+    },
+  ],
+}
+,
   {
     id: "3",
     title: "Facial Services",
@@ -371,11 +409,29 @@ export const services: Service[] = [
   },
   {
     id: "6",
-    title: "Makeup",
-    slug: "makeup",
-    image: "/assets/service/Makeupmen.jpg",
-    description: "Get glam-ready for parties, weddings, and special events.",
+    title: "M Face Clean Up",
+    slug: "face-clean-up-men",
+    image: "/assets/face-cleanup-men/face-cleanup-men.jpg",
+    description:
+      "Facial clean up services for men with premium products like Lotus, O3+, and Skeyndor for glowing and refreshed skin.",
     category: "Men",
+    SaloonServices: [
+      {
+        name: "LOTUS CLEAN UP (M)",
+        price: 1200,
+        image: "/assets/face-cleanup-men/lotus-cleanup.webp",
+      },
+      {
+        name: "O3+ CLEAN UP (M)",
+        price: 2000,
+        image: "/assets/face-cleanup-men/o3plus-cleanup.jpg",
+      },
+      {
+        name: "SKEYNDOR CLEAN UP (M)",
+        price: 2500,
+        image: "/assets/face-cleanup-men/skeyndor-cleanup.jpg",
+      },
+    ],
   },
   {
     id: "7",
@@ -388,19 +444,43 @@ export const services: Service[] = [
   {
     id: "8",
     title: "Hair Color",
-    slug: "hair-color-women",
+    slug: "hair-color-men",
     image: "/assets/service/Hair Colormen.jpg",
     description: "Trendy hair coloring with expert consultation.",
     category: "Men",
   },
   {
-    id: "9",
-    title: "Manicure & Pedicure",
-    slug: "mani-pedi-women",
-    image: "/assets/service/mani-pedi.jpg",
-    description: "Nail care and spa treatments for a polished look.",
-    category: "Women",
-  },
+  id: "9",
+  title: "W Pedicure & Manicure",
+  slug: "pedicure-manicure-women",
+  image: "/assets/pedicure-manicure-women/pedicure-manicure-women.webp",
+  description: "Pamper your hands and feet with our range of manicure and pedicure services, including spa treatments, massages, nail art, and more.",
+  category: "Women",
+  SaloonServices: [
+    { name: "BASIC MANICURE", price: 450, image: "/assets/pedicure-manicure-women/basic-manicure.webp" },
+    { name: "BASIC PEDICURE", price: 500, image: "/assets/pedicure-manicure-women/basic-pedicure.jpg" },
+    { name: "CRUISE PEDICURE", price: 1350, image: "/assets/pedicure-manicure-women/cruise-pedicure.jpg" },
+    { name: "CRYSTAL SPA MANICURE", price: 1100, image: "/assets/pedicure-manicure-women/crystal-spa-manicure.webp" },
+    { name: "CRYSTAL SPA PEDICURE", price: 1100, image: "/assets/pedicure-manicure-women/crystal-spa-pedicure.jpg" },
+    { name: "CUT", price: 50, image: "/assets/pedicure-manicure-women/cut.jpg" },
+    { name: "EXTANTION REMOVE", price: 500, image: "/assets/pedicure-manicure-women/extension-remove.jpg" },
+    { name: "FEET CLEAN", price: 350, image: "/assets/pedicure-manicure-women/feet-clean.jpg" },
+    { name: "FEET MASSAGE", price: 350, image: "/assets/pedicure-manicure-women/feet-massage.jpg" },
+    { name: "FILLING", price: 50, image: "/assets/pedicure-manicure-women/filling.jpg" },
+    { name: "FRENCH NAIL PAINT", price: 150, image: "/assets/pedicure-manicure-women/french-nail-paint.webp" },
+    { name: "HAND MASSAGE", price: 350, image: "/assets/pedicure-manicure-women/hand-massage.avif" },
+    { name: "HAND N BACK MASSAGE", price: 350, image: "/assets/pedicure-manicure-women/hand-back-massage.jpg" },
+    { name: "NAIL CUT N FILE", price: 100, image: "/assets/pedicure-manicure-women/nail-cut-file.jpg" },
+    { name: "NAIL PAINT", price: 100, image: "/assets/pedicure-manicure-women/nail-paint.png" },
+    { name: "O3 MANICURE", price: 700, image: "/assets/pedicure-manicure-women/o3-manicure.webp" },
+    { name: "O3 PEDICURE", price: 700, image: "/assets/pedicure-manicure-women/o3-pedicure.jpg" },
+    { name: "PARAFIN PEDICURE", price: 750, image: "/assets/pedicure-manicure-women/parafin-pedicure.webp" },
+    { name: "RAAGA MENICURE", price: 650, image: "/assets/pedicure-manicure-women/raaga-manicure.webp" },
+    { name: "RAAGA PEDICURE", price: 650, image: "/assets/pedicure-manicure-women/raaga-pedicure.avif" },
+    { name: "SARA RELAXING MANI/PEDI", price: 650, image: "/assets/pedicure-manicure-women/sara-relaxing-manicure.jpg" },
+  ]
+}
+,
   {
     id: "10",
     title: "Women Polishing",
@@ -429,20 +509,101 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "11",
-    title: "Massage",
-    slug: "massage-women",
-    image: "/assets/service/massage.jpg",
-    description: "Relaxing massage therapy for stress relief and wellness.",
-    category: "Women",
-  },
+  id: "11",
+  title: "Massage",
+  slug: "massage-women",
+  image: "/assets/massage-women/massage-women.avif",
+  description: "Relaxing massage therapy for stress relief and wellness.",
+  category: "Women",
+  SaloonServices: [
+    {
+      name: "Head Massage",
+      price: 600,
+      image: "/assets/massage-women/head-massage.jpg",
+    },
+    {
+      name: "Shoulder Massage",
+      price: 800,
+      image: "/assets/massage-women/shoulder-massage.jpg",
+    },
+    {
+      name: "Full Body Massage",
+      price: 2000,
+      image: "/assets/massage-women/full-body-massage.jpg",
+    },
+    {
+      name: "Back Massage",
+      price: 1000,
+      image: "/assets/massage-women/back-massage.jpg",
+    },
+    {
+      name: "Foot Massage",
+      price: 700,
+      image: "/assets/massage-women/foot-massage.webp",
+    },
+    {
+      name: "Aroma Therapy Massage",
+      price: 2500,
+      image: "/assets/massage-women/aroma-massage.webp",
+    },
+    {
+      name: "Hot Stone Massage",
+      price: 3000,
+      image: "/assets/massage-women/hot-stone-massage.webp",
+    },
+    {
+      name: "Deep Tissue Massage",
+      price: 2800,
+      image: "/assets/massage-women/deep-tissue-massage.jpg",
+    }
+  ],
+}
+,
   {
     id: "12",
-    title: "Hair Services",
-    slug: "hair-services-women",
-    image: "/assets/service/Hair Services.jpg",
-    description: "Haircut, trimming, and styling by professionals.",
+    title: "Face Clean Up",
+    slug: "face-clean-up-women",
+    image: "/assets/face-cleanup-women/face-cleanup-women.jpg",
+    description:
+      "Refresh your skin with our exclusive clean-up services for women, including O3+, Shahnaz, and Skeyndor treatments.",
     category: "Women",
+    SaloonServices: [
+      {
+        name: "03+ CLEAN UP WITH MASK",
+        price: 2500,
+        image: "/assets/face-cleanup-women/o3plus-cleanup-mask.webp",
+      },
+      {
+        name: "EXTRA CLEANUP",
+        price: 500,
+        image: "/assets/face-cleanup-women/extra-cleanup.jpeg",
+      },
+      {
+        name: "O3+ CLEAN UP",
+        price: 2000,
+        image: "/assets/face-cleanup-women/o3plus-cleanup.jpg",
+      },
+      {
+        name: "O3+ DAIMOND CLEAN UP",
+        price: 2500,
+        image: "/assets/face-cleanup-women/o3plus-diamond-cleanup.webp",
+      },
+      {
+        name: "SHAHNAZ CLEAN UP",
+        price: 2000,
+        image: "/assets/face-cleanup-women/shahnaz-cleanup.avif",
+      },
+      {
+        name: "SHAHNAZ GOLD CLEAN UP",
+        price: 2000,
+        image: "/assets/face-cleanup-women/shahnaz-gold-cleanup.webp",
+      },
+      {
+        name: "SKEYNDOR CLEAN UP",
+        price: 2500,
+        image: "/assets/face-cleanup-women/skeyndor-cleanup.avif",
+      },
+    ],
   },
   {
     id: "13",
@@ -478,26 +639,236 @@ export const services: Service[] = [
   },
   {
     id: "14",
-    title: "Hair Services",
+    title: "Men Hair Services",
     slug: "hair-services-men",
-    image: "/assets/service/HAIR.jpg",
+    image: "/assets/men-hair/men-hair.jpg",
     description: "Haircut, trimming, and styling by professionals.",
     category: "Men",
+    SaloonServices: [
+      { name: "ALMOND (M)", price: 500, image: "/assets/men-hair/almond.webp" },
+      { name: "BEARD", price: 150, image: "/assets/men-hair/beard.webp" },
+      {
+        name: "BEARD COLOUR",
+        price: 600,
+        image: "/assets/men-hair/beard-colour.jpg",
+      },
+      {
+        name: "BRINGHARJ (M)",
+        price: 600,
+        image: "/assets/men-hair/bringharj.jpg",
+      },
+      {
+        name: "COCONUT (M)",
+        price: 400,
+        image: "/assets/men-hair/coconut.jpg",
+      },
+      {
+        name: "COLOUR APPLICATION (M)",
+        price: 550,
+        image: "/assets/men-hair/colour-application.jpg",
+      },
+      {
+        name: "HAIR CUT (M)",
+        price: 250,
+        image: "/assets/men-hair/haircut.jpg",
+      },
+      {
+        name: "HAIR CUT(M)",
+        price: 300,
+        image: "/assets/men-hair/haircut2.jpg",
+      },
+      { name: "INOA (M)", price: 1000, image: "/assets/men-hair/inoa.webp" },
+      {
+        name: "LOREAL CONDITIONER (M)",
+        price: 110,
+        image: "/assets/men-hair/loreal-conditioner.avif",
+      },
+      {
+        name: "LOREAL SHAMPOO (M)",
+        price: 110,
+        image: "/assets/men-hair/loreal-shampoo.webp",
+      },
+      {
+        name: "MAJIREL (M)",
+        price: 800,
+        image: "/assets/men-hair/majirel.webp",
+      },
+      {
+        name: "MOROCCANOIL CONDITIONER (M)",
+        price: 220,
+        image: "/assets/men-hair/moroccanoil-conditioner.jpg",
+      },
+      {
+        name: "MOROCCANOIL SHAMPOO (M)",
+        price: 220,
+        image: "/assets/men-hair/moroccanoil-shampoo.jpeg",
+      },
+      { name: "OILVE (M)", price: 450, image: "/assets/men-hair/olive.avif" },
+      { name: "SHAVE", price: 150, image: "/assets/men-hair/shave.webp" },
+    ],
   },
   {
-  id: "15",
-  title: "Men Polishing",
-  slug: "men-polishing",
-  image: "/assets/men-polishing/men-polishing.webp",
-  description:
-    "Exclusive body polishing, massage, and scrubbing services for men to relax and rejuvenate with premium care.",
-  category: "Men",
-  SaloonServices: [
-    { name: "BODY MASSAGE", price: 1500, image: "/assets/men-polishing/men-massage.jpg" },
-    { name: "BODY POLISHING", price: 4500, image: "/assets/men-polishing/men-polishing.png" },
-    { name: "BODY SCRUB N PEELING", price: 2500, image: "/assets/men-polishing/men-scrub.webp" },
-    { name: "UPTEN", price: 4500, image: "/assets/men-polishing/men-upten.png" }
-  ],
-}
-
+    id: "15",
+    title: "Men Polishing",
+    slug: "men-polishing",
+    image: "/assets/men-polishing/men-polishing.webp",
+    description:
+      "Exclusive body polishing, massage, and scrubbing services for men to relax and rejuvenate with premium care.",
+    category: "Men",
+    SaloonServices: [
+      {
+        name: "BODY MASSAGE",
+        price: 1500,
+        image: "/assets/men-polishing/men-massage.jpg",
+      },
+      {
+        name: "BODY POLISHING",
+        price: 4500,
+        image: "/assets/men-polishing/men-polishing.png",
+      },
+      {
+        name: "BODY SCRUB N PEELING",
+        price: 2500,
+        image: "/assets/men-polishing/men-scrub.webp",
+      },
+      {
+        name: "UPTEN",
+        price: 4500,
+        image: "/assets/men-polishing/men-upten.png",
+      },
+    ],
+  },
+  {
+    id: "16",
+    title: "Women Head Massage",
+    slug: "women-head-massage",
+    image: "/assets/women-headmassage/women-headmassage.avif",
+    description:
+      "Relax your mind and nourish your hair with our premium head massage services for women, featuring various oils and treatments.",
+    category: "Women",
+    SaloonServices: [
+      {
+        name: "ALMOND OIL (W)",
+        price: 500,
+        image: "/assets/women-headmassage/almond-oil.webp",
+      },
+      {
+        name: "BRINHRAJ OIL (W)",
+        price: 600,
+        image: "/assets/women-headmassage/brinhraj-oil.jpg",
+      },
+      {
+        name: "COCONUT OIL (W)",
+        price: 450,
+        image: "/assets/women-headmassage/coconut-oil.webp",
+      },
+      {
+        name: "EGGS",
+        price: 650,
+        image: "/assets/women-headmassage/eggs.avif",
+      },
+      {
+        name: "MOROCCAN OIL",
+        price: 1500,
+        image: "/assets/women-headmassage/moroccan-oil.jfif",
+      },
+      {
+        name: "MUSTARD OIL (W)",
+        price: 400,
+        image: "/assets/women-headmassage/mustard-oil.jpg",
+      },
+      {
+        name: "NAVARAT OIL",
+        price: 550,
+        image: "/assets/women-headmassage/navarat-oil.jpg",
+      },
+      {
+        name: "OLIVE OIL (W)",
+        price: 500,
+        image: "/assets/women-headmassage/olive-oil.webp",
+      },
+    ],
+  },
+  {
+    id: "17",
+    title: "Women Hair Treatment",
+    slug: "hair-treatment-women",
+    image: "/assets/hair-treatment-women/hair-treatment-women.jpg",
+    description:
+      "Rejuvenate and repair your hair with our premium treatment options, including anti-dandruff, deep conditioning, and hair fall solutions for women.",
+    category: "Women",
+    SaloonServices: [
+      {
+        name: "ANTI DANDRUFF TREATMENT",
+        price: 1500,
+        image: "/assets/hair-treatment-women/anti-dandruff.webp",
+      },
+      {
+        name: "DEEP CONDITIONING",
+        price: 1000,
+        image: "/assets/hair-treatment-women/deep-conditioning.jpg",
+      },
+      {
+        name: "HAIR FALL TREATMENT",
+        price: 1500,
+        image: "/assets/hair-treatment-women/hairfall-treatment.jpg",
+      },
+      {
+        name: "INNER SPA",
+        price: 1000,
+        image: "/assets/hair-treatment-women/inner-spa.png",
+      },
+      {
+        name: "POWER DOSE",
+        price: 500,
+        image: "/assets/hair-treatment-women/power-dose.avif",
+      },
+      {
+        name: "RENEW C",
+        price: 600,
+        image: "/assets/hair-treatment-women/renew-c.webp",
+      },
+      {
+        name: "SERIOXYL",
+        price: 1500,
+        image: "/assets/hair-treatment-women/serioxyl.webp",
+      },
+    ],
+  },
+  {
+    id: "18",
+    title: "Women Texture Services",
+    slug: "texture-services-women",
+    image: "/assets/texture-services-women/texture-services-women.jpg",
+    description:
+      "Smooth, style, and strengthen your hair with texture treatments and get flawless nails with premium nail services for women.",
+    category: "Women",
+    SaloonServices: [
+      {
+        name: "KERATIN",
+        price: 6500,
+        image: "/assets/texture-services-women/keratin.jpg",
+      },
+      {
+        name: "NAIL SERVICE",
+        price: 1000,
+        image: "/assets/texture-services-women/nail-service.jfif",
+      },
+      {
+        name: "PERMING",
+        price: 4500,
+        image: "/assets/texture-services-women/perming.jpg",
+      },
+      {
+        name: "REBONDING",
+        price: 7500,
+        image: "/assets/texture-services-women/rebonding.avif",
+      },
+      {
+        name: "SMOOTHING",
+        price: 6500,
+        image: "/assets/texture-services-women/smoothing.jpg",
+      },
+    ],
+  },
 ];
