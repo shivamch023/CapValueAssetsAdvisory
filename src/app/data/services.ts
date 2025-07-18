@@ -434,21 +434,122 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "7",
-    title: "Hair Color",
-    slug: "hair-color-women",
-    image: "/assets/service/haircolor.jpg",
-    description: "Trendy hair coloring with expert consultation.",
-    category: "Women",
-  },
+  id: "7",
+  title: "Women Hair Color",
+  slug: "hair-color-women",
+  image: "/assets/haircolor/haircolor.jpg",
+  description: "Trendy hair coloring with expert consultation.",
+  category: "Women",
+  SaloonServices: [
+    {
+      name: "Global Hair Color (Short Hair)",
+      price: 2500,
+      image: "/assets/haircolor/global-short.jpg",
+    },
+    {
+      name: "Global Hair Color (Medium Hair)",
+      price: 3500,
+      image: "/assets/haircolor/global-medium.webp",
+    },
+    {
+      name: "Global Hair Color (Long Hair)",
+      price: 4500,
+      image: "/assets/haircolor/global-long.jpg",
+    },
+    {
+      name: "Root Touch-Up",
+      price: 1200,
+      image: "/assets/haircolor/root-touchup.jpeg",
+    },
+    {
+      name: "Highlights (Per Streak)",
+      price: 350,
+      image: "/assets/haircolor/highlight.webp",
+    },
+    {
+      name: "Full Head Highlights",
+      price: 5000,
+      image: "/assets/haircolor/full-highlights.webp",
+    },
+    {
+      name: "Balayage Coloring",
+      price: 7000,
+      image: "/assets/haircolor/balayage.jpg",
+    },
+    {
+      name: "Ombre Hair Color",
+      price: 6500,
+      image: "/assets/haircolor/ombre.jpg",
+    },
+    {
+      name: "Fashion Color (Global)",
+      price: 8000,
+      image: "/assets/haircolor/fashion-color.webp",
+    },
+    {
+      name: "Hair Color Correction",
+      price: 8500,
+      image: "/assets/haircolor/correction.jpg",
+    }
+  ],
+},
+
   {
-    id: "8",
-    title: "Hair Color",
-    slug: "hair-color-men",
-    image: "/assets/service/Hair Colormen.jpg",
-    description: "Trendy hair coloring with expert consultation.",
-    category: "Men",
-  },
+  id: "8",
+  title: "Hair Color",
+  slug: "hair-color-men",
+  image: "/assets/haircolor-men/haircolor-men.jpg",
+  description: "Trendy and stylish hair coloring services for men with premium color options.",
+  category: "Men",
+  SaloonServices: [
+    {
+      name: "Global Hair Color (Short Hair)",
+      price: 1200,
+      image: "/assets/haircolor-men/global-short.jpg",
+    },
+    {
+      name: "Global Hair Color (Medium Hair)",
+      price: 1800,
+      image: "/assets/haircolor-men/global-medium.jpg",
+    },
+    {
+      name: "Global Hair Color (Long Hair)",
+      price: 2500,
+      image: "/assets/haircolor-men/global-long.png",
+    },
+    {
+      name: "Root Touch-Up",
+      price: 700,
+      image: "/assets/haircolor-men/root-touchup.jpg",
+    },
+    {
+      name: "Highlights (Per Streak)",
+      price: 250,
+      image: "/assets/haircolor-men/highlight.jpg",
+    },
+    {
+      name: "Full Head Highlights",
+      price: 3500,
+      image: "/assets/haircolor-men/full-highlight.jpg",
+    },
+    {
+      name: "Grey Coverage (Ammonia Free)",
+      price: 1500,
+      image: "/assets/haircolor-men/grey-coverage.webp",
+    },
+    {
+      name: "Beard Color",
+      price: 500,
+      image: "/assets/haircolor-men/beard-color.jpg",
+    },
+    {
+      name: "Beard + Hair Color Combo",
+      price: 1800,
+      image: "/assets/haircolor-men/beard-hair-combo.jpg",
+    }
+  ],
+},
+
   {
   id: "9",
   title: "W Pedicure & Manicure",
@@ -510,7 +611,7 @@ export const services: Service[] = [
   },
   {
   id: "11",
-  title: "Massage",
+  title: "Women Massage",
   slug: "massage-women",
   image: "/assets/massage-women/massage-women.avif",
   description: "Relaxing massage therapy for stress relief and wellness.",
@@ -871,4 +972,83 @@ export const services: Service[] = [
       },
     ],
   },
+  {
+  id: "19",
+  title: "Women Waxing",
+  slug: "waxing-women",
+  image: "/assets/waxing-women/waxing-women.jpg",
+  description: "Smooth and clean waxing services with regular and flavoured options for women.",
+  category: "Women",
+  SaloonServices: [
+    { name: "Arms (Full)", price: 400, image: "/assets/waxing-women/arms-full.jpg" },
+    { name: "Arms (Half)", price: 300, image: "/assets/waxing-women/arms-half.jpg" },
+    { name: "Chin (Flavoured)", price: 100, image: "/assets/waxing-women/chin-flavoured.webp" },
+    { name: "Chin (waxing)", price: 100, image: "/assets/waxing-women/chin.webp" },
+    { name: "Extra Wax", price: 1000, image: "/assets/waxing-women/extra.jpg" },
+    { name: "Face Wax (Flavoured)", price: 500, image: "/assets/waxing-women/face-flavoured.jpg" },
+    { name: "Full Back/Front", price: 850, image: "/assets/waxing-women/back-front.jpg" },
+    { name: "Full Back/Front (Flavoured)", price: 1000, image: "/assets/waxing-women/back-front-flavoured.jpg" },
+    { name: "Full Body", price: 3500, image: "/assets/waxing-women/full-body.jpg" },
+    { name: "Legs (Full)", price: 400, image: "/assets/waxing-women/legs-full.avif" },
+    { name: "Side Lock", price: 150, image: "/assets/waxing-women/side-lock.webp" },
+    { name: "Underarms", price: 100, image: "/assets/waxing-women/underarms.jpg" },
+    { name: "Underarms (Flavoured)", price: 150, image: "/assets/waxing-women/underarms-flavoured.jpg" },
+    { name: "Upperlip (Flavoured)", price: 80, image: "/assets/waxing-women/upperlip-flavoured.jpg" }
+  ]
+},
+{
+  id: "20",
+  title: "Men Waxing",
+  slug: "waxing-men",
+  image: "/assets/waxing-men/waxing-men.png",
+  description: "Professional men's waxing services for a clean and smooth look, including chest, back, and arms.",
+  category: "Men",
+  SaloonServices: [
+    {
+      name: "Chest Waxing",
+      price: 800,
+      image: "/assets/waxing-men/chest.jpg"
+    },
+    {
+      name: "Back Waxing",
+      price: 900,
+      image: "/assets/waxing-men/back.webp"
+    },
+    {
+      name: "Full Arms Waxing",
+      price: 600,
+      image: "/assets/waxing-men/arms.webp"
+    },
+    {
+      name: "Full Legs Waxing",
+      price: 800,
+      image: "/assets/waxing-men/legs.jpg"
+    },
+    {
+      name: "Underarms Waxing",
+      price: 250,
+      image: "/assets/waxing-men/underarms.webp"
+    }
+  ]
+}
+,
+{
+  id: "21",
+  title: "Women Threading",
+  slug: "threading-women",
+  image: "/assets/threading/threading.webp",
+  description: "Precise and gentle threading services for women including eyebrows, chin, and full face.",
+  category: "Women",
+  SaloonServices: [
+    { name: "Chin (Threading)", price: 50, image: "/assets/threading/chin.avif" },
+    { name: "Disposable", price: 50, image: "/assets/threading/disposable.jpg" },
+    { name: "Eyebrow", price: 50, image: "/assets/threading/eyebrow.jpg" },
+    { name: "Forehead", price: 50, image: "/assets/threading/forehead.jpg" },
+    { name: "Full Face", price: 400, image: "/assets/threading/full-face.jpg" },
+    { name: "Nose", price: 80, image: "/assets/threading/nose.png" },
+    { name: "Upperlip", price: 50, image: "/assets/threading/upperlip.jpg" }
+  ]
+}
+
+
 ];
