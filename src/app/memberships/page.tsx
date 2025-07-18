@@ -3,6 +3,7 @@
 import React from "react";
 import PageBanner from "../components/PageBanner/PageBanner";
 import PageDesign from "../components/PageDesignmul/PageDesignmul";
+import ContactInfo from "../components/ContactInfo/ContactInfo";
 
 const MembershipPage = () => {
   return (
@@ -54,6 +55,7 @@ const MembershipPage = () => {
           <span className="absolute inset-0 bg-gray-400 rounded-md scale-0 origin-bottom-right group-hover:scale-100 transition-transform duration-500 ease-in-out"></span>
         </button>
       </PageDesign>
+      <ContactInfo/>
     </div>
   );
 };

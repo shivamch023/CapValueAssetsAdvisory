@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -14,7 +14,6 @@ const navItems = [
   { name: "Memberships", href: "/memberships" },
   { name: "Loyalty Program", href: "/loyalty-program" },
   { name: "Appointments", href: "/appointments" },
-  { name: "Contact Us", href: "/contact-us" },
 ];
 
 export default function Navbar() {
@@ -54,7 +53,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav (lg and up) */}
-          <nav className="hidden lg:flex gap-8">
+          <nav className="hidden lg:flex gap-8 justify-center items-center">
             {navItems.map(({ name, href }) => (
               <motion.div
                 key={name}
@@ -100,6 +99,12 @@ export default function Navbar() {
                 </div>
               </motion.div>
             ))}
+            <Link
+              className="border border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-500 hover:text-gray-900 duration-300 transition-all "
+              href="/contactus"
+            >
+              Contact Us
+            </Link>
           </nav>
 
           {/* Hamburger Menu (mobile + tablet) */}

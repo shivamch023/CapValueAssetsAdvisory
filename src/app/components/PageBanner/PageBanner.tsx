@@ -14,7 +14,7 @@ export default function PageBanner({
   bgImage,
 }: PageBannerProps) {
   return (
-    <div className="p-2 border border-gray-700 rounded-lg shadow-md mb-10 mt-2">
+    <div className="p-3 border border-gray-700 rounded-lg shadow-md mb-10 mt-2">
         <motion.section
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 40 }}

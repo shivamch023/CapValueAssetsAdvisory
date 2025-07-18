@@ -32,14 +32,14 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="pt-20 pb-5 px-4 md:px-20 text-white container bg-[#010913] mt-5">
+    <section className="pt-20 pb-5 px-2 md:px-20 text-white container bg-[#010913] mt-5">
       <PageBanner
         title="Our Services"
         description="Explore our premium salon services tailored just for you."
         bgImage="/assets/banner/banner1.avif"
       />
 
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-2">
         {/* Category Buttons */}
         <div className="flex items-center gap-4 mb-10 mt-4">
           {["All", "Men", "Women"].map((cat) => (
