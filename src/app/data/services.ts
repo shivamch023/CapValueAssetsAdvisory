@@ -1052,3 +1052,110 @@ export const services: Service[] = [
 
 
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+// team data
+// src/app/data/services.ts
+
+// ✅ Team Member Interface
+export interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+}
+
+// ✅ Team Data
+export const teamData: TeamMember[] = [
+  {
+    id: 1,
+    name: "Aarav Sharma",
+    role: "Creative Director",
+    description: "Expert in fashion-forward hair styling and modern grooming trends.",
+    image: "/assets/team/arav.jpg"
+  },
+  {
+    id: 2,
+    name: "Priya Mehta",
+    role: "Senior Beautician",
+    description: "Specialist in luxurious facials, skin care treatments, and wellness services.",
+    image: "/assets/team/priya.avif"
+  },
+  {
+    id: 3,
+    name: "Rahul Verma",
+    role: "Color Specialist",
+    description: "Passionate about vibrant and natural color transformations with the latest techniques.",
+    image: "/assets/team/rahul.jpg"
+  },
+  {
+    id: 4,
+    name: "Simran Kaur",
+    role: "Hair & Makeup Artist",
+    description: "Known for elegant bridal makeup, event styling, and customized makeovers.",
+    image: "/assets/team/simran.avif"
+  },
+  {
+    id: 5,
+    name: "Vikram Singh",
+    role: "Men's Grooming Expert",
+    description: "Professional in beard styling, classic cuts, and contemporary men's grooming.",
+    image: "/assets/team/vikram.avif"
+  },
+  {
+    id: 6,
+    name: "Anjali Gupta",
+    role: "Spa & Wellness Specialist",
+    description: "Provides holistic spa treatments and relaxing therapies for complete rejuvenation.",
+    image: "/assets/team/anjali.webp"
+  }
+];
+
+
+// ✅ Why Choose Us Interface
+export interface WhyChooseItem {
+  id: number;
+  icon: 'Heart' | 'Star' | 'Sparkles';
+  title: string;
+  description: string;
+}
+
+// ✅ Why Choose Us Data
+export const whyChooseUsData: WhyChooseItem[] = [
+  {
+    id: 1,
+    icon: 'Heart',
+    title: 'Personalized Service',
+    description: 'Services tailored to your unique style and preferences.',
+  },
+  {
+    id: 2,
+    icon: 'Star',
+    title: 'Top-Rated Experience',
+    description: 'Consistent 5-star ratings from our satisfied clients.',
+  },
+  {
+    id: 3,
+    icon: 'Sparkles',
+    title: 'Luxurious Environment',
+    description: 'Modern, hygienic salon setup ensuring comfort and elegance.',
+  },
+];
+
+
+
+
+
+
