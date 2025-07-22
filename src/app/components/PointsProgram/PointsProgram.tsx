@@ -12,7 +12,7 @@ export default function PointsProgram() {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center text-[1.8rem] md:text-4xl font-extrabold mb-6 "
+        className="text-center text-[1.6rem] md:text-4xl font-extrabold mb-6 "
       >
         {headingText.split("").map((char, index) => {
           const color =
@@ -70,7 +70,7 @@ export default function PointsProgram() {
           className="w-full flex justify-center"
         >
           <Image
-            src="/assets/loyalty/loyalty.jfif"
+            src="/assets/loyalty/loyalty.jpg"
             alt="Loyalty Points"
             width={500}
             height={800}
@@ -82,7 +82,7 @@ export default function PointsProgram() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="w-full space-y-5 text-left"
+          className="w-full space-y-5 text-left p-2"
         >
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-medium">
             🎉{" "}

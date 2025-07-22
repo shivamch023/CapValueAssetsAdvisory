@@ -17,7 +17,7 @@ export default function VisitTracker() {
         initial={{ opacity: 0, x: 60 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-        className="w-full space-y-6 text-left"
+        className="w-full space-y-6 text-left p-2"
       >
         <h2 className="text-2xl md:text-4xl font-extrabold text-yellow-300 flex items-center gap-3 drop-shadow-md">
           <FaCrown className="text-yellow-400 text-4xl" /> Visit Rewards Program
