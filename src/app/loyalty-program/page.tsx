@@ -3,6 +3,10 @@ import PageBanner from "../components/PageBanner/PageBanner";
 import PointsProgram from "../components/PointsProgram/PointsProgram";
 import VisitTracker from "../components/VisitTrack/VisitTrack";
 import ReferralRewardsYellow from "../components/Reward/Reward";
+import BirthdayAnniversaryPerks from "../components/BirthdayAnniversaryPerks/BirthdayAnniversaryPerks";
+import SocialMediaChallenge from "../components/SocialMediaChallenge/SocialMediaChallenge";
+import LoyaltyFeedback from "../components/LoyaltyFeedback/LoyaltyFeedback";
+import ForeverClientClub from "../components/ForeverClientClub/ForeverClientClub";
 
 const page = () => {
   return (
@@ -12,9 +16,13 @@ const page = () => {
         description="Exclusive Loyalty Program – Earn Rewards and Enjoy Special Discounts on Every Salon Visit!"
         bgImage="/assets/banner/loyaltyprogram.jpg"
       />
-      <PointsProgram/>
-      <VisitTracker/>
-      <ReferralRewardsYellow/>
+      <PointsProgram />
+      <VisitTracker />
+      <ReferralRewardsYellow />
+      <BirthdayAnniversaryPerks />
+      <SocialMediaChallenge />
+      <LoyaltyFeedback />
+      <ForeverClientClub />
     </div>
   );
 };

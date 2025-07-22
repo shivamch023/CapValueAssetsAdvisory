@@ -172,6 +172,12 @@ export default function Navbar() {
                 </motion.div>
               ))}
             </motion.nav>
+             <Link
+              className="border mt-14 border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-500 hover:text-gray-900 duration-300 transition-all "
+              href="/contactus"
+            >
+              Contact Us
+            </Link>
           </motion.aside>
         )}
       </AnimatePresence>
