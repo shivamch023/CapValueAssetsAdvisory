@@ -91,7 +91,7 @@ export default function BookApointMentSection() {
           <motion.button
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="relative group border border-gray-700 overflow-hidden cursor-pointer rounded-lg px-6 py-3 font-semibold w-full sm:w-auto shadow-lg text-white text-sm sm:text-base"
+            className="relative group border border-gray-900 overflow-hidden cursor-pointer rounded-lg px-6 py-3 font-semibold  sm:w-auto shadow-lg text-white text-sm sm:text-base bg-gray-600/40"
           >
             <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-gray-900 transition-all duration-300">
               Book Now

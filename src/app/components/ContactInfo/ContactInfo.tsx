@@ -68,56 +68,49 @@ export default function ContactInfo() {
         </div>
 
         {/* Right: Text with Background Image & Animation */}
-        <div
-          className="flex items-center justify-center p-6 md:p-8 rounded-xl border border-gray-700 bg-cover bg-center shadow-lg overflow-hidden"
-          style={{ backgroundImage: `url('/assets/brands/conttt.jpg')` }}
-        >
-          <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 40 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.4 }}
-            className="bg-gray-900/20 rounded-xl p-6 md:p-10 w-full max-w-lg text-center space-y-3 shadow-xl backdrop-blur-sm"
-          >
-            <motion.h3
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl font-extrabold text-gray-900 drop-shadow-sm"
-            >
-              🗺 Our Location
-            </motion.h3>
+       <div
+  className="flex items-center justify-center p-6 md:p-8 rounded-xl border border-gray-700 bg-cover bg-center shadow-lg overflow-hidden"
+  style={{ backgroundImage: `url('/assets/brands/loc.jpg')` }}
+>
+  <motion.div
+    whileInView={{ opacity: 1, y: 0 }}
+    initial={{ opacity: 0, y: 40 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.4 }}
+    className="bg-black/70 rounded-xl p-6 md:p-10 w-full max-w-xl text-center space-y-5 shadow-xl backdrop-blur-md"
+  >
+    <motion.h3
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      transition={{ duration: 0.7 }}
+      className="text-3xl md:text-4xl font-bold text-white tracking-wide"
+    >
+      🗺 Our Location
+    </motion.h3>
 
-            <motion.p
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-800 font-medium leading-relaxed"
-            >
-              Near Main Market,
-              <br />
-              Narela, Delhi - 110040
-            </motion.p>
+    <motion.p
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+      className="text-base md:text-lg text-gray-200 leading-relaxed"
+    >
+      Near Main Market,
+      <br />
+      Narela, Delhi - 110040
+    </motion.p>
 
-            <motion.span
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="block text-lg md:text-xl font-semibold text-gray-800"
-            >
-              📞 +91-9876543210
-            </motion.span>
+    <motion.div
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      transition={{ duration: 0.7, delay: 0.4 }}
+      className="text-base md:text-lg font-medium text-gray-100 space-y-2"
+    >
+      <div>📞 <span className="font-semibold text-white">+91-9876543210</span></div>
+      <div>📧 <span className="font-semibold text-white">info@yourwebsite.com</span></div>
+    </motion.div>
+  </motion.div>
+</div>
 
-            <motion.span
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.7, delay: 0.6 }}
-              className="block text-lg md:text-xl font-semibold text-gray-800"
-            >
-              📧 info@yourwebsite.com
-            </motion.span>
-          </motion.div>
-        </div>
       </div>
     </section>
   );
