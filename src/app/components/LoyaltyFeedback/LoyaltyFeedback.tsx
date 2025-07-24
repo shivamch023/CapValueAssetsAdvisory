@@ -35,7 +35,7 @@ export default function LoyaltyFeedback() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="rounded-xl border border-gray-700 shadow-md p-6 group hover:scale-105 transition-all duration-500"
+          className="rounded-xl border border-gray-700 shadow-md p-6 group hover:scale-103 transition-all duration-500"
         >
           <div className="flex flex-col items-center space-y-4">
             <FaGoogle className="text-yellow-400 text-6xl group-hover:scale-110 transition" />
@@ -57,7 +57,7 @@ export default function LoyaltyFeedback() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="rounded-xl border border-gray-700 shadow-md p-6 group hover:scale-105 transition-all duration-500"
+          className="rounded-xl border border-gray-700 shadow-md p-6 group hover:scale-103 transition-all duration-500"
         >
           <div className="flex flex-col items-center space-y-4">
             <FaInstagram className="text-pink-500 text-6xl group-hover:scale-110 transition" />

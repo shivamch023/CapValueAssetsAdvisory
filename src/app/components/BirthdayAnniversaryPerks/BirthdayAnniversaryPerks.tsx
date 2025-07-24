@@ -35,13 +35,10 @@ export default function BirthdayAnniversaryPerks() {
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden text-sm cursor-pointer border shadow-md border-gray-700 text-white uppercase font-semibold py-3 px-6 rounded-md transition duration-300 group"
         >
-          <span className="relative z-10">Share With Your Friends</span>
-          <span className="absolute left-0 top-0 w-full h-full text-gray-900 bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out rounded-md"></span>
-          <style jsx>{`
-            button:hover span:first-child {
-              color: #374151;
-            }
-          `}</style>
+          <span className="relative z-30 group-hover:text-gray-900 transition-colors duration-300">
+            Share With Your Friends
+          </span>
+          <span className="absolute left-0 top-0 w-full h-full bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out rounded-md z-10"></span>
         </motion.button>
       </motion.div>
 
@@ -152,7 +149,9 @@ export default function BirthdayAnniversaryPerks() {
                 <a
                   href={`https://wa.me/?text=${encodeURIComponent(
                     "Check out this amazing offer: " +
-                      (typeof window !== "undefined" ? window.location.href : "")
+                      (typeof window !== "undefined"
+                        ? window.location.href
+                        : "")
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

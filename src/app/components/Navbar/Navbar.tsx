@@ -141,7 +141,7 @@ export default function Navbar() {
 
             {/* Drawer Links */}
             <motion.nav
-              className="flex flex-col gap-6"
+              className="flex flex-col gap-6 mb-8"
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -173,7 +173,9 @@ export default function Navbar() {
               ))}
             </motion.nav>
              <Link
-              className="border mt-14 border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-500 hover:text-gray-900 duration-300 transition-all "
+                                 onClick={() => setIsOpen(false)}
+
+              className="border   border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-500 hover:text-gray-900 duration-300 transition-all "
               href="/contactus"
             >
               Contact Us
