@@ -13,7 +13,7 @@ const navItems = [
   { name: "Services", href: "/all-services" },
   { name: "Memberships", href: "/memberships" },
   { name: "Loyalty Program", href: "/loyalty-program" },
-  { name: "Appointments", href: "/appointments" },
+  { name: "Appointments", href: "/book-apointment" },
 ];
 
 export default function Navbar() {

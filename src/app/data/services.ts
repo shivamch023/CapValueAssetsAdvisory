@@ -1159,3 +1159,44 @@ export const whyChooseUsData: WhyChooseItem[] = [
 
 
 
+// data/products.js
+export const products = [
+  { name: "ABSOLUT REPAIR CONDITNER (P)", price: 780, image: "/assets/products/1.webp" },
+  { name: "ABSOLUT REPAIR CREAM (P)", price: 510, image: "/assets/products/2.jpg" },
+  { name: "ABSOLUT REPAIR SHAMPOO (P)", price: 635, image: "/assets/products/3.jpg" },
+  { name: "AMINEXIL ADVANCED (P)", price: 1800, image: "/assets/products/4.jpg" },
+  { name: "DANSITY SHAMPOO (P)", price: 635, image: "/assets/products/5.jpg" },
+  { name: "FOREC VECTOR CONDINTER (P)", price: 675, image: "/assets/products/6.jpg" },
+  { name: "LISS UNLIMITED CONDITNER (P)", price: 675, image: "/assets/products/7.jpg" },
+  { name: "LISS UNLIMITED SERUM (P)", price: 600, image: "/assets/products/8.jpg" },
+  { name: "LISS UNLIMITED SHAMPOO (P)", price: 575, image: "/assets/products/9.jpg" },
+  { name: "MYTHIC OIL (P)", price: 950, image: "/assets/products/10.jpg" },
+  { name: "MYTHIC OIL CONDITNER (P)", price: 950, image: "/assets/products/11.jpg" },
+  { name: "MYTHIC OIL SHAMPOO (P)", price: 900, image: "/assets/products/12.jpg" },
+  { name: "PRO FIBER RECONSTRUCT CONDITNER (P)", price: 1400, image: "/assets/products/13.jpg" },
+  { name: "PRO FIBER RECONSTRUCT SHAMPOO (P)", price: 1200, image: "/assets/products/14.jpg" },
+  { name: "PRO FIBER RECTIFY CONDITNER (P)", price: 1400, image: "/assets/products/15.jpg" },
+  { name: "PRO FIBER RECTIFY SHAMPOO (P)", price: 1200, image: "/assets/products/16.jpg" },
+  { name: "PRO FIBER RESTORE CONDITENER (P)", price: 1400, image: "/assets/products/17.jpg" },
+  { name: "PRO FIBER RESTORE SHAMPOO (P)", price: 1200, image: "/assets/products/18.jpg" },
+  { name: "PURE RESOURCE SHAMPOO (P)", price: 635, image: "/assets/products/19.jpg" },
+  { name: "SENS BALANCE SHAMPOO (P)", price: 635, image: "/assets/products/20.jpg" },
+  { name: "SERIOXYL BODYIFYING COLOUR (P)", price: 950, image: "/assets/products/21.jpg" },
+  { name: "SERIOXYL BODYIFYING NATURAL (P)", price: 950, image: "/assets/products/22.jpg" },
+  { name: "SERIOXYL CLARIFYING CONDITNER (P)", price: 950, image: "/assets/products/23.jpg" },
+  { name: "SERIOXYL CLARIFYING SHAMPOO (P)", price: 950, image: "/assets/products/24.jpg" },
+  { name: "SERIOXYL DENSIFYING DENSER HAIR (P)", price: 3600, image: "/assets/products/25.jpg" },
+  { name: "SERIOXYL DENSIFYING MOUSSE (P)", price: 800, image: "/assets/products/26.jpg" },
+  { name: "SKEYMDOR B.B CREAM AGE DEFENCE (P)", price: 1815, image: "/assets/products/27.jpg" },
+  { name: "VIT AMINO CONDITNER (P)", price: 780, image: "/assets/products/28.jpg" },
+  { name: "VITOMINO SHAMPOO (P)", price: 635, image: "/assets/products/29.jpg" },
+  { name: "VOREC VECTOR SHAMPOO (P)", price: 575, image: "/assets/products/30.jpg" },
+  { name: "X TENSO CONDITNER (P)", price: 675, image: "/assets/products/31.jpg" },
+  { name: "X TENSO SERUM (P)", price: 600, image: "/assets/products/32.jpg" },
+  { name: "X TENSO SHAMPOO (P)", price: 575, image: "/assets/products/33.jpg" }
+];
+
+
+
+
+

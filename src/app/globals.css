@@ -57,3 +57,29 @@ body {
   animation: pulse-line 3s ease-in-out infinite;
   transform-origin: left;
 }
+
+
+
+
+
+.react-datepicker {
+  border-radius: 1rem;
+  font-family: inherit;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.react-datepicker__header {
+  background-color: #facc15; /* Tailwind yellow-400 */
+  border-bottom: none;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #eab308; /* Tailwind yellow-500 */
+  color: white;
+}
+
+.react-datepicker__day:hover {
+  background-color: #fde68a; /* Tailwind yellow-200 */
+}
