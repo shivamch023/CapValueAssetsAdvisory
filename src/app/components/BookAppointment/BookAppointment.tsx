@@ -5,6 +5,7 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 import BookingModal from "../BookingModal/BookingModal";
 import { GrFormNext, GrPrevious } from "react-icons/gr";
 import { motion } from "framer-motion";
+import { FiSearch } from "react-icons/fi";
 
 interface SubService {
   name: string;
@@ -18,18 +19,34 @@ const ITEMS_PER_PAGE = 9;
 export default function BookAppointment() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedService, setSelectedService] = useState<SubService | null>(null);
+  const [selectedService, setSelectedService] = useState<SubService | null>(
+    null
+  );
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const handleSearch = (value: string) => {
+    setSearchTerm(value);
+    setCurrentPage(1);
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
 
   const allFiltered = services
-    .filter((s) => selectedCategory === "All" || s.category === selectedCategory)
-    .flatMap((s) =>
-      s.SaloonServices?.filter((item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-      ).map((item) => ({
-        ...item,
-        image: item.image || s.image,
-      })) || []
+    .filter(
+      (s) => selectedCategory === "All" || s.category === selectedCategory
+    )
+    .flatMap(
+      (s) =>
+        s.SaloonServices?.filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        ).map((item) => ({
+          ...item,
+          image: item.image || s.image,
+        })) || []
     );
 
   const totalServices = allFiltered.length;
@@ -50,7 +67,7 @@ export default function BookAppointment() {
 
   return (
     <motion.div
-      className="pt-28 container mx-auto px-4"
+      className=" py-10  container mx-auto px-2"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -63,16 +80,30 @@ export default function BookAppointment() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <input
-          type="text"
-          placeholder="Search All Service..."
-          className="border border-gray-300 px-4 py-2 rounded-md flex-1"
-          value={searchTerm}
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-            setCurrentPage(1);
-          }}
-        />
+        {/* Search Box with Icon and Loader */}
+        <div className="relative w-full sm:w-[90%] md:w-[60%] lg:w-[50%]">
+          <input
+            type="text"
+            placeholder="Search All Service..."
+            className="border border-gray-500 px-4 py-2 rounded-md w-full pr-10"
+            value={searchTerm}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+          {loading ? (
+            <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+              <div className="w-5 h-5 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          ) : (
+            <button
+              onClick={() => handleSearch(searchTerm)}
+              className="absolute border px-3 cursor-pointer py-3 rounded-r-md  border-gray-500 right-0 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-yellow-600"
+            >
+              <FiSearch />
+            </button>
+          )}
+        </div>
+
+        {/* Category Buttons */}
         <div className="flex gap-2">
           {categories.map((cat) => (
             <motion.button
@@ -85,8 +116,8 @@ export default function BookAppointment() {
               }}
               className={`px-3 py-2 rounded transition-all ${
                 selectedCategory === cat
-                  ? "border cursor-pointer border-gray-700 text-white"
-                  : "bg-gray-800/40 text-white"
+                  ? "border border-gray-700 cursor-not-allowed text-white"
+                  : "bg-yellow-600 cursor-pointer text-white"
               }`}
             >
               {cat}
@@ -146,7 +177,7 @@ export default function BookAppointment() {
             className={`rounded border ${
               currentPage === 1
                 ? "text-gray-600 cursor-not-allowed border-gray-700 px-4 py-2 bg-gray-900"
-                : "text-gray-300 border-gray-700 px-4 py-2 hover:bg-gray-600  cursor-pointer"
+                : "text-gray-300 border-gray-700 px-4 py-2 hover:bg-gray-600 cursor-pointer"
             }`}
           >
             <GrPrevious />
@@ -163,7 +194,7 @@ export default function BookAppointment() {
             className={`rounded border ${
               currentPage === totalPages
                 ? "text-gray-600 cursor-not-allowed border-gray-700 px-4 py-2 bg-gray-900"
-                : "text-gray-300 border-gray-700 px-4 py-2 hover:bg-gray-900/50  cursor-pointer"
+                : "text-gray-300 border-gray-700 px-4 py-2 hover:bg-gray-900/50 cursor-pointer"
             }`}
           >
             <GrFormNext />
