@@ -33,7 +33,7 @@ export default function ScrollToTopButton() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={handleClick}
-          className="fixed  bottom-8 left-5 md:left-8 z-50 bg-yellow-400 text-gray-800 p-3 rounded-full shadow-lg hover:bg-yellow-500 transition-all"
+          className="fixed  bottom-5  left-5 md:left-8 z-50 bg-yellow-400 text-gray-800 p-3 rounded-full shadow-lg hover:bg-yellow-500 transition-all"
         >
           <FaArrowUp className="text-xl" />
         </motion.button>
