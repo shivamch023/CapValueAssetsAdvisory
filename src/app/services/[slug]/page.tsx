@@ -1,20 +1,21 @@
 "use client";
 import { services } from "@/app/data/services";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaCalendarCheck } from "react-icons/fa";
+import { useCart } from "@/app/context/CartContext";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 const ServiceDetail: React.FC<Props> = ({ params }) => {
-  const [slug, setSlug] = React.useState<string | null>(null);
+  const [slug, setSlug] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [visibleCount, setVisibleCount] = useState(8);
+  const { cart, addToCart, incrementQuantity, decrementQuantity } = useCart();
 
-  React.useEffect(() => {
+  useEffect(() => {
     params.then((resolvedParams) => {
       setSlug(resolvedParams.slug);
     });
@@ -39,7 +40,6 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
   }
 
   const headingText = service.title;
-
   const filteredServices = service.SaloonServices?.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -75,9 +75,7 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`relative inline-block ${
-                      char === " " ? "w-2" : ""
-                    }`}
+                    className={`relative inline-block ${char === " " ? "w-2" : ""}`}
                     style={{ color }}
                   >
                     {char}
@@ -120,43 +118,66 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
             />
 
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredServices?.slice(0, visibleCount).map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="border border-gray-700 rounded-xl shadow-md hover:shadow-xl p-3 flex flex-col items-center duration-300 transition-all"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={800}
-                    height={800}
-                    className="w-full h-50 object-cover rounded-lg mb-4 shadow-md"
-                  />
-                  <div className="flex items-center flex-col  justify-center mb-4">
-                    <h3 className="text-lg text-nowrap font-bold text-gray-400 ">
-                      {item.name}
-                    </h3>
-                    <p className="text-yellow-500 font-semibold text-md mt-1">
-                      ₹{item.price}
-                    </p>
-                  </div>
-                  <motion.button
-                    whileHover={{ scale: 1.04 }}
-                    whileTap={{ scale: 0.96 }}
-                    className="relative group overflow-hidden justify-center items-center cursor-pointer rounded-lg px-4 py-4 sm:px-7 sm:py-3 font-medium w-full  shadow-md border border-gray-700 text-gray-200  text-sm sm:text-base text-center  transition-all duration-300"
+              {filteredServices?.slice(0, visibleCount).map((item, index) => {
+                const cartItem = cart.find((c) => c.name === item.name);
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="border border-gray-700 rounded-xl shadow-md hover:shadow-xl p-3 flex flex-col items-center duration-300 transition-all"
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-400 group-hover:text-gray-800">
-                      Book Appointment <FaCalendarCheck />
-                    </span>
-                    {/* Tarang-style Animated BG */}
-                    <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-lg" />
-                  </motion.button>
-                </motion.div>
-              ))}
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={800}
+                      height={800}
+                      className="w-full h-50 object-cover rounded-lg mb-4 shadow-md"
+                    />
+                    <div className="flex items-center flex-col justify-center mb-4">
+                      <h3 className="text-lg text-nowrap font-bold text-gray-400">
+                        {item.name}
+                      </h3>
+                      <p className="text-yellow-500 font-semibold text-md mt-1">
+                        ₹{item.price}
+                      </p>
+                    </div>
+
+                    {cartItem && cartItem.quantity > 0 ? (
+                      <div className="flex items-center gap-2">
+                        <motion.button
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => decrementQuantity(item.name)}
+                          className="px-3 py-2 bg-red-700 hover:bg-red-600 text-white rounded"
+                        >
+                          -
+                        </motion.button>
+
+                        <span className="text-white font-semibold">{cartItem.quantity}</span>
+
+                        <motion.button
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => incrementQuantity(item.name)}
+                          className="px-3 py-2 bg-green-700 hover:bg-green-600 text-white rounded"
+                        >
+                          +
+                        </motion.button>
+                      </div>
+                    ) : (
+                      <motion.button
+                        whileHover={{ scale: 1.04 }}
+                        whileTap={{ scale: 0.96 }}
+                        onClick={() => addToCart({ name: item.name, price: item.price })}
+                        className="w-full px-4 py-3 bg-green-700 hover:bg-green-600 text-white rounded text-center"
+                      >
+                        Add
+                      </motion.button>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
 
             {filteredServices && visibleCount < filteredServices.length && (

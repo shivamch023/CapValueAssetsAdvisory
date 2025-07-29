@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import Footer from "./components/Footer/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import { CartProvider } from "./context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable}  ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <CartProvider>
         {children}
+
+        </CartProvider>
         <Footer />
         <WhatsAppButton />
         <ScrollToTopButton />
