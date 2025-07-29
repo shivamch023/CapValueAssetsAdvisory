@@ -46,7 +46,7 @@ export default function ServiceCard({ service }: { service: Service }) {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={handleRemove}
-              className="px-3 py-1 border border-gray-700 hover:bg-gray-900/60 text-white rounded"
+              className="px-3 py-1 border cursor-pointer border-gray-700 hover:bg-gray-900/60 text-white rounded"
             >
               -
             </motion.button>
@@ -54,7 +54,7 @@ export default function ServiceCard({ service }: { service: Service }) {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={handleAdd}
-              className="px-3 py-1 border border-gray-700 hover:bg-gray-900/60 text-white rounded"
+              className="px-3 py-1 border cursor-pointer border-gray-700 hover:bg-gray-900/60 text-white rounded"
             >
               +
             </motion.button>
@@ -64,7 +64,7 @@ export default function ServiceCard({ service }: { service: Service }) {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={handleAdd}
-            className="px-4 py-1 border border-gray-700 shadow-md hover:bg-gray-900/50 text-white rounded text-sm"
+            className="px-4 py-1 cursor-pointer border border-gray-700 shadow-md hover:bg-gray-900/50 text-white rounded text-sm"
           >
             Add
           </motion.button>

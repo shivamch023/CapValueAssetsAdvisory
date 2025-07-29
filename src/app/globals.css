@@ -115,3 +115,9 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #4b5563 transparent;
 }
+
+
+
+.no-scroll {
+  overflow: hidden;
+}

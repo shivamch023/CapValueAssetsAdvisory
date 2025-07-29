@@ -4,6 +4,8 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useCart } from "@/app/context/CartContext";
+import { useRouter } from "next/navigation";
+import { IoMdCheckmark } from "react-icons/io";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -14,6 +16,7 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
   const [search, setSearch] = useState("");
   const [visibleCount, setVisibleCount] = useState(8);
   const { cart, addToCart, incrementQuantity, decrementQuantity } = useCart();
+  const router = useRouter();
 
   useEffect(() => {
     params.then((resolvedParams) => {
@@ -44,9 +47,12 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
+  const hasCartItems = cart.some((item) => item.quantity > 0);
+
   return (
-    <section className="min-h-screen py-12 px-2 md:px-14 mt-[4rem]">
+    <section className="min-h-screen py-12 px-2 md:px-14 mt-[4rem] relative">
       <div className="container mx-auto max-w-7xl flex flex-col items-center text-center">
+        {/* Banner */}
         <div className="relative w-full lg:min-h-[60vh] md:min-h-[45vh] h-[25vh] rounded-lg overflow-hidden mb-12 flex items-center justify-start px-6 md:px-12 border border-gray-700">
           <Image
             src={service.image}
@@ -107,6 +113,7 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
           </div>
         </div>
 
+        {/* Search & Cards */}
         {service.SaloonServices && (
           <>
             <input
@@ -150,7 +157,7 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
                         <motion.button
                           whileTap={{ scale: 0.95 }}
                           onClick={() => decrementQuantity(item.name)}
-                          className="px-3 py-2 bg-red-700 hover:bg-red-600 text-white rounded"
+                          className="px-3 py-1 border-gray-700 cursor-pointer border hover:bg-gray-900/50 text-white rounded"
                         >
                           -
                         </motion.button>
@@ -160,7 +167,7 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
                         <motion.button
                           whileTap={{ scale: 0.95 }}
                           onClick={() => incrementQuantity(item.name)}
-                          className="px-3 py-2 bg-green-700 hover:bg-green-600 text-white rounded"
+                          className="px-3 py-1 border-gray-700 cursor-pointer border hover:bg-gray-900/50 text-white rounded"
                         >
                           +
                         </motion.button>
@@ -170,9 +177,9 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
                         whileHover={{ scale: 1.04 }}
                         whileTap={{ scale: 0.96 }}
                         onClick={() => addToCart({ name: item.name, price: item.price })}
-                        className="w-full px-4 py-3 bg-green-700 hover:bg-green-600 text-white rounded text-center"
+                        className="w-full cursor-pointer px-4 py-2 border border-gray-700 hover:bg-gray-900/40 text-white rounded text-center"
                       >
-                        Add
+                        Book Appointment
                       </motion.button>
                     )}
                   </motion.div>
@@ -191,6 +198,22 @@ const ServiceDetail: React.FC<Props> = ({ params }) => {
           </>
         )}
       </div>
+
+      {/* ✅ Bottom Sticky Button */}
+      {hasCartItems && (
+        <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center px-4">
+  <motion.button
+    whileHover={{ scale: 1.03 }}
+    whileTap={{ scale: 0.97 }}
+    onClick={() => router.push("/book-apointment")}
+    className="w-[70%] max-w-md md:max-w-sm bg-yellow-400 text-black font-semibold px-6 py-2 text-nowrap md:py-3.5 rounded-xl shadow-lg transition-all duration-200 hover:bg-yellow-500 flex items-center justify-center gap-2"
+  >
+    <IoMdCheckmark size={22} />
+    View Selected Services
+  </motion.button>
+</div>
+
+      )}
     </section>
   );
 };
