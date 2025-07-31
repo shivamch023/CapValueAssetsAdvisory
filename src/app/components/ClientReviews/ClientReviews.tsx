@@ -64,7 +64,7 @@ export default function ClientReviews() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl font-extrabold text-center mb-8 bg-gradient-to-r from-yellow-400 via-gray-300 to-white bg-clip-text text-transparent animate-pulse"
         >
-          What&apos;s Our Clients{" "}
+          What Our Clients{" "}
           <span className="text-yellow-400 inline-flex items-center">
             Say
             <span className="ml-1 text-6xl animate-jhanjhanaht">?</span>

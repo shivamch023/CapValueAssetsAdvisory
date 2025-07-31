@@ -31,7 +31,7 @@ export default function ServiceSection() {
   };
 
   return (
-    <section className="py-20 px-2 md:px-12 text-white container ">
+    <section className="py-20 px-0 md:px-12 text-white container ">
       <div className="max-w-7xl mx-auto">
         {/* Animated Heading */}
         <motion.h2

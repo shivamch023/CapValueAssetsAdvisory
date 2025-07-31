@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BookApointMentSection() {
-  const headingText = "Book Appointment";
+  const headingText = "Book - Appointment";
 
   return (
     <div className="px-3 sm:px-6 md:px-8 py-8 sm:py-12">
@@ -28,7 +29,7 @@ export default function BookApointMentSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.04 }}
-              className={`relative inline-block ${char === " " ? "w-1" : ""}`}
+              className={`relative inline-block gap-2 ${char === " " ? "w-1" : ""}`}
               style={{ color }}
             >
               {char}
@@ -88,6 +89,7 @@ export default function BookApointMentSection() {
             refreshed every visit.
           </motion.p>
 
+          <Link href="/book-apointment">
           <motion.button
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
@@ -97,7 +99,7 @@ export default function BookApointMentSection() {
               Book Now
             </span>
             <span className="absolute -top-full -left-full w-full h-full bg-blue-100 group-hover:top-0 group-hover:left-0 transition-all duration-700 ease-in-out z-0 rounded-lg" />
-          </motion.button>
+          </motion.button></Link>
         </div>
       </section>
     </div>

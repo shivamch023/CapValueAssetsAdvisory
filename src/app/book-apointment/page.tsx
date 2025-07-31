@@ -8,7 +8,7 @@ const page = () => {
       <PageBanner
         title="Book Appointments"
         description="Explore our premium salon services tailored just for you."
-        bgImage="/assets/banner/appoint.png"/>
+        bgImage="/assets/banner/getintouch.png"/>
       <BookAppointment />
     </div>
   );

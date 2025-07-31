@@ -1,17 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaCalendarCheck } from "react-icons/fa";
 import { GrFormNext } from "react-icons/gr";
 
 export default function HeroSection() {
+  const images = [
+    "/assets/banner/hairrr.png",
+    "/assets/banner/hair2.png", // second image
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000); // change every 2 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <section className="relative w-full text-white overflow-hidden md:mt-[3rem] mt-[3rem] ">
       {/* 🔆 Background abstract light shape */}
       <div className="absolute top-1/2 left-1/2 w-[120px] h-[120px] -translate-x-1/2 -translate-y-1/2  rounded-full blur-[100px] z-0" />
 
-      <div className="relative z-10 container mx-auto px-6 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+      <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
         {/* Left: Content */}
         <div className="lg:w-1/2 w-full">
           <motion.h1
@@ -19,7 +34,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight 
-    text-white tracking-tight font-sans text-start"
+           text-white tracking-tight font-sans text-start"
           >
             Be{" "}
             <motion.span
@@ -82,30 +97,34 @@ export default function HeroSection() {
             className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6"
           >
             {/* Learn More Button */}
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              className="relative group overflow-hidden cursor-pointer rounded-2xl px-6 py-4 text-center sm:px-7 sm:py-3 font-medium w-full sm:w-auto shadow-lg text-white text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-gray-800 to-gray-800"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-300 group-hover:text-gray-900">
-                Learn More <GrFormNext />
-              </span>
-              {/* Tarang-style Animated BG */}
-              <span className="absolute -top-full -left-full w-full h-full bg-blue-100 group-hover:top-0 group-hover:left-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
-            </motion.button>
+            <Link href="/about" className="w-full md:max-w-max">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="relative group  overflow-hidden cursor-pointer rounded-2xl px-6 py-4 text-center sm:px-7 sm:py-3 font-medium w-full  shadow-lg text-white text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-gray-800 to-gray-800"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-300 group-hover:text-gray-900">
+                  Learn More <GrFormNext />
+                </span>
+                {/* Tarang-style Animated BG */}
+                <span className="absolute -top-full -left-full w-full h-full bg-blue-100 group-hover:top-0 group-hover:left-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
+              </motion.button>
+            </Link>
 
             {/* Book Appointment Button */}
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              className="relative group overflow-hidden justify-center items-center cursor-pointer rounded-2xl px-6 py-4 sm:px-7 sm:py-3 font-medium w-full sm:w-auto shadow-md border border-gray-700 text-gray-200  text-sm sm:text-base text-center  transition-all duration-300"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-400 group-hover:text-gray-800">
-                Book Appointment <FaCalendarCheck />
-              </span>
-              {/* Tarang-style Animated BG */}
-              <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
-            </motion.button>
+            <Link href="/book-apointment" className="w-full md:max-w-max">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="relative group overflow-hidden justify-center items-center cursor-pointer rounded-2xl px-6 py-4 sm:px-7 sm:py-3 font-medium w-full  shadow-md border border-gray-700 text-gray-200  text-sm sm:text-base text-center  transition-all duration-300"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-400 group-hover:text-gray-800">
+                  Book Appointment <FaCalendarCheck />
+                </span>
+                {/* Tarang-style Animated BG */}
+                <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 
@@ -208,17 +227,27 @@ export default function HeroSection() {
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-full"
+            className="relative z-10 w-full mt-0 lg:mt-10 lg:p-5 p-0"
           >
-            <Image
-              src="/assets/banner/hairrr.png"
-              alt="Beauty Service"
-              width={600}
-              height={600}
-              className="rounded-2xl w-full h-auto object-contain drop-shadow-[0_10px_30px_rgba(156,163,175,0.4)]"
-              quality={100}
-              priority
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <Image
+                  src={images[index]}
+                  alt="Beauty Service"
+                  width={600}
+                  height={600}
+                  className="rounded-2xl w-full h-[500px] object-contain drop-shadow-[0_10px_30px_rgba(156,163,175,0.4)]"
+                  quality={100}
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       </div>

@@ -31,27 +31,27 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <h2 className="text-2xl md:text-5xl font-bold text-gray-400">
+          <h2 className="text-2xl md:text-5xl font-bold text-gray-300">
             About <span className="text-yellow-600">Style Lounge</span>
           </h2>
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
             At <span className="font-semibold">Style Lounge</span>, we believe beauty is more than appearance—it&apos;s self-expression, confidence, and care. We are one of the city&apos;s top-rated salons, providing personalized hair, beauty, and wellness services in a welcoming environment.
           </p>
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <Sparkles className="w-8 h-8 text-yellow-600" />
-              <p className="text-gray-600">Trendy hair transformations and premium color treatments.</p>
+              <p className="text-gray-400">Trendy hair transformations and premium color treatments.</p>
             </div>
             <div className="flex items-start gap-3">
               <Scissors className="w-8 h-8 text-yellow-600" />
-              <p className="text-gray-600">Expert grooming, facials, and beauty services tailored for you.</p>
+              <p className="text-gray-400">Expert grooming, facials, and beauty services tailored for you.</p>
             </div>
             <div className="flex items-start gap-3">
               <Smile className="w-8 h-8 text-yellow-600" />
-              <p className="text-gray-600">Friendly, skilled professionals ensuring you feel confident and refreshed.</p>
+              <p className="text-gray-400">Friendly, skilled professionals ensuring you feel confident and refreshed.</p>
             </div>
           </div>
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
             Whether it&apos;s a special occasion or self-care day, we are here to deliver the best in style, relaxation, and transformation.
           </p>
         </motion.div>

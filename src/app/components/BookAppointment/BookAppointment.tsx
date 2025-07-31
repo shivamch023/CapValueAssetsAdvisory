@@ -129,10 +129,10 @@ export default function BookAppointment() {
                 setSelectedTitle("");
                 setCurrentPage(1);
               }}
-              className={`px-3 py-2  rounded cursor-pointer ${
+              className={`px-3 py-2  rounded font-semibold cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-yellow-600 text-white"
-                  : "border border-gray-700 text-white"
+                  ? "bg-yellow-600 text-gray-900 uppercase text-sm"
+                  : "border border-gray-700 text-white hover:bg-gray-900/40 transition-all duration-300 cursor-pointer hover:backdrop-blur-md uppercase text-sm"
               }`}
             >
               {cat}
@@ -140,7 +140,7 @@ export default function BookAppointment() {
           ))}
           <button
             onClick={() => setTitleModalOpen(true)}
-            className="px-3  py-2 rounded bg-gray-600 text-white hover:bg-gray-700 cursor-pointer"
+            className="px-3  text-sm shadow-md py-2 rounded border border-gray-700 bg-gray-900/40 text-white hover:bg-gray-700 cursor-pointer uppercase"
           >
             Categories
           </button>
@@ -160,12 +160,10 @@ export default function BookAppointment() {
         </motion.div>
       )}
 
-              <h3 className="text-md text-gray-200 mb-4 pl-2">All Services</h3>
-
+      <h3 className="text-md text-gray-200 mb-4 pl-2">All Services</h3>
 
       {/* Main Service Cards */}
       <div className="flex flex-col lg:flex-row gap-6">
-
         <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
           {paginatedItems.length > 0 ? (
             paginatedItems.map((item, i) => (
@@ -236,7 +234,7 @@ export default function BookAppointment() {
         <div className="flex justify-center items-center gap-3 my-10">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-            className="px-3 py-1 border border-gray-600 text-white rounded hover:bg-gray-700"
+            className="px-3 py-1 border cursor-pointer border-gray-600 text-white rounded hover:bg-gray-700"
           >
             Prev
           </button>
@@ -247,7 +245,7 @@ export default function BookAppointment() {
             onClick={() =>
               setCurrentPage((prev) => Math.min(totalPages, prev + 1))
             }
-            className="px-3 py-1 border border-gray-600 text-white rounded hover:bg-gray-700"
+            className="px-3 py-1 border cursor-pointer border-gray-600 text-white rounded hover:bg-gray-700"
           >
             Next
           </button>
@@ -281,7 +279,7 @@ export default function BookAppointment() {
               </h3>
               <button
                 onClick={() => setDrawerOpen(false)}
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-white p-1 border border-gray-700 shadow-md rounded-md"
               >
                 <MdClose size={24} />
               </button>
@@ -352,7 +350,7 @@ export default function BookAppointment() {
                 </h2>
                 <button
                   onClick={() => setTitleModalOpen(false)}
-                  className="text-white hover:text-yellow-400"
+                  className="text-white hover:text-yellow-400 cursor-pointer rounded-md p-1 border border-gray-700 shadow-md"
                 >
                   <MdClose size={24} />
                 </button>

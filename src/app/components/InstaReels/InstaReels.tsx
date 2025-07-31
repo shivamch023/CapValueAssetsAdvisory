@@ -43,7 +43,7 @@ const reels = [
 
 export default function InstaReels() {
   const swiperRef = useRef<SwiperType | null>(null);
-    const headingText = "Our Instgaram Feed";
+    const headingText = "Our Instagram Feed";
 
 
   return (

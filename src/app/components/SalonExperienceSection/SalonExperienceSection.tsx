@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { Bungee } from "next/font/google";
+import Link from "next/link";
 
 const bungee = Bungee({
   weight: "400",
@@ -104,19 +105,19 @@ export default function SalonHero() {
           <div className="grid grid-cols-3 md:gap-4 gap-2 text-center">
             <div className="border text-center border-gray-800 shadow-md p-1 rounded-md py-2 ">
               <p className="md:text-3xl text-xl font-bold text-yellow-500">
-                <CountUp end={98} duration={5} />%
+                <CountUp end={98} duration={8} />%
               </p>
               <p className="text-sm text-gray-400">Customer Satisfaction</p>
             </div>
             <div className="border text-center border-gray-800 shadow-md p-1 rounded-md py-2 ">
               <p className="md:text-3xl text-xl font-bold text-yellow-500">
-                <CountUp end={4000} duration={5} />+
+                <CountUp end={1500} duration={9} />+
               </p>
               <p className="text-sm text-gray-400 ">Services Delivered</p>
             </div>
             <div className="border text-center border-gray-800 shadow-md p-1 rounded-md py-2 ">
               <p className="md:text-3xl text-xl font-bold text-yellow-500">
-                <CountUp end={3000} duration={7} />+
+                <CountUp end={1000} duration={10} />+
               </p>
               <p className="text-sm text-gray-400">Happy Clients</p>
             </div>
@@ -124,17 +125,27 @@ export default function SalonHero() {
 
           {/* CTA & Contact */}
           <div className="flex flex-wrap items-center gap-6 pt-4">
-            <button className="border border-gray-600 text-gray-200 cursor-pointer hover:bg-gray-800  text-sm font-medium px-6 py-3 rounded-sm transition-all shadow-md">
+            <Link
+              href="/all-services"
+              className="border border-gray-600 text-gray-200 cursor-pointer hover:bg-gray-800  text-sm font-medium px-6 py-3 rounded-sm transition-all shadow-md"
+            >
               Explore More
-            </button>
+            </Link>
 
             <div className="flex items-center gap-3">
               <div className="bg-yellow-500 p-3 rounded-full shadow-md">
                 <FaPhoneAlt className="text-white text-base" />
               </div>
-              <div className="text-sm leading-tight">
+              <div className="text-sm leading-tight cursor-pointer">
                 <p className="text-gray-400">Contact Us</p>
-                <p className="font-semibold text-white">1234567890</p>
+                <motion.a
+                  href="tel:1234567890"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="font-semibold text-white  inline-block cursor-pointer transition-all duration-200"
+                >
+                  1234567890
+                </motion.a>
               </div>
             </div>
           </div>
