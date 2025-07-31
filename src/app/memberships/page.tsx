@@ -4,6 +4,7 @@ import React from "react";
 import PageBanner from "../components/PageBanner/PageBanner";
 import PageDesign from "../components/PageDesignmul/PageDesignmul";
 import ContactInfo from "../components/ContactInfo/ContactInfo";
+import Link from "next/link";
 
 const MembershipPage = () => {
   return (
@@ -26,12 +27,12 @@ const MembershipPage = () => {
           "Benefits cannot be clubbed with other offers",        ]}
           sticker="/assets/platinum.png"
       >
-        <button className="mt-3 cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
+        <Link href="/book-apointment" className="mt-3 cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm text-center rounded-md font-semibold relative overflow-hidden group">
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">
             Join Platinum
           </span>
           <span className="absolute inset-0 bg-gray-400 rounded-md scale-0 origin-bottom-right group-hover:scale-100 transition-transform duration-500 ease-in-out"></span>
-        </button>
+        </Link>
       </PageDesign>
 
       <PageDesign
@@ -46,12 +47,12 @@ const MembershipPage = () => {
           "Benefits cannot be clubbed with other offers",        ]}
           sticker="/assets/goldpng.png"
       >
-        <button className="mt-3 cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
+        <Link href="/book-apointment"  className="mt-3 text-center cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">
             Join Gold
           </span>
           <span className="absolute inset-0 bg-gray-400 rounded-md scale-0 origin-bottom-right group-hover:scale-100 transition-transform duration-500 ease-in-out"></span>
-        </button>
+        </Link>
       </PageDesign>
 
       <PageDesign
@@ -66,12 +67,12 @@ const MembershipPage = () => {
           "Benefits cannot be clubbed with other offers",        ]}
           sticker="/assets/silver.png"
       >
-        <button className="mt-3 cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
+        <Link href="/book-apointment"  className="mt-3 text-center cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">
             Join Silver
           </span>
           <span className="absolute inset-0 bg-gray-400 rounded-md scale-0 origin-bottom-right group-hover:scale-100 transition-transform duration-500 ease-in-out"></span>
-        </button>
+        </Link>
       </PageDesign>
       <PageDesign
         index={3}
@@ -85,12 +86,12 @@ const MembershipPage = () => {
           "Benefits cannot be clubbed with other offers",        ]}
           sticker="/assets/Diamond.png"
       >
-        <button className="mt-3 cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
+        <Link href="/book-apointment"  className="mt-3 text-center cursor-pointer max-w-40 px-4 py-2 border border-gray-700 text-sm rounded-md font-semibold relative overflow-hidden group">
           <span className="relative z-10 text-white group-hover:text-black transition-colors duration-300">
             Join Diamond
           </span>
           <span className="absolute inset-0 bg-gray-400 rounded-md scale-0 origin-bottom-right group-hover:scale-100 transition-transform duration-500 ease-in-out"></span>
-        </button>
+        </Link>
       </PageDesign>
       <ContactInfo />
     </div>

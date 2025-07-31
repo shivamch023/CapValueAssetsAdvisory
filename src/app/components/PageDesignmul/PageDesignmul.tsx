@@ -49,7 +49,7 @@ export default function PageDesign({
             />
 
             {sticker && (
-              <div className="absolute -top-2 left-5 -translate-x-1/2">
+              <div className="absolute -top-3 left-8 -translate-x-1/2">
                 <Image
                   src={sticker}
                   alt="sticker"

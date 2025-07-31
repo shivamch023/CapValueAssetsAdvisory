@@ -132,7 +132,7 @@ export default function Footer() {
                 whileTap={{ scale: 0.97 }}
               >
                 <Link
-                  href="/book-appointment"
+                  href="/book-apointment"
                   className="flex items-center uppercase  gap-4 pl-2 md:pl-4  hover:text-yellow-400 transition-all cursor-pointer"
                 >
                   <span className="w-18 flex text-nowrap font-medium text-white">

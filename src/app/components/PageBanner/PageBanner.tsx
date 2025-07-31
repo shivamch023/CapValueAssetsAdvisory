@@ -23,7 +23,7 @@ export default function PageBanner({
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="relative max-w-7xl w-full px-2 md:px-10 flex flex-col items-start text-left py-3 md:py-10 lg:py-14">
-        <h1 className="text-xl md:text-4xl font-extrabold text-yellow-400 mb-4 drop-shadow-md tracking-wide font-[Poppins] uppercase ">
+        <h1 className="text-xl  md:text-4xl font-extrabold text-yellow-400 mb-4 drop-shadow-md tracking-wide  uppercase ">
           {title}
         </h1>
         <p className="text-sm md:text-xl max-w-2xl text-gray-200 drop-shadow-sm leading-relaxed font-[Inter] italic">
