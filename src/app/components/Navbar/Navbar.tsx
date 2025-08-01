@@ -5,15 +5,16 @@ import Link from "next/link";
 import { LuMenu } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
-import { GiScissors } from "react-icons/gi";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Services", href: "/all-services" },
+  { name: "Appointments", href: "/book-apointment" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Memberships", href: "/memberships" },
   { name: "Loyalty Program", href: "/loyalty-program" },
-  { name: "Appointments", href: "/book-apointment" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -35,25 +36,23 @@ export default function Navbar() {
     <div>
       {/* Fixed Navbar */}
       <header className="fixed top-0 left-0 w-full bg-[#010913] text-white z-50 shadow-xs shadow-gray-700">
-        <div className="container mx-auto px-5 py-5 flex justify-between items-center">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-[-3] group text-yellow-400 transition-all"
-          >
-            <GiScissors
-              size={36}
-              className="text-yellow-400 group-hover:text-white transition-colors duration-300"
+          <Link href="/" className="flex  flex-col items-center  text-white ">
+            <Image
+              src="/assets/logo.png"
+              alt="logo"
+              height={100}
+              width={100}
+              className="h-10 w-10 border"
             />
-            <div className="flex flex-col leading-tight text-center">
-              <span className="text-xl md:text-2xl font-bold tracking-widest uppercase group-hover:text-white transition-colors">
-                TBB
-              </span>
-            </div>
+            <span className="uppercase text-xs font-semibold ">
+              Style Lounge Salon
+            </span>
           </Link>
 
           {/* Desktop Nav (lg and up) */}
-          <nav className="hidden lg:flex gap-8 justify-center items-center">
+          <nav className="hidden lg:flex gap-5 justify-center items-center ">
             {navItems.map(({ name, href }) => (
               <motion.div
                 key={name}
@@ -62,10 +61,11 @@ export default function Navbar() {
                 whileHover="visible"
                 animate="hidden"
                 variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+                
               >
                 <Link
                   href={href}
-                  className="text-xs uppercase tracking-wide hover:text-yellow-400 transition"
+                  className="text-xs uppercase tracking-wide hover:text-yellow-400 transition "
                 >
                   {name}
                 </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
               </motion.div>
             ))}
             <Link
-              className="border border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-500 hover:text-gray-900 duration-300 transition-all "
+              className="border border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-900/60 hover:text-gray-200 duration-300 transition-all "
               href="/contactus"
             >
               Contact Us
@@ -141,7 +141,7 @@ export default function Navbar() {
 
             {/* Drawer Links */}
             <motion.nav
-              className="flex flex-col gap-6 mb-8"
+              className="flex flex-col gap-6 mb-6"
               initial="hidden"
               animate="visible"
               exit="hidden"

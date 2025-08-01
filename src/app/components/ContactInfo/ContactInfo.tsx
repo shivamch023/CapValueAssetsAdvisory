@@ -56,7 +56,7 @@ export default function ContactInfo() {
         {/* Left: Google Map */}
         <div className="w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg p-2 border border-gray-700">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7002.307258911098!2d77.09163117396498!3d28.849315012245684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390dda05c70aa0df%3A0x50a94cb9cfad2780!2sNarela%2C%20Delhi%2C%20110040!5e0!3m2!1sen!2sin!4v1710278926630!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.5366319911564!2d77.24135437578283!3d28.583673875691456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce301057f22f7%3A0x638e6bbabd6b7dc6!2sStyle%20lounge%20salon!5e0!3m2!1sen!2sin!4v1754027693478!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -94,9 +94,9 @@ export default function ContactInfo() {
       transition={{ duration: 0.7, delay: 0.2 }}
       className="text-base md:text-lg text-gray-200 leading-relaxed"
     >
-      Near Main Market,
+      Style lounge salon, 41, Birbal Rd,
       <br />
-      Narela, Delhi - 110040
+       near post office, Block I, Jungpura Extension, New Delhi, Delhi 110014
     </motion.p>
 
     <motion.div
@@ -105,7 +105,7 @@ export default function ContactInfo() {
       transition={{ duration: 0.7, delay: 0.4 }}
       className="text-base md:text-lg font-medium text-gray-100 space-y-2"
     >
-      <div>📞 <span className="font-semibold text-white">+91-9876543210</span></div>
+      <div>📞 <span className="font-semibold text-white">+91 9711816265</span></div>
       <div>📧 <span className="font-semibold text-white">info@yourwebsite.com</span></div>
     </motion.div>
   </motion.div>

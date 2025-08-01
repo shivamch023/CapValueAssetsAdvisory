@@ -1159,6 +1159,30 @@ export const whyChooseUsData: WhyChooseItem[] = [
 
 
 
+//gallery 
+// data/salonGalleryData.ts
+
+export interface GalleryItem {
+  title: string;
+  image: string;
+  category: string;
+}
+
+export const salonGalleryData: GalleryItem[] = [
+  { title: "Hair Cut", image: "/assets/hair/babycut.jpg", category: "Client" },
+  { title: "Beard Style", image: "/assets/men-hair/classic-hair-cut.jpg", category: "Model" },
+  { title: "Makeup", image: "/assets/products/32.jpg", category: "Owner" },
+  { title: "Hair Color", image: "/assets/products/13.jpg", category: "Product" },
+  { title: "Facial Glow", image: "/assets/products/19.jpg", category: "Product" },
+  
+];
+
+
+
+
+
+
+
 // data/products.js
 export const products = [
   { name: "ABSOLUT REPAIR CONDITNER (P)", price: 780, image: "/assets/products/1.webp" },

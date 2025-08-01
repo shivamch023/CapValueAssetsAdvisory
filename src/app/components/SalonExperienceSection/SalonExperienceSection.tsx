@@ -139,12 +139,12 @@ export default function SalonHero() {
               <div className="text-sm leading-tight cursor-pointer">
                 <p className="text-gray-400">Contact Us</p>
                 <motion.a
-                  href="tel:1234567890"
+                  href="tel:+919711816265"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="font-semibold text-white  inline-block cursor-pointer transition-all duration-200"
                 >
-                  1234567890
+                  +91 9711816265
                 </motion.a>
               </div>
             </div>

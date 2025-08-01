@@ -12,32 +12,32 @@ const reels = [
   {
     video: "/assets/vid/makeup1.mp4",
     caption: "Brown girls wearing suit >>>>",
-    instaLink: "https://www.instagram.com/reel/xyz1",
+    instaLink: "https://www.instagram.com/stylelounge_salon/#",
   },
   {
     video: "/assets/vid/makeup2.mp4",
     caption: "Your Hair deserves the best. Give it a gift of New Colour",
-    instaLink: "https://www.instagram.com/reel/xyz2",
+    instaLink: "https://www.instagram.com/stylelounge_salon/#",
   },
   {
     video: "/assets/vid/makeup3.mp4",
     caption: "Trends Salon (Men & Women)",
-    instaLink: "https://www.instagram.com/reel/xyz3",
+    instaLink: "https://www.instagram.com/stylelounge_salon/#",
   },
   {
     video: "/assets/vid/makeup4.mp4",
     caption: "Say goodbye to dull locks. Hello to vibrant color!",
-    instaLink: "https://www.instagram.com/reel/xyz4",
+    instaLink: "https://www.instagram.com/stylelounge_salon/#",
   },
   {
     video: "/assets/vid/makeup2.mp4",
     caption: "Your Hair deserves the best. Give it a gift of New Colour",
-    instaLink: "https://www.instagram.com/reel/xyz2",
+    instaLink: "https://www.instagram.com/stylelounge_salon/#",
   },
   {
     video: "/assets/vid/makeup3.mp4",
     caption: "Trends Salon (Men & Women)",
-    instaLink: "https://www.instagram.com/reel/xyz3",
+    instaLink: "https://www.instagram.com/stylelounge_salon/#",
   },
 ];
 

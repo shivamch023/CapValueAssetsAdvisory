@@ -30,14 +30,14 @@ export default function Footer() {
           className="space-y-4 text-center md:text-left"
         >
           <Image
-            src="/assets/your-logo.png"
+            src="/assets/logo.png"
             alt="Salon Logo"
             width={120}
             height={120}
-            className="mx-auto md:mx-0 rounded-full border-4 border-yellow-400"
+            className="mx-auto md:mx-0 "
           />
-          <h2 className="text-3xl font-extrabold tracking-wide text-yellow-400">
-            Your Salon
+          <h2 className="text-2xl font-extrabold tracking-wide text-yellow-400">
+            Style Lounge Salon
           </h2>
           <p className="text-gray-300 leading-relaxed text-sm">
             Should be Experience premium salon services with modern trends and
@@ -52,20 +52,46 @@ export default function Footer() {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="space-y-4"
         >
-          <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+          <h3 className="text-xl font-bold text-yellow-400 mb-3">
             Connect With Us
           </h3>
           <div className="flex space-x-5 text-2xl text-gray-300">
-            {[FaFacebook, FaInstagram, FaGlobe, FaYoutube].map((Icon, i) => (
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ scale: 1.2 }}
-                className="hover:text-yellow-400 transition-all"
-              >
-                <Icon />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://www.facebook.com/bittoo.chandel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-yellow-400 transition-all"
+            >
+              <FaFacebook />
+            </motion.a>
+            <motion.a
+              href="https://www.instagram.com/stylelounge_salon/#"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-yellow-400 transition-all"
+            >
+              <FaInstagram />
+            </motion.a>
+            <motion.a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-yellow-400 transition-all"
+            >
+              <FaGlobe />
+            </motion.a>
+            <motion.a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="hover:text-yellow-400 transition-all"
+            >
+              <FaYoutube />
+            </motion.a>
           </div>
           <p className="text-sm text-gray-400">
             Follow us for latest updates & offers!
@@ -79,26 +105,26 @@ export default function Footer() {
           transition={{ duration: 1, delay: 0.4 }}
           className="space-y-4"
         >
-          <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+          <h3 className="text-xl font-bold text-yellow-400 mb-3">
             Contact Us
           </h3>
 
           <motion.a
-            href="https://www.google.com/maps/place/Main+Market,+Narela,+Delhi"
+            href="https://www.google.com/maps/dir//Style+lounge+salon+41,+Birbal+Rd+near+post+office,+Block+I,+Jungpura+Extension+New+Delhi,+Delhi+110014/@28.5836739,77.2439293,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390ce301057f22f7:0x638e6bbabd6b7dc6!2m2!1d77.2439293!2d28.5836739?entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
           >
-            <FaMapMarkerAlt /> <span>Main Market, Narela, Delhi - 110040</span>
+            <FaMapMarkerAlt /> <span>41 Birbal Road, Jungpura Ext New Delhi</span>
           </motion.a>
 
           <motion.a
-            href="tel:+919876543210"
+            href="tel:+919711816265"
             whileHover={{ scale: 1.03 }}
             className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
           >
-            <FaPhone /> <span>+91-9876543210</span>
+            <FaPhone /> <span>+91-9711816265</span>
           </motion.a>
 
           <motion.a
@@ -117,7 +143,7 @@ export default function Footer() {
           transition={{ duration: 1.1, delay: 0.6 }}
           className="space-y-4"
         >
-          <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+          <h3 className="text-xl font-bold text-yellow-400 mb-3">
             Working Hours
           </h3>
           <ul className="space-y-2 text-gray-300 text-sm">
@@ -151,9 +177,9 @@ export default function Footer() {
       <div className="border-t border-gray-700 mt-10 pt-6 text-center space-y-2 text-sm text-gray-400">
         <p>
           Made with <FaHeart className="inline text-pink-500 animate-pulse" />{" "}
-          by <span className="font-semibold text-white">The Beauty Baar</span>
+          by <span className="font-semibold text-white">Style Lounge Salon</span>
         </p>
-        <p>© {new Date().getFullYear()} Your Salon. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Style Lounge Salon. All rights reserved.</p>
       </div>
     </footer>
   );
