@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function BookApointMentSection() {
-  const headingText = "Book - Appointment";
+  const headingText = "Book  Appointment";
 
   return (
     <div className="px-3 sm:px-6 md:px-8 py-8 sm:py-12">
@@ -15,7 +15,7 @@ export default function BookApointMentSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center text-2xl sm:text-3xl md:text-5xl font-extrabold mb-8 sm:mb-11"
       >
-        {headingText.split("").map((char, index) => {
+        {headingText.split(" ").map((char, index) => {
           const color =
             index % 3 === 0
               ? "#FFD700"

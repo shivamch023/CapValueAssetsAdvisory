@@ -72,7 +72,7 @@ export default function ClientReviews() {
         </motion.h2>
 
         <p className="text-center text-gray-500 max-w-3xl mx-auto mb-6">
-          At The salon, our clients are our top priority. We take pride in
+          At Style Lounge Saloon, our clients are our top priority. We take pride in
           delivering exceptional beauty and hair services that leave a lasting
           impression.
         </p>

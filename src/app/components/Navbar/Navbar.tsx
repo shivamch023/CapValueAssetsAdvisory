@@ -44,11 +44,9 @@ export default function Navbar() {
               alt="logo"
               height={100}
               width={100}
-              className="h-10 w-10 border"
+              className="h-12 w-12 "
             />
-            <span className="uppercase text-xs font-semibold ">
-              Style Lounge Salon
-            </span>
+          
           </Link>
 
           {/* Desktop Nav (lg and up) */}
