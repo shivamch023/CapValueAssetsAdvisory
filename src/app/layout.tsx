@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
@@ -7,15 +6,8 @@ import Footer from "./components/Footer/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import { CartProvider } from "./context/CartContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "@fontsource/geist-mono"; // default 400
+import "@fontsource/geist-sans"; // default 400
 
 export const metadata: Metadata = {
   title: "The Beauty Baar",
@@ -29,14 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable}  ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased" style={{ fontFamily: '"Geist Sans", sans-serif' }}>
         <Navbar />
-        <CartProvider>
-        {children}
-
-        </CartProvider>
+        <CartProvider>{children}</CartProvider>
         <Footer />
         <WhatsAppButton />
         <ScrollToTopButton />

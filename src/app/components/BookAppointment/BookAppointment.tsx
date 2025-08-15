@@ -43,32 +43,59 @@ export default function BookAppointment() {
   });
   const [loadingBooking, setLoadingBooking] = useState(false);
 
+  const WHATSAPP_NUMBER = "919711816265"; // fixed WhatsApp number
+
   const handleBookingSubmit = async () => {
-    if (!formData.CustName || !formData.EmailId || !formData.MobNo || !formData.AppointmentDate || !formData.AppointmentTime) {
+    if (
+      !formData.CustName ||
+      !formData.EmailId ||
+      !formData.MobNo ||
+      !formData.AppointmentDate ||
+      !formData.AppointmentTime
+    ) {
       alert("Please fill all fields");
       return;
     }
     setLoadingBooking(true);
     try {
+      // 1️⃣ Send to your API
       const res = await fetch("/api/bookAppointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          services: cart.map(item => ({
+          services: cart.map((item) => ({
             ServiceName: item.name,
             Qty: item.quantity,
-            Price: item.price
-          }))
-        })
+            Price: item.price,
+          })),
+          TotalPrice: totalPrice,
+        }),
       });
 
-      if (res.ok) {
-        alert("Booking confirmed!");
-        setBookingModalOpen(false);
-      } else {
+      if (!res.ok) {
         alert("Failed to book appointment");
+        return;
       }
+
+      // 2️⃣ Prepare WhatsApp message
+      const message = `Booking Details:
+Name: ${formData.CustName}
+Email: ${formData.EmailId}
+Mobile: ${formData.MobNo}
+Date: ${formData.AppointmentDate}
+Time: ${formData.AppointmentTime}
+Services:
+${cart
+          .map((i) => `- ${i.name} x${i.quantity} = ₹${i.price * i.quantity}`)
+          .join("\n")}
+Total: ₹${totalPrice}`;
+
+      // 3️⃣ Open WhatsApp with fixed number
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+
+      alert("Booking confirmed!");
+      setBookingModalOpen(false);
     } catch (err) {
       console.error(err);
       alert("Error occurred while booking");
@@ -76,6 +103,7 @@ export default function BookAppointment() {
       setLoadingBooking(false);
     }
   };
+
 
 
   const { cart, incrementQuantity, decrementQuantity, totalPrice } = useCart();
@@ -174,8 +202,8 @@ export default function BookAppointment() {
                 setCurrentPage(1);
               }}
               className={`px-3 py-2  rounded font-semibold cursor-pointer ${selectedCategory === cat
-                  ? "bg-yellow-600 text-gray-900 uppercase text-sm"
-                  : "border border-gray-700 text-white hover:bg-gray-900/40 transition-all duration-300 cursor-pointer hover:backdrop-blur-md uppercase text-sm"
+                ? "bg-yellow-600 text-gray-900 uppercase text-sm"
+                : "border border-gray-700 text-white hover:bg-gray-900/40 transition-all duration-300 cursor-pointer hover:backdrop-blur-md uppercase text-sm"
                 }`}
             >
               {cat}
@@ -368,11 +396,11 @@ export default function BookAppointment() {
                 Total Price : ₹{totalPrice}
               </p>
               <button
-                  onClick={() => setBookingModalOpen(true)}
-                  className="w-full cursor-pointer bg-green-600 hover:bg-green-700 px-6 py-2 mt-4 rounded text-white"
-                >
-                  Book Now
-                </button>
+                onClick={() => setBookingModalOpen(true)}
+                className="w-full cursor-pointer bg-green-600 hover:bg-green-700 px-6 py-2 mt-4 rounded text-white"
+              >
+                Book Now
+              </button>
             </div>
           </motion.div>
         )}
@@ -430,68 +458,113 @@ export default function BookAppointment() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[300]"
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-[300]"
           >
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.9 }}
-              className="bg-white text-black rounded-lg w-[90%] max-w-md p-6"
+              className="bg-gray-700 text-white rounded-xl w-[90%] max-w-md p-6 max-h-[90vh] overflow-y-auto shadow-2xl"
             >
-              <h2 className="text-xl font-bold mb-4">Confirm Booking</h2>
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="border p-2 w-full mb-3"
-                value={formData.CustName}
-                onChange={(e) => setFormData({ ...formData, CustName: e.target.value })}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="border p-2 w-full mb-3"
-                value={formData.EmailId}
-                onChange={(e) => setFormData({ ...formData, EmailId: e.target.value })}
-              />
-              <input
-                type="tel"
-                placeholder="Mobile No"
-                className="border p-2 w-full mb-3"
-                value={formData.MobNo}
-                onChange={(e) => setFormData({ ...formData, MobNo: e.target.value })}
-              />
-              <input
-                type="date"
-                className="border p-2 w-full mb-3"
-                value={formData.AppointmentDate}
-                onChange={(e) => setFormData({ ...formData, AppointmentDate: e.target.value })}
-              />
-              <input
-                type="time"
-                className="border p-2 w-full mb-3"
-                value={formData.AppointmentTime}
-                onChange={(e) => setFormData({ ...formData, AppointmentTime: e.target.value })}
-              />
+              <h2 className="text-2xl font-bold mb-5 text-yellow-400 text-center">
+                Confirm Booking
+              </h2>
 
-              <div className="flex justify-end gap-2 mt-4">
-                <button
-                  onClick={() => setBookingModalOpen(false)}
-                  className="px-4 py-2 border rounded"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleBookingSubmit}
-                  disabled={loadingBooking}
-                  className="px-4 py-2 bg-green-600 text-white rounded"
-                >
-                  {loadingBooking ? "Booking..." : "Confirm"}
-                </button>
+              {/* Selected Services Summary */}
+              <div className="mb-5">
+                <h3 className="font-semibold mb-2 text-white">Your Services:</h3>
+                {cart.map((item) => (
+                  <div
+                    key={item.name}
+                    className="flex justify-between items-center border-b border-gray-600 py-2"
+                  >
+                    <div>
+                      <p className="font-medium">{item.name}</p>
+                      <p className="text-sm text-gray-300">Qty: {item.quantity}</p>
+                    </div>
+                    <p className="font-semibold text-yellow-400">
+                      ₹{item.price * item.quantity}
+                    </p>
+                  </div>
+                ))}
+                <p className="text-right font-bold text-yellow-400 mt-2 text-lg">
+                  Total: ₹{totalPrice}
+                </p>
+              </div>
+
+              {/* Customer Info Form */}
+              <div className="space-y-3">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full p-3 rounded-md bg-gray-600 text-white border border-gray-500 placeholder-gray-300 focus:outline-yellow-400"
+                  value={formData.CustName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, CustName: e.target.value })
+                  }
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full p-3 rounded-md bg-gray-600 text-white border border-gray-500 placeholder-gray-300 focus:outline-yellow-400"
+                  value={formData.EmailId}
+                  onChange={(e) =>
+                    setFormData({ ...formData, EmailId: e.target.value })
+                  }
+                />
+                <input
+                  type="tel"
+                  placeholder="Mobile No"
+                  className="w-full p-3 rounded-md bg-gray-600 text-white border border-gray-500 placeholder-gray-300 focus:outline-yellow-400"
+                  value={formData.MobNo}
+                  onChange={(e) =>
+                    setFormData({ ...formData, MobNo: e.target.value })
+                  }
+                />
+                <input
+                  type="date"
+                  className="w-full p-3 rounded-md bg-gray-600 text-white border border-gray-500 placeholder-gray-300 focus:outline-yellow-400"
+                  value={formData.AppointmentDate}
+                  min={new Date().toISOString().split("T")[0]} // disable past dates
+                  onChange={(e) =>
+                    setFormData({ ...formData, AppointmentDate: e.target.value })
+                  }
+                />
+                <input
+                  type="time"
+                  className="w-full p-3 rounded-md bg-gray-600 text-white border border-gray-500 placeholder-gray-300 focus:outline-yellow-400"
+                  value={formData.AppointmentTime}
+                  onChange={(e) =>
+                    setFormData({ ...formData, AppointmentTime: e.target.value })
+                  }
+                />
+              </div>
+
+              {/* Buttons */}
+              <div className="flex justify-end gap-3 mt-6">
+                <div className="flex justify-end gap-2 mt-4">
+                  <button
+                    onClick={() => setBookingModalOpen(false)}
+                    className="px-4 py-2 border rounded bg-gray-600 hover:bg-gray-500"
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    onClick={handleBookingSubmit}
+                    disabled={loadingBooking}
+                    className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                  >
+                    {loadingBooking ? "Booking..." : "Confirm & WhatsApp"}
+                  </button>
+                </div>
+
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
 
     </motion.div>
   );
