@@ -33,6 +33,50 @@ export default function BookAppointment() {
   const [loading, setLoading] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [titleModalOpen, setTitleModalOpen] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    CustName: "",
+    EmailId: "",
+    MobNo: "",
+    AppointmentDate: "",
+    AppointmentTime: ""
+  });
+  const [loadingBooking, setLoadingBooking] = useState(false);
+
+  const handleBookingSubmit = async () => {
+    if (!formData.CustName || !formData.EmailId || !formData.MobNo || !formData.AppointmentDate || !formData.AppointmentTime) {
+      alert("Please fill all fields");
+      return;
+    }
+    setLoadingBooking(true);
+    try {
+      const res = await fetch("/api/bookAppointment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          services: cart.map(item => ({
+            ServiceName: item.name,
+            Qty: item.quantity,
+            Price: item.price
+          }))
+        })
+      });
+
+      if (res.ok) {
+        alert("Booking confirmed!");
+        setBookingModalOpen(false);
+      } else {
+        alert("Failed to book appointment");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error occurred while booking");
+    } finally {
+      setLoadingBooking(false);
+    }
+  };
+
 
   const { cart, incrementQuantity, decrementQuantity, totalPrice } = useCart();
 
@@ -129,11 +173,10 @@ export default function BookAppointment() {
                 setSelectedTitle("");
                 setCurrentPage(1);
               }}
-              className={`px-3 py-2  rounded font-semibold cursor-pointer ${
-                selectedCategory === cat
+              className={`px-3 py-2  rounded font-semibold cursor-pointer ${selectedCategory === cat
                   ? "bg-yellow-600 text-gray-900 uppercase text-sm"
                   : "border border-gray-700 text-white hover:bg-gray-900/40 transition-all duration-300 cursor-pointer hover:backdrop-blur-md uppercase text-sm"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -220,9 +263,13 @@ export default function BookAppointment() {
                 <p className="text-white font-semibold text-right">
                   Total Price : ₹{totalPrice}
                 </p>
-                <button className="w-full cursor-pointer bg-green-600 hover:bg-green-700 px-6 py-2 mt-4 rounded text-white">
+                <button
+                  onClick={() => setBookingModalOpen(true)}
+                  className="w-full cursor-pointer bg-green-600 hover:bg-green-700 px-6 py-2 mt-4 rounded text-white"
+                >
                   Book Now
                 </button>
+
               </div>
             </>
           )}
@@ -320,9 +367,12 @@ export default function BookAppointment() {
               <p className="font-semibold text-white text-right">
                 Total Price : ₹{totalPrice}
               </p>
-              <button className="w-full bg-green-600 hover:bg-green-700 px-6 py-2 mt-4 rounded text-white">
-                Book Now
-              </button>
+              <button
+                  onClick={() => setBookingModalOpen(true)}
+                  className="w-full cursor-pointer bg-green-600 hover:bg-green-700 px-6 py-2 mt-4 rounded text-white"
+                >
+                  Book Now
+                </button>
             </div>
           </motion.div>
         )}
@@ -374,6 +424,75 @@ export default function BookAppointment() {
           </motion.div>
         )}
       </AnimatePresence>
+      <AnimatePresence>
+        {bookingModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[300]"
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="bg-white text-black rounded-lg w-[90%] max-w-md p-6"
+            >
+              <h2 className="text-xl font-bold mb-4">Confirm Booking</h2>
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="border p-2 w-full mb-3"
+                value={formData.CustName}
+                onChange={(e) => setFormData({ ...formData, CustName: e.target.value })}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="border p-2 w-full mb-3"
+                value={formData.EmailId}
+                onChange={(e) => setFormData({ ...formData, EmailId: e.target.value })}
+              />
+              <input
+                type="tel"
+                placeholder="Mobile No"
+                className="border p-2 w-full mb-3"
+                value={formData.MobNo}
+                onChange={(e) => setFormData({ ...formData, MobNo: e.target.value })}
+              />
+              <input
+                type="date"
+                className="border p-2 w-full mb-3"
+                value={formData.AppointmentDate}
+                onChange={(e) => setFormData({ ...formData, AppointmentDate: e.target.value })}
+              />
+              <input
+                type="time"
+                className="border p-2 w-full mb-3"
+                value={formData.AppointmentTime}
+                onChange={(e) => setFormData({ ...formData, AppointmentTime: e.target.value })}
+              />
+
+              <div className="flex justify-end gap-2 mt-4">
+                <button
+                  onClick={() => setBookingModalOpen(false)}
+                  className="px-4 py-2 border rounded"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleBookingSubmit}
+                  disabled={loadingBooking}
+                  className="px-4 py-2 bg-green-600 text-white rounded"
+                >
+                  {loadingBooking ? "Booking..." : "Confirm"}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </motion.div>
   );
 }
