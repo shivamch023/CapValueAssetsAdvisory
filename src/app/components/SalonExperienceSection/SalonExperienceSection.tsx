@@ -42,7 +42,7 @@ export default function SalonHero() {
 
             {/* Overlapping Image 3 */}
             <Image
-              src="/assets/banner/hairshowerrrr.avif"
+              src="/assets/banner/estate1.jpg"
               alt="Image 3"
               width={280}
               height={160}
@@ -51,7 +51,7 @@ export default function SalonHero() {
             />
             {/* Overlapping Image 2 */}
             <Image
-              src="/assets/banner/hairshowerr.avif"
+              src="/assets/banner/estate.jpg"
               alt="Image 2"
               width={140}
               height={120}
@@ -61,21 +61,21 @@ export default function SalonHero() {
 
             {/* Overlapping Image 4 */}
             <Image
-              src="/assets/banner/hairshower.avif"
+              src="/assets/banner/estates.avif"
               alt="Image 4"
               width={160}
               height={100}
-              className="absolute bottom-[-1%] md:bottom-[15%] left-[5%] md:left-[60%]  rounded-md p-1 shadow-lg border-1 border-gray-600"
+              className="absolute bottom-[-1%] h-50 md:bottom-[15%] left-[5%] md:left-[60%]  rounded-md p-1 shadow-lg border-1 border-gray-600"
               style={{ zIndex: 30 }}
             />
 
             {/* Overlapping Image 5 */}
             <Image
-              src="/assets/banner/haircutting.avif"
+              src="/assets/banner/estatee.avif"
               alt="Image 5"
               width={120}
               height={90}
-              className="absolute  bottom-8 md:bottom-[0] right-[3%] md:right-[0] p-1 rounded-md shadow-md border-1 border-gray-700"
+              className="absolute  bottom-8 md:bottom-[0] h-45 right-[3%] md:right-[0] p-1 rounded-md shadow-md border-1 border-gray-700"
               style={{ zIndex: 35 }}
             />
           </div>
@@ -92,63 +92,91 @@ export default function SalonHero() {
           <h2
             className={`${bungee.className} text-3xl md:text-4xl font-normal leading-tight tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 drop-shadow-md`}
           >
-            Transform Your Beauty Experience at{" "}
-            <span className="text-gray-300">The SALON</span>
+            Discover the True Value Behind  {" "}
+            <span className="text-gray-300">Every Property</span>
           </h2>
 
           <p className="text-gray-300 text-base leading-relaxed">
-            Our skilled professionals are committed to delivering top-quality
-            treatments tailored to your unique needs.
+            Before you buy or invest, know if it's safe, smart, and worth the price. Our expert inspections reveal hidden issues, ensuring you make informed decisions with confidence.
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 md:gap-4 gap-2 text-center">
-            <div className="border text-center border-gray-800 shadow-md p-1 rounded-md py-2 ">
-              <p className="md:text-3xl text-xl font-bold text-yellow-500">
-                <CountUp end={98} duration={8} />%
-              </p>
-              <p className="text-sm text-gray-400">Customer Satisfaction</p>
-            </div>
-            <div className="border text-center border-gray-800 shadow-md p-1 rounded-md py-2 ">
-              <p className="md:text-3xl text-xl font-bold text-yellow-500">
-                <CountUp end={1500} duration={9} />+
-              </p>
-              <p className="text-sm text-gray-400 ">Services Delivered</p>
-            </div>
-            <div className="border text-center border-gray-800 shadow-md p-1 rounded-md py-2 ">
-              <p className="md:text-3xl text-xl font-bold text-yellow-500">
-                <CountUp end={1000} duration={10} />+
-              </p>
-              <p className="text-sm text-gray-400">Happy Clients</p>
-            </div>
-          </div>
+         <div className="grid grid-cols-3 md:gap-4 gap-2 text-center">
+  {/* Assets Under Advisory */}
+  <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
+    transition-all duration-300
+    hover:border-yellow-500
+    hover:bg-yellow-500/5">
+    <p className="md:text-3xl text-xl font-bold text-yellow-500">
+      ₹<CountUp end={20} duration={8} />Cr+
+    </p>
+    <p className="text-sm text-gray-400">Assets Under Advisory</p>
+  </div>
+
+  {/* Properties Closed */}
+  <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
+    transition-all duration-300
+    hover:border-yellow-500
+    hover:bg-yellow-500/5">
+    <p className="md:text-3xl text-xl font-bold text-yellow-500">
+      <CountUp end={1200} duration={9} />+
+    </p>
+    <p className="text-sm text-gray-400">Properties Closed</p>
+  </div>
+
+  {/* Client ROI */}
+  <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
+    transition-all duration-300
+    hover:border-yellow-500
+    hover:bg-yellow-500/5">
+    <p className="md:text-3xl text-xl font-bold text-yellow-500">
+      <CountUp end={18} duration={10} />%+
+    </p>
+    <p className="text-sm text-gray-400">Avg Client ROI</p>
+  </div>
+</div>
+
 
           {/* CTA & Contact */}
-          <div className="flex flex-wrap items-center gap-6 pt-4">
-            <Link
-              href="/all-services"
-              className="border border-gray-600 text-gray-200 cursor-pointer hover:bg-gray-800  text-sm font-medium px-6 py-3 rounded-sm transition-all shadow-md"
-            >
-              Explore More
-            </Link>
+         <div className="flex flex-wrap items-center gap-6 pt-4">
+  {/* Explore Button */}
+  <Link
+    href="/all-services"
+    className="border border-gray-600 text-gray-200 cursor-pointer
+    hover:border-yellow-500 hover:bg-yellow-500/10
+    hover:shadow-[0_0_20px_rgba(234,179,8,0.35)]
+    text-sm font-medium px-6 py-3 rounded-sm
+    transition-all duration-300 shadow-md"
+  >
+    Explore More
+  </Link>
 
-            <div className="flex items-center gap-3">
-              <div className="bg-yellow-500 p-3 rounded-full shadow-md">
-                <FaPhoneAlt className="text-white text-base" />
-              </div>
-              <div className="text-sm leading-tight cursor-pointer">
-                <p className="text-gray-400">Contact Us</p>
-                <motion.a
-                  href="tel:+919711816265"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="font-semibold text-white  inline-block cursor-pointer transition-all duration-200"
-                >
-                  +91 9711816265
-                </motion.a>
-              </div>
-            </div>
-          </div>
+  {/* Contact CTA */}
+  <div className="flex items-center gap-3 group">
+    {/* Phone Icon with Pulse */}
+    <div className="relative">
+      <span className="absolute inset-0 rounded-full bg-yellow-500 opacity-30 animate-ping"></span>
+      <div className="relative bg-yellow-500 p-3 rounded-full shadow-md">
+        <FaPhoneAlt className="text-white text-base" />
+      </div>
+    </div>
+
+    {/* Contact Text */}
+    <div className="text-sm leading-tight cursor-pointer">
+      <p className="text-gray-400">Free Consultation</p>
+      <motion.a
+        href="tel:+919711816265"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="font-semibold text-white inline-block
+        group-hover:text-yellow-400 transition-all duration-200"
+      >
+        +91 9700000000
+      </motion.a>
+    </div>
+  </div>
+</div>
+
         </motion.div>
       </div>
     </section>

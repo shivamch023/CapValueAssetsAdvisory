@@ -9,8 +9,9 @@ import { GrFormNext } from "react-icons/gr";
 
 export default function HeroSection() {
   const images = [
-    "/assets/banner/hairrr.png",
-    "/assets/banner/hair2.png", // second image
+    "/assets/banner/prop.png",
+    "/assets/banner/prop3.png", // second image
+    "/assets/banner/prop2.png", // second image
   ];
   const [index, setIndex] = useState(0);
 
@@ -29,11 +30,21 @@ export default function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
         {/* Left: Content */}
         <div className="lg:w-1/2 w-full">
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1 }}
+            className="text-base lg:text-lg text-gray-400 max-w-xl mb-6"
+          >
+
+            How PropTech Is Powering the New Office Paradigm
+
+          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight 
+            className="text-3xl sm:text-4xl md:text-4xl font-extrabold mb-6 leading-tight 
            text-white tracking-tight font-sans text-start"
           >
             Be{" "}
@@ -54,9 +65,9 @@ export default function HeroSection() {
               }}
               className="text-yellow-400 font-light italic tracking-wide inline-block"
             >
-              Bold
+              FROM
             </motion.span>{" "}
-            , Be{" "}
+            SQUARE{" "}
             <motion.span
               animate={{
                 y: [0, 8, 0],
@@ -65,7 +76,7 @@ export default function HeroSection() {
                   "0px 0px 5px rgba(200,200,200,0.3)",
                   "0px 0px 12px rgba(200,200,200,0.4)",
                   "0px 0px 5px rgba(200,200,200,0.3)",
-                ],
+                ]
               }}
               transition={{
                 duration: 2,
@@ -74,10 +85,10 @@ export default function HeroSection() {
               }}
               className="text-gray-300 inline-block font-serif"
             >
-              Beautiful
+              FOOTAGE
             </motion.span>{" "}
-            ,<br />
-            Stay <span className="text-white">You</span>
+            <br />
+            <span className="text-white tracking-[0.1em]"> TO SMART FOOTAGE</span>
           </motion.h1>
 
           <motion.p
@@ -86,8 +97,9 @@ export default function HeroSection() {
             transition={{ duration: 1.1 }}
             className="text-base lg:text-lg text-gray-400 max-w-xl mb-6"
           >
-            Discover premium hair and skin services, tailored to your beauty —
-            in a calm and elegant space.
+            India’s commercial real estate is entering a decisive phase of <br/> digital transformation.
+
+
           </motion.p>
 
           <motion.div
@@ -96,22 +108,31 @@ export default function HeroSection() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6"
           >
-            {/* Learn More Button */}
-            <Link href="/about" className="w-full md:max-w-max">
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                className="relative group  overflow-hidden cursor-pointer rounded-2xl px-6 py-4 text-center sm:px-7 sm:py-3 font-medium w-full  shadow-lg text-white text-sm sm:text-base transition-all duration-300 bg-gradient-to-r from-gray-800 to-gray-800"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-300 group-hover:text-gray-900">
-                  Learn More <GrFormNext />
-                </span>
-                {/* Tarang-style Animated BG */}
-                <span className="absolute -top-full -left-full w-full h-full bg-blue-100 group-hover:top-0 group-hover:left-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
-              </motion.button>
-            </Link>
+           <Link href="/about" className="w-full md:max-w-max">
+  <motion.button
+    whileHover={{ scale: 1.04 }}
+    whileTap={{ scale: 0.96 }}
+    className="
+      relative group overflow-hidden cursor-pointer
+      rounded-xl px-6 py-4 sm:px-7 sm:py-3
+      font-medium w-full text-sm sm:text-base
+      shadow-lg transition-all duration-300
+      bg-gradient-to-r from-gray-900 to-gray-800
+      group-hover:border-yellow-400  "
+  >
+    {/* Text */}
+    <span className="relative z-10 flex items-center justify-center gap-2
+      text-white transition-all duration-300
+      group-hover:text-yellow-400 group-hover:border-yellow-400">
+      Learn More <GrFormNext size={20} />
+    </span>
 
-            {/* Book Appointment Button */}
+   
+  </motion.button>
+</Link>
+
+
+            {/* Book Appointment Button
             <Link href="/book-apointment" className="w-full md:max-w-max">
               <motion.button
                 whileHover={{ scale: 1.04 }}
@@ -122,9 +143,9 @@ export default function HeroSection() {
                   Book Appointment <FaCalendarCheck />
                 </span>
                 {/* Tarang-style Animated BG */}
-                <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
+                {/* <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
               </motion.button>
-            </Link>
+            </Link> */} 
           </motion.div>
         </div>
 
@@ -135,14 +156,14 @@ export default function HeroSection() {
 
           {/* 🎖️ Tag sticker */}
           <motion.div
-            className="absolute lg:top-14 top-8 lg:right-24 right-7 border border-gray-700 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md z-20 "
+            className="absolute lg:top-14 tracking-[0.15em] top-8 lg:right-24 right-7 border border-gray-700 text-white text-sm font-semibold  px-3 py-1 rounded-full shadow-md z-20 "
             animate={{
               textShadow: [
                 "0 0 0px #fff",
-                "0 0 8px #facc15",
+                "0 0 8px #20fa15ff",
                 "0 0 12px #facc15",
                 "0 0 8px #facc15",
-                "0 0 12px #facc15",
+                "0 0 12px #15fa19ff",
                 "0 0 8px #facc15",
                 "0 0 0px #fff",
               ],
@@ -153,7 +174,7 @@ export default function HeroSection() {
               ease: "easeInOut",
             }}
           >
-            #GlowUp
+            #PropertyAdvisor
           </motion.div>
 
           {/* ✨ Sparkles */}

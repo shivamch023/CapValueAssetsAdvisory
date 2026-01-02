@@ -32,13 +32,11 @@ export default function Footer() {
           <Image
             src="/assets/logo.png"
             alt="Salon Logo"
-            width={120}
-            height={120}
+            width={220}
+            height={220}
             className="mx-auto md:mx-0 "
           />
-          <h2 className="text-2xl font-extrabold tracking-wide text-yellow-400">
-            Style Lounge Salon
-          </h2>
+          
           <p className="text-gray-300 leading-relaxed text-sm">
             Should be Experience premium salon services with modern trends and
             professional care where style meets elegance.

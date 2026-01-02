@@ -2,197 +2,251 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { LuMenu } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
+import { FiSearch } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/all-services" },
-  { name: "Appointments", href: "/book-apointment" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Memberships", href: "/memberships" },
-  { name: "Loyalty Program", href: "/loyalty-program" },
+  { name: "Properties", href: "" },
+  { name: "Services", href: "" },
+  { name: "People", href: "" },
+  { name: "Insights", href: "" },
   { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  // ✅ Auto-close drawer on screen resize to lg (desktop)
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsOpen(false);
-      }
+      if (window.innerWidth >= 1024) setIsOpen(false);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <div>
-      {/* Fixed Navbar */}
+    <>
+      {/* ================= NAVBAR ================= */}
       <header className="fixed top-0 left-0 w-full bg-[#010913] text-white z-50 shadow-xs shadow-gray-700">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex  flex-col items-center  text-white ">
+
+          {/* LEFT: LOGO */}
+          <Link
+            href="/"
+            className="flex flex-col  items-center"
+          >
+            {/* Logo */}
             <Image
-              src="/assets/logo.png"
-              alt="logo"
-              height={100}
+              src="/assets/logo1.png"
+              alt="Capvalue Assets Advisory Logo"
               width={100}
-              className="h-12 w-12 "
+              height={100}
+              priority
+              className="h-12  object-contain"
             />
-          
+
+            {/* Text */}
+            <div className="text-center sm:text-left leading-tight">
+              <p className="uppercase tracking-widest text-[8px] font-semibold text-yellow-500">
+                Capvalue Assets Advisory        </p>
+
+            </div>
           </Link>
 
-          {/* Desktop Nav (lg and up) */}
-          <nav className="hidden lg:flex gap-5 justify-center items-center ">
-            {navItems.map(({ name, href }) => (
-              <motion.div
-                key={name}
-                className="relative group"
-                initial="hidden"
-                whileHover="visible"
-                animate="hidden"
-                variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-                
-              >
+          {/* CENTER: NAV LINKS WITH LINES */}
+          <nav className="hidden lg:flex items-center">
+            {navItems.map(({ name, href }, index) => (
+              <div key={name} className="flex items-center">
                 <Link
                   href={href}
-                  className="text-xs uppercase tracking-wide hover:text-yellow-400 transition "
+                  className="px-4 text-xs uppercase tracking-wide hover:text-yellow-400 transition"
                 >
                   {name}
                 </Link>
 
-                {/* Underline Dots on Hover */}
-                <div className="absolute left-1/2 -bottom-2 flex gap-[6px] -translate-x-1/2">
-                  <motion.span
-                    className="w-1.5 h-1.5 bg-yellow-400 rounded-full"
-                    variants={{
-                      hidden: { x: -10, opacity: 0 },
-                      visible: { x: 0, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  />
-                  <motion.span
-                    className="w-1.5 h-1.5 bg-yellow-400 rounded-full"
-                    variants={{
-                      hidden: { y: 6, opacity: 0 },
-                      visible: { y: 0, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  />
-                  <motion.span
-                    className="w-1.5 h-1.5 bg-yellow-400 rounded-full"
-                    variants={{
-                      hidden: { x: 10, opacity: 0 },
-                      visible: { x: 0, opacity: 1 },
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  />
-                </div>
-              </motion.div>
+                {/* Vertical Line */}
+                {index !== navItems.length - 1 && (
+                  <span className="h-4 w-px bg-gray-600" />
+                )}
+              </div>
             ))}
-            <Link
-              className="border border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-900/60 hover:text-gray-200 duration-300 transition-all "
-              href="/contactus"
-            >
-              Contact Us
-            </Link>
           </nav>
 
-          {/* Hamburger Menu (mobile + tablet) */}
+          {/* RIGHT: BUTTON + SEARCH */}
+          {/* RIGHT: SEARCH + CONTACT (Desktop) */}
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="
+    border border-gray-700
+    p-2 cursor-pointer rounded-md
+    shadow-md
+    transition-all duration-300 ease-in-out
+    hover:bg-yellow-500/10
+    hover:border-yellow-400
+    group
+  "
+            >
+              <FiSearch className="text-gray-300 transition-colors duration-300 group-hover:text-yellow-400" />
+            </button>
+
+
+            <Link
+              href="/contactus"
+              className="
+    border border-gray-700
+    cursor-pointer
+    px-4 py-2
+    text-xs uppercase tracking-wide
+    rounded-md
+    shadow-md
+    transition-all duration-300 ease-in-out
+    hover:border-yellow-500
+    hover:bg-yellow-500/10
+    hover:shadow-lg
+    text-gray-200
+    hover:text-yellow-400
+  "
+            >
+              Contact
+            </Link>
+
+          </div>
+          {/* MOBILE SEARCH ICON */}
           <button
-            className="lg:hidden border-gray-700 border-2 p-1 shadow-md text-gray-100 rounded-md"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className="lg:hidden border border-gray-700 p-2 rounded-md shadow-md hover:bg-gray-900 transition"
           >
-            <LuMenu size={25} />
+            <FiSearch />
+          </button>
+
+
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            className="lg:hidden border-gray-700 border-2 p-1 rounded-md"
+            onClick={() => setIsOpen(true)}
+          >
+            <LuMenu size={24} />
           </button>
         </div>
       </header>
 
-      {/* Mobile/Tablet Drawer */}
+      {/* ================= SEARCH BAR ================= */}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 18,
+            }}
+            className="fixed top-[80px] left-0 w-full bg-[#010913] z-40 shadow-md"
+          >
+            <div className="container mx-auto px-4 py-10 flex justify-center">
+
+              {/* Search Wrapper */}
+              <div className="relative w-full md:w-[70%]">
+
+                {/* Close (Cross) */}
+                <button
+                  onClick={() => setIsSearchOpen(false)}
+                  className="absolute cursor-pointer   bottom-12 right-0 text-gray-400 hover:text-white text-lg transition"
+                  aria-label="Close search"
+                >
+                  ✕
+                </button>
+
+                {/* Input + Button (Joined) */}
+                <div className="flex w-full overflow-hidden rounded-md border shadow-md border-gray-200 focus-within:border-gray-500 transition">
+
+                  {/* Input */}
+                  <input
+                    type="text"
+                    placeholder="Search properties, services..."
+                    className="flex-1 bg-transparent px-4 py-3 text-sm text-gray-600 outline-none placeholder-gray-500"
+                    autoFocus
+                  />
+
+                  {/* Search Button */}
+                  <button
+                    className="bg-gray-800 cursor-pointer text-yellow-500 px-6 text-sm font-medium uppercase hover:bg-gray-700 transition"
+                  >
+                    Search
+                  </button>
+
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
+
+      {/* ================= MOBILE DRAWER ================= */}
       <AnimatePresence>
         {isOpen && (
-          <motion.aside
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.4 }}
-            className="fixed top-0 right-0 bottom-0 w-72 bg-[#010913] text-white z-[60] px-6 py-6 shadow-xs shadow-gray-700"
-          >
-            <div className="flex justify-between items-center mb-10">
-              <h2 className="text-lg font-semibold text-yellow-400">Menu</h2>
-              <button
-                className="text-gray-100 border-2 shadow-md border-gray-700 rounded-md p-1"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close menu"
-              >
-                <IoClose size={26} />
-              </button>
-            </div>
-
-            {/* Drawer Links */}
-            <motion.nav
-              className="flex flex-col gap-6 mb-6"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.15,
-                  },
-                },
-              }}
+          <>
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.4 }}
+              className="fixed top-0 right-0 bottom-0 w-72 bg-[#010913] text-white z-[60] px-6 py-6"
             >
-              {navItems.map(({ name, href }) => (
-                <motion.div
-                  key={name}
-                  variants={{
-                    hidden: { opacity: 0, x: 30 },
-                    visible: { opacity: 1, x: 0 },
-                  }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+              <div className="flex justify-between items-center mb-10">
+                <h2 className="text-lg font-semibold text-yellow-400">Menu</h2>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="border border-gray-700 p-1 rounded-md"
                 >
+                  <IoClose size={24} />
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-5">
+                {navItems.map(({ name, href }) => (
                   <Link
+                    key={name}
                     href={href}
                     onClick={() => setIsOpen(false)}
-                    className="text-sm font-medium uppercase tracking-wide hover:text-gray-700 transition-colors border-b text-gray-300 border-gray-700 pb-1 block"
+                    className="text-sm uppercase tracking-wide border-b border-gray-700 pb-2"
                   >
                     {name}
                   </Link>
-                </motion.div>
-              ))}
-            </motion.nav>
-            <Link
-              onClick={() => setIsOpen(false)}
-              className="border   border-gray-700 uppercase text-gray-200 text-xs py-2 px-4 rounded-md  hover:bg-gray-500 hover:text-gray-900 duration-300 transition-all "
-              href="/contactus"
-            >
-              Contact Us
-            </Link>
-          </motion.aside>
-        )}
-      </AnimatePresence>
+                ))}
+              </nav>
+              {/* Mobile Contact Button */}
+              <Link
+                href="/contactus"
+                onClick={() => setIsOpen(false)}
+                className="mt-10 block text-center border border-gray-600 text-sm uppercase tracking-wide py-3 rounded-md hover:bg-gray-900 transition"
+              >
+                Contact
+              </Link>
 
-      {/* Drawer Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black z-40"
-            onClick={() => setIsOpen(false)}
-          />
+            </motion.aside>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black z-40"
+              onClick={() => setIsOpen(false)}
+            />
+          </>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }
