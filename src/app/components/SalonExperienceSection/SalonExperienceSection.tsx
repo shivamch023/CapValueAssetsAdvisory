@@ -97,85 +97,85 @@ export default function SalonHero() {
           </h2>
 
           <p className="text-gray-300 text-base leading-relaxed">
-            Before you buy or invest, know if it's safe, smart, and worth the price. Our expert inspections reveal hidden issues, ensuring you make informed decisions with confidence.
+            Before you buy or invest, know if its safe, smart, and worth the price. Our expert inspections reveal hidden issues, ensuring you make informed decisions with confidence.
           </p>
 
           {/* Stats */}
-         <div className="grid grid-cols-3 md:gap-4 gap-2 text-center">
-  {/* Assets Under Advisory */}
-  <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
+          <div className="grid grid-cols-3 md:gap-4 gap-2 text-center">
+            {/* Assets Under Advisory */}
+            <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
     transition-all duration-300
     hover:border-yellow-500
     hover:bg-yellow-500/5">
-    <p className="md:text-3xl text-xl font-bold text-yellow-500">
-      ₹<CountUp end={20} duration={8} />Cr+
-    </p>
-    <p className="text-sm text-gray-400">Assets Under Advisory</p>
-  </div>
+              <p className="md:text-3xl text-xl font-bold text-yellow-500">
+                ₹<CountUp end={20} duration={8} />Cr+
+              </p>
+              <p className="text-sm text-gray-400">Assets Under Advisory</p>
+            </div>
 
-  {/* Properties Closed */}
-  <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
+            {/* Properties Closed */}
+            <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
     transition-all duration-300
     hover:border-yellow-500
     hover:bg-yellow-500/5">
-    <p className="md:text-3xl text-xl font-bold text-yellow-500">
-      <CountUp end={1200} duration={9} />+
-    </p>
-    <p className="text-sm text-gray-400">Properties Closed</p>
-  </div>
+              <p className="md:text-3xl text-xl font-bold text-yellow-500">
+                <CountUp end={1200} duration={9} />+
+              </p>
+              <p className="text-sm text-gray-400">Properties Closed</p>
+            </div>
 
-  {/* Client ROI */}
-  <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
+            {/* Client ROI */}
+            <div className="border border-gray-800 shadow-md p-1 rounded-md py-2
     transition-all duration-300
     hover:border-yellow-500
     hover:bg-yellow-500/5">
-    <p className="md:text-3xl text-xl font-bold text-yellow-500">
-      <CountUp end={18} duration={10} />%+
-    </p>
-    <p className="text-sm text-gray-400">Avg Client ROI</p>
-  </div>
-</div>
+              <p className="md:text-3xl text-xl font-bold text-yellow-500">
+                <CountUp end={18} duration={10} />%+
+              </p>
+              <p className="text-sm text-gray-400">Avg Client ROI</p>
+            </div>
+          </div>
 
 
           {/* CTA & Contact */}
-         <div className="flex flex-wrap items-center gap-6 pt-4">
-  {/* Explore Button */}
-  <Link
-    href="/all-services"
-    className="border border-gray-600 text-gray-200 cursor-pointer
+          <div className="flex flex-wrap items-center gap-6 pt-4">
+            {/* Explore Button */}
+            <Link
+              href="/all-services"
+              className="border border-gray-600 text-gray-200 cursor-pointer
     hover:border-yellow-500 hover:bg-yellow-500/10
     hover:shadow-[0_0_20px_rgba(234,179,8,0.35)]
     text-sm font-medium px-6 py-3 rounded-sm
     transition-all duration-300 shadow-md"
-  >
-    Explore More
-  </Link>
+            >
+              Explore More
+            </Link>
 
-  {/* Contact CTA */}
-  <div className="flex items-center gap-3 group">
-    {/* Phone Icon with Pulse */}
-    <div className="relative">
-      <span className="absolute inset-0 rounded-full bg-yellow-500 opacity-30 animate-ping"></span>
-      <div className="relative bg-yellow-500 p-3 rounded-full shadow-md">
-        <FaPhoneAlt className="text-white text-base" />
-      </div>
-    </div>
+            {/* Contact CTA */}
+            <div className="flex items-center gap-3 group">
+              {/* Phone Icon with Pulse */}
+              <div className="relative">
+                <span className="absolute inset-0 rounded-full bg-yellow-500 opacity-30 animate-ping"></span>
+                <div className="relative bg-yellow-500 p-3 rounded-full shadow-md">
+                  <FaPhoneAlt className="text-white text-base" />
+                </div>
+              </div>
 
-    {/* Contact Text */}
-    <div className="text-sm leading-tight cursor-pointer">
-      <p className="text-gray-400">Free Consultation</p>
-      <motion.a
-        href="tel:+919711816265"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="font-semibold text-white inline-block
+              {/* Contact Text */}
+              <div className="text-sm leading-tight cursor-pointer">
+                <p className="text-gray-400">Free Consultation</p>
+                <motion.a
+                  href="tel:+919711816265"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="font-semibold text-white inline-block
         group-hover:text-yellow-400 transition-all duration-200"
-      >
-        +91 9700000000
-      </motion.a>
-    </div>
-  </div>
-</div>
+                >
+                  +91 9700000000
+                </motion.a>
+              </div>
+            </div>
+          </div>
 
         </motion.div>
       </div>

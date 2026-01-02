@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaCalendarCheck } from "react-icons/fa";
 import { GrFormNext } from "react-icons/gr";
 
 export default function HeroSection() {
