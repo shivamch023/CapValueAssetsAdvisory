@@ -36,10 +36,9 @@ export default function Footer() {
             height={220}
             className="mx-auto md:mx-0 "
           />
-          
+
           <p className="text-gray-300 leading-relaxed text-sm">
-            Should be Experience premium salon services with modern trends and
-            professional care where style meets elegance.
+            Experience premium real estate advisory with modern market insights and professional expertise—where value meets trust
           </p>
         </motion.div>
 
@@ -122,7 +121,7 @@ export default function Footer() {
             whileHover={{ scale: 1.03 }}
             className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
           >
-            <FaPhone /> <span>+91-9711816265</span>
+            <FaPhone /> <span>+91-0000000000</span>
           </motion.a>
 
           <motion.a
@@ -130,7 +129,7 @@ export default function Footer() {
             whileHover={{ scale: 1.03 }}
             className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
           >
-            <FaEnvelope /> <span>info@salonwebsite.com</span>
+            <FaEnvelope /> <span>info@website.com</span>
           </motion.a>
         </motion.div>
 
@@ -175,9 +174,9 @@ export default function Footer() {
       <div className="border-t border-gray-700 mt-10 pt-6 text-center space-y-2 text-sm text-gray-400">
         <p>
           Made with <FaHeart className="inline text-pink-500 animate-pulse" />{" "}
-          by <span className="font-semibold text-white">Style Lounge Salon</span>
+          by <span className="font-semibold text-white">Capvalue Assets Advisorys</span>
         </p>
-        <p>© {new Date().getFullYear()} Style Lounge Salon. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Capvalue Assets Advisorys. All rights reserved.</p>
       </div>
     </footer>
   );

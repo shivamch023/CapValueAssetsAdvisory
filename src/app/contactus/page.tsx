@@ -7,8 +7,8 @@ export default function ContactPage() {
     <div className="py-20 px-4 md:px-20 text-white container bg-[#010913] mt-5 overflow-hidden">
       <PageBanner
         title="Get In Touch"
-        description="Get in touch with us for expert unisex salon services, appointments, or style consultations."
-        bgImage="/assets/banner/getintouchcont.jpg"
+        description="Connect with us for expert advice, tailored consultations, and smart investment guidance."
+        bgImage="/assets/banner/getintouchcont.avif"
       />
       <ContactSection />
     </div>

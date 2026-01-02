@@ -64,8 +64,7 @@ export default function ContactSection() {
           })}
         </motion.h2>{" "}
         <p className="text-gray-400 max-w-xl mx-auto">
-          We’d love to hear from you! Fill out the form or reach out using the
-          contact details.
+          Get in touch with our advisory team to discuss tailored solutions for your assets and real estate investments.
         </p>
       </motion.div>
 
@@ -79,7 +78,7 @@ export default function ContactSection() {
           className="space-y-6"
         >
           <Image
-            src="/assets/contact.jpg"
+            src="/assets/contact.avif"
             alt="Contact"
             width={500}
             height={400}
@@ -94,7 +93,7 @@ export default function ContactSection() {
             >
               <FaPhoneAlt className="text-gray-200 text-3xl border border-gray-700 p-2 rounded-lg group-hover:text-yellow-300 transition-all duration-300" />
               <span className="font-medium group-hover:text-yellow-400 transition">
-                +91 98765 43210
+                +91 xxx0000000 
               </span>
             </a>
 
