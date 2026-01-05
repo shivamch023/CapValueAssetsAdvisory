@@ -1,182 +1,145 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+// app/components/Footer/Footer.tsx
+import React from "react";
 import Link from "next/link";
 import {
-  FaFacebook,
-  FaInstagram,
-  FaGlobe,
-  FaEnvelope,
-  FaPhone,
-  FaHeart,
-  FaYoutube,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import { IoIosArrowRoundForward } from "react-icons/io";
+  IoChevronForward,
+  IoBriefcaseOutline,
+  IoPeopleOutline,
+  IoCallOutline,
+  IoMailOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
+
+
+
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#010913] to-[#1a1a2e] text-white pt-14 pb-8 px-4 md:px-16 font-sans">
-      {/* Top Border Line */}
-      <div className="max-w-7xl h-[2px] rounded-full bg-gradient-to-r from-gray-500 via-yellow-100 to-white mb-10 mx-auto" />
+    <footer className="bg-[#152D5B] text-white py-12 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Logo & Brand Info */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-4 text-center md:text-left"
-        >
-          <Image
-            src="/assets/logo.png"
-            alt="Salon Logo"
-            width={220}
-            height={220}
-            className="mx-auto md:mx-0 "
-          />
 
-          <p className="text-gray-300 leading-relaxed text-sm">
-            Experience premium real estate advisory with modern market insights and professional expertise—where value meets trust
-          </p>
-        </motion.div>
 
-        {/* Social Links */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 40 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="space-y-4"
-        >
-          <h3 className="text-xl font-bold text-yellow-400 mb-3">
-            Connect With Us
-          </h3>
-          <div className="flex space-x-5 text-2xl text-gray-300">
-            <motion.a
-              href="https://www.facebook.com/bittoo.chandel/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }}
-              className="hover:text-yellow-400 transition-all"
-            >
-              <FaFacebook />
-            </motion.a>
-            <motion.a
-              href="https://www.instagram.com/stylelounge_salon/#"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }}
-              className="hover:text-yellow-400 transition-all"
-            >
-              <FaInstagram />
-            </motion.a>
-            <motion.a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }}
-              className="hover:text-yellow-400 transition-all"
-            >
-              <FaGlobe />
-            </motion.a>
-            <motion.a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2 }}
-              className="hover:text-yellow-400 transition-all"
-            >
-              <FaYoutube />
-            </motion.a>
+        {/* ================= MAIN FOOTER GRID ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-sm sm:text-base">
+
+          {/* -------- CapValue Info -------- */}
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold tracking-wide flex items-baseline ">
+              <span className="text-white font-light">
+                Cap
+              </span>
+              <span className="text-[#B79643] font-medium text-[1.15em]">
+                Value
+              </span>
+            </h3>
+
+            <p className="text-gray-400 text-[15px] mb-4 mt-3">
+              Strategic advisory services for discerning clients seeking
+              exceptional outcomes in business, real estate, and capital
+              markets.
+            </p>
           </div>
-          <p className="text-sm text-gray-400">
-            Follow us for latest updates & offers!
-          </p>
-        </motion.div>
 
-        {/* Contact Info */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 40 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="space-y-4"
-        >
-          <h3 className="text-xl font-bold text-yellow-400 mb-3">
-            Contact Us
-          </h3>
-
-          <motion.a
-            href="https://www.google.com/maps/dir//Style+lounge+salon+41,+Birbal+Rd+near+post+office,+Block+I,+Jungpura+Extension+New+Delhi,+Delhi+110014/@28.5836739,77.2439293,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390ce301057f22f7:0x638e6bbabd6b7dc6!2m2!1d77.2439293!2d28.5836739?entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.03 }}
-            className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
-          >
-            <FaMapMarkerAlt /> <span>41 Birbal Road, Jungpura Ext New Delhi</span>
-          </motion.a>
-
-          <motion.a
-            href="tel:+919711816265"
-            whileHover={{ scale: 1.03 }}
-            className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
-          >
-            <FaPhone /> <span>+91-0000000000</span>
-          </motion.a>
-
-          <motion.a
-            href="mailto:info@salonwebsite.com"
-            whileHover={{ scale: 1.03 }}
-            className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-all"
-          >
-            <FaEnvelope /> <span>info@website.com</span>
-          </motion.a>
-        </motion.div>
-
-        {/* Working Hours (Clickable Redirect) */}
-        <motion.div
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 40 }}
-          transition={{ duration: 1.1, delay: 0.6 }}
-          className="space-y-4"
-        >
-          <h3 className="text-xl font-bold text-yellow-400 mb-3">
-            Working Hours
-          </h3>
-          <ul className="space-y-2 text-gray-300 text-sm">
-            {[
-              { day: "Mon - Fri", time: "9 AM - 8 PM" },
-              { day: "Saturday", time: "9 AM - 9 PM" },
-              { day: "Sunday", time: "10 AM - 6 PM" },
-            ].map((slot, index) => (
-              <motion.li
-                key={index}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <Link
-                  href="/book-apointment"
-                  className="flex items-center uppercase  gap-4 pl-2 md:pl-4  hover:text-yellow-400 transition-all cursor-pointer"
-                >
-                  <span className="w-18 flex text-nowrap font-medium text-white">
-                    {slot.day}
-                  </span>
-                  <IoIosArrowRoundForward />
-                  <span className="text-gray-300 text-nowrap">{slot.time}</span>
+          {/* -------- Services -------- */}
+          <div>
+            <h3 className="flex items-center gap-2 text-lg mb-3">
+              <IoBriefcaseOutline className="text-[#B79643]" />
+              Services
+            </h3>
+            <ul className="space-y-2 text-gray-400 text-[15px]">
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/services/business-advisory">
+                  Business Advisory
                 </Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/services/real-estate">
+                  Real Estate Investment
+                </Link>
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/services/growth-capital">
+                  Growth Capital
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center space-y-2 text-sm text-gray-400">
-        <p>
-          Made with <FaHeart className="inline text-pink-500 animate-pulse" />{" "}
-          by <span className="font-semibold text-white">Capvalue Assets Advisorys</span>
-        </p>
-        <p>© {new Date().getFullYear()} Capvalue Assets Advisorys. All rights reserved.</p>
+          {/* -------- Company -------- */}
+          <div>
+            <h3 className="flex items-center gap-2 text-lg mb-3 ">
+              <IoPeopleOutline className="text-[#B79643]" />
+              Company
+            </h3>
+            <ul className="space-y-2 text-gray-400 text-[15px]">
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/meet-our-team">Our Team</Link>
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/resources">Resources</Link>
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* -------- Contact (CLICKABLE) -------- */}
+          <div>
+            <h3 className="flex items-center gap-2 text-lg mb-3">
+              <IoCallOutline className="text-[#B79643]" />
+              Contact
+            </h3>
+            <ul className="space-y-3 text-gray-400 text-[15px]">
+              {/* Location */}
+              <li className="flex items-start gap-2 hover:text-[#C9A240] transition">
+                <IoLocationOutline className="mt-1" />
+                <a
+                  href="https://www.google.com/maps?q=123+Financial+District,+New+York,+NY+10004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  123 Financial District, New York, NY 10004
+                </a>
+              </li>
+
+              {/* Phone */}
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoCallOutline />
+                <a href="tel:+12125550100">+1 (212) 555-0100</a>
+              </li>
+
+              {/* Email */}
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoMailOutline />
+                <a href="mailto:contact@capvalue.com">
+                  contact@capvalue.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* ================= BOTTOM BAR ================= */}
+        <div className="border-t border-gray-700 pt-6 flex flex-col lg:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
+          <p>© 2026 CapValue Advisory. All rights reserved.</p>
+          <div className="flex gap-4 mt-2 lg:mt-0">
+            <Link href="/privacy-policy" className="hover:text-[#C9A240] transition">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-[#C9A240] transition">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+
       </div>
     </footer>
   );

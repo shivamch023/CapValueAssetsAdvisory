@@ -62,7 +62,7 @@ export default function AdvisoryCards() {
                                     key={item}
                                     className="text-sm text-gray-700 flex items-start gap-2"
                                 >
-                                    <span className="text-[#C9A240] mt-1">•</span>
+                                    <span className="text-[#C9A240] text-[15px]">•</span>
                                     {item}
                                 </li>
                             ))}

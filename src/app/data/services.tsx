@@ -1,5 +1,10 @@
 import { title } from "process";
 import { ReactNode } from "react";
+import { IconType } from "react-icons";
+import { IoNewspaperOutline } from "react-icons/io5";
+import { MdInsights } from "react-icons/md";
+import { TbReportSearch } from "react-icons/tb";
+
 
 export interface ChildCard {
   id: string;
@@ -396,9 +401,9 @@ export const cardsData: CardData[] = [
 
         features: [
           { ptext: "Series A/B", pnumber: "$5M - $50M" },
-          { ptext: " Growth Equity",pnumber:"$50M - $250M" },
-          { ptext: "Pre-IPO",pnumber:"$100M+" },
-          { ptext: "Recapitalization",pnumber:"Custom " },
+          { ptext: " Growth Equity", pnumber: "$50M - $250M" },
+          { ptext: "Pre-IPO", pnumber: "$100M+" },
+          { ptext: "Recapitalization", pnumber: "Custom " },
         ],
         lay2: [
           {
@@ -432,4 +437,166 @@ export const cardsData: CardData[] = [
       }
     ]
   },
+];
+
+
+
+
+//team data
+
+export const teamData = [
+  {
+    name: "Jonathan W. Sterling",
+    role: "Managing Partner",
+    image: "/assets/team/man.jpg",
+    bio: "Former Goldman Sachs Managing Director with 25+ years of experience in investment banking and private equity. Jonathan founded CapValue to deliver institutional-caliber advisory to the middle market.",
+    expertise: ["M&A Advisory", "Private Equity", "Strategic Planning"],
+    education: "MBA, Harvard Business School | BA, Yale University",
+    socials: {
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+    },
+  },
+  {
+    name: "Emily R. Carter",
+    role: "Senior Partner",
+    image: "/assets/team/woman1.jpg",
+    bio: "Emily brings over two decades of experience advising Fortune 500 companies on growth strategy and corporate restructuring.",
+    expertise: ["Corporate Strategy", "Business Transformation", "Risk Advisory"],
+    education: "MBA, Wharton School | BA, Stanford University",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    name: "Michael T. Reynolds",
+    role: "Managing Director",
+    image: "/assets/team/man2.jpg",
+    bio: "Michael specializes in capital markets and large-scale real estate investments across global markets.",
+    expertise: ["Capital Markets", "Real Estate Investment", "Portfolio Strategy"],
+    education: "MS Finance, NYU | BA, Columbia University",
+    socials: {
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+    },
+  },
+  {
+    name: "Sophia L. Bennett",
+    role: "Principal Advisor",
+    image: "/assets/team/woman2.jpg",
+    bio: "Sophia advises high-growth firms on market entry, valuation, and long-term strategic planning.",
+    expertise: ["Market Entry", "Valuation", "Strategic Planning"],
+    education: "MBA, INSEAD | BA, University of London",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    name: "Daniel K. Moore",
+    role: "Director",
+    image: "/assets/team/man3.jpg",
+    bio: "Daniel has deep expertise in mergers, acquisitions, and post-merger integration strategies.",
+    expertise: ["Mergers & Acquisitions", "Integration", "Operational Strategy"],
+    education: "MBA, Chicago Booth | BS, MIT",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    name: "Olivia H. Martinez",
+    role: "Vice President",
+    image: "/assets/team/woman3.jpg",
+    bio: "Olivia focuses on private equity transactions and financial due diligence for middle-market clients.",
+    expertise: ["Private Equity", "Due Diligence", "Financial Modeling"],
+    education: "MBA, UCLA Anderson | BCom, USC",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    name: "Robert J. Collins",
+    role: "Senior Advisor",
+    image: "/assets/team/man4.jpg",
+    bio: "Robert advises family offices and institutional investors on long-term capital allocation strategies.",
+    expertise: ["Capital Allocation", "Family Office Advisory", "Investment Strategy"],
+    education: "MBA, Oxford | BA, University of Toronto",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    name: "Ava N. Thompson",
+    role: "Associate Director",
+    image: "/assets/team/woman4.jpg",
+    bio: "Ava supports strategic initiatives with deep analytical insight and market research expertise.",
+    expertise: ["Market Research", "Competitive Analysis", "Strategy Support"],
+    education: "MS Economics, LSE | BA, NYU",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+  {
+    name: "William P. Anderson",
+    role: "Strategy Consultant",
+    image: "/assets/team/man5.jpg",
+    bio: "William works closely with leadership teams to design and execute growth-oriented business strategies.",
+    expertise: ["Growth Strategy", "Business Planning", "Performance Improvement"],
+    education: "MBA, IE Business School | BA, University of Michigan",
+    socials: {
+      linkedin: "https://linkedin.com",
+    },
+  },
+];
+
+
+
+//resource data
+export type ResourceItem = {
+  id: number;
+  category: "Business Advisory" | "Real Estate" | "Growth Capital";
+  date: string; // e.g., "December 2025"
+  title: string;
+  description: string;
+  pdfLink: string;
+  cate: string;
+  icon?: IconType;
+}
+
+export const resourcesData: ResourceItem[] = [
+  {
+    id: 1,
+    category: "Business Advisory",
+    date: "December 2025",
+    title: "Navigating M&A in Uncertain Markets",
+    cate: "Whitepaper",
+    icon: IoNewspaperOutline,
+    description:
+      "Strategic considerations for corporate transactions in volatile economic environments.",
+    pdfLink: "/pdfs/ma-strategy.pdf",
+  },
+  {
+    id: 2,
+    category: "Real Estate",
+    date: "November 2025",
+    title: "Real Estate Investment Trends 2025",
+    description:
+      "Insights and strategies for maximizing returns in evolving real estate markets.",
+    pdfLink: "/pdfs/real-estate-trends.pdf",
+    cate: "Market Insight",
+    icon: MdInsights,
+
+
+  },
+  {
+    id: 3,
+    category: "Growth Capital",
+    date: "October 2025",
+    title: "Growth Capital for Emerging Companies", cate: "Market Insight", icon: TbReportSearch,
+
+
+    description:
+      "Best practices for securing growth capital to scale your business efficiently.",
+    pdfLink: "/pdfs/growth-capital.pdf",
+  },
+  // add more items as needed
 ];

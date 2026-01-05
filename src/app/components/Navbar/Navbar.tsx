@@ -11,7 +11,7 @@ const navItems = [
   { name: "Business Advisory", href: "/services/business-advisory" },
   { name: "Real Estate", href: "/services/real-estate" },
   { name: "Growth Capital", href: "/services/growth-capital" },
-  { name: "Team", href: "/team" },
+  { name: "Team", href: "/meet-our-team" },
   { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ];
