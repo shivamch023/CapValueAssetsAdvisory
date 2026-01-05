@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import Footer from "./components/Footer/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
-import { CartProvider } from "./context/CartContext";
 
 import "@fontsource/geist-mono"; // default 400
 import "@fontsource/geist-sans"; // default 400
@@ -23,8 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased" style={{ fontFamily: '"Geist Sans", sans-serif' }}>
         <Navbar />
-        <CartProvider>{children}</CartProvider>
-        <Footer />
+        {children}
         <WhatsAppButton />
         <ScrollToTopButton />
       </body>

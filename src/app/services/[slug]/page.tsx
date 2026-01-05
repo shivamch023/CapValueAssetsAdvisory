@@ -1,221 +1,133 @@
-"use client";
-import { services } from "@/app/data/services";
-import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { useCart } from "@/app/context/CartContext";
-import { useRouter } from "next/navigation";
-import { IoMdCheckmark } from "react-icons/io";
+import { notFound } from "next/navigation";
+import { cardsData } from "@/app/data/services";
+import { AdvantageCard } from "@/app/data/services";
+import AdvantageSection from "@/app/components/AdvantageSection/AdvantageSection";
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
-
-const ServiceDetail: React.FC<Props> = ({ params }) => {
-  const [slug, setSlug] = useState<string | null>(null);
-  const [search, setSearch] = useState("");
-  const [visibleCount, setVisibleCount] = useState(8);
-  const { cart, addToCart, incrementQuantity, decrementQuantity } = useCart();
-  const router = useRouter();
-
-  useEffect(() => {
-    params.then((resolvedParams) => {
-      setSlug(resolvedParams.slug);
-    });
-  }, [params]);
-
-  if (!slug) {
-    return (
-      <p className="text-center text-yellow-500 mt-12 font-bold text-xl">
-        Loading service details...
-      </p>
-    );
-  }
-
-  const service = services.find((item) => item.slug === slug);
-
-  if (!service) {
-    return (
-      <p className="text-center text-red-500 mt-12 font-bold text-xl">
-        Service not found!
-      </p>
-    );
-  }
-
-  const headingText = service.title;
-  const filteredServices = service.SaloonServices?.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const hasCartItems = cart.some((item) => item.quantity > 0);
-
-  return (
-    <section className="min-h-screen py-12 px-2 md:px-14 mt-[4rem] relative">
-      <div className="container mx-auto max-w-7xl flex flex-col items-center text-center">
-        {/* Banner */}
-        <div className="relative w-full lg:min-h-[60vh] md:min-h-[45vh] h-[25vh] rounded-lg overflow-hidden mb-12 flex items-center justify-start px-6 md:px-12 border border-gray-700">
-          <Image
-            src={service.image}
-            alt={service.title}
-            fill
-            className="absolute inset-0 w-full h-full object-cover brightness-75 p-2 border border-gray-700 rounded-lg"
-          />
-          <div className="relative z-10 max-w-4xl text-left">
-            <motion.h2
-              initial={{ opacity: 0, y: -40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-3xl md:text-5xl font-extrabold mb-6"
-            >
-              {headingText.split("").map((char, index) => {
-                const color =
-                  index % 3 === 0
-                    ? "#FFD700"
-                    : index % 3 === 1
-                    ? "#CCCCCC"
-                    : "#FFFFFF";
-                const showUnderline = color !== "#CCCCCC";
-                return (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className={`relative inline-block ${char === " " ? "w-2" : ""}`}
-                    style={{ color }}
-                  >
-                    {char}
-                    {showUnderline && (
-                      <motion.span
-                        className="absolute left-0 bottom-0 h-[2px] w-full"
-                        style={{
-                          backgroundColor: color,
-                          transformOrigin: "left",
-                        }}
-                        animate={{ scaleX: [0, 1, 0] }}
-                        transition={{
-                          duration: 1.5,
-                          ease: "easeInOut",
-                          repeat: Infinity,
-                          repeatType: "loop",
-                          delay: index * 0.05,
-                        }}
-                      />
-                    )}
-                  </motion.span>
-                );
-              })}
-            </motion.h2>
-
-            <p className="lg:text-lg md:text-md text-sm text-white leading-relaxed">
-              {service.description}
-            </p>
-          </div>
-        </div>
-
-        {/* Search & Cards */}
-        {service.SaloonServices && (
-          <>
-            <input
-              type="text"
-              placeholder="Search service..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="mb-8 px-4 py-2 border border-gray-700 rounded-lg w-full max-w-md text-gray-200"
-            />
-
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredServices?.slice(0, visibleCount).map((item, index) => {
-                const cartItem = cart.find((c) => c.name === item.name);
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="border border-gray-700 rounded-xl shadow-md hover:shadow-xl p-3 flex flex-col items-center duration-300 transition-all"
-                  >
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={800}
-                      height={800}
-                      className="w-full h-50 object-cover rounded-lg mb-4 shadow-md"
-                    />
-                    <div className="flex items-center flex-col justify-center mb-4">
-                      <h3 className="text-lg text-nowrap font-bold text-gray-400">
-                        {item.name}
-                      </h3>
-                      <p className="text-yellow-500 font-semibold text-md mt-1">
-                        ₹{item.price}
-                      </p>
-                    </div>
-
-                    {cartItem && cartItem.quantity > 0 ? (
-                      <div className="flex items-center gap-2">
-                        <motion.button
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => decrementQuantity(item.name)}
-                          className="px-3 py-1 border-gray-700 cursor-pointer border hover:bg-gray-900/50 text-white rounded"
-                        >
-                          -
-                        </motion.button>
-
-                        <span className="text-white font-semibold">{cartItem.quantity}</span>
-
-                        <motion.button
-                          whileTap={{ scale: 0.95 }}
-                          onClick={() => incrementQuantity(item.name)}
-                          className="px-3 py-1 border-gray-700 cursor-pointer border hover:bg-gray-900/50 text-white rounded"
-                        >
-                          +
-                        </motion.button>
-                      </div>
-                    ) : (
-                      <motion.button
-                        whileHover={{ scale: 1.04 }}
-                        whileTap={{ scale: 0.96 }}
-                        onClick={() => addToCart({ name: item.name, price: item.price })}
-                        className="w-full cursor-pointer px-4 py-2 border border-gray-700 hover:bg-gray-900/40 text-white rounded text-center"
-                      >
-                        Book Appointment
-                      </motion.button>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {filteredServices && visibleCount < filteredServices.length && (
-              <button
-                onClick={() => setVisibleCount((prev) => prev + 8)}
-                className=" mt-8 mx-auto flex cursor-pointer items-center justify-center px-6 py-2 rounded-lg border border-gray-700 text-gray-200 hover:text-yellow-500 font-bold shadow-md transition-all"
-              >
-                View More
-              </button>
-            )}
-          </>
-        )}
-      </div>
-
-      {/* ✅ Bottom Sticky Button */}
-      {hasCartItems && (
-        <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center px-4">
-  <motion.button
-    whileHover={{ scale: 1.03 }}
-    whileTap={{ scale: 0.97 }}
-    onClick={() => router.push("/book-apointment")}
-    className="w-[70%] max-w-md md:max-w-sm bg-yellow-400 text-black font-semibold px-6 py-2 text-nowrap md:py-3.5 rounded-xl shadow-lg transition-all duration-200 hover:bg-yellow-500 flex items-center justify-center gap-2"
-  >
-    <IoMdCheckmark size={22} />
-    View Selected Services
-  </motion.button>
-</div>
-
-      )}
-    </section>
-  );
+type Props = {
+    params: {
+        slug: string;
+    };
 };
 
-export default ServiceDetail;
+export default function ServiceDetailPage({ params }: Props) {
+    const service = cardsData.find(
+        (item) => item.slug === params.slug
+    );
+
+    if (!service) {
+        return notFound();
+    }
+    const card = cardsData.find(
+        (item) => item.slug === params.slug
+    );
+
+    // ✅ safety check
+    if (!card) {
+        return <div>Service not found</div>;
+    }
+
+    return (
+        <div className="relative bg-gray-100/40  w-full  overflow-hidden">
+            <section className="relative container w-full bg-[#142964] px-4 py-20 lg:py-32 overflow-hidden">
+                <div className="flex-1 flex flex-col gap-4">
+                    {/* Trusted By */}
+                    <div className="flex items-center gap-2 bg-yellow-600/10 border border-yellow-700/10 backdrop-blur-lg px-6 py-2 rounded-full w-max">
+                        <span className="w-2 h-2 bg-[#C9A240] rounded-full" />
+                        <p className="text-[13px] text-[#C9A240]  font-bold">
+                            {service.title}
+                        </p>
+                    </div>
+
+                    {/* Headings */}
+                    <div className="flex flex-col  items-start -gap-3">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                            {service.titles}
+                        </h2>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-[#C9A240] leading-tight">
+                            {service.titles1}
+                        </h2>
+                    </div>
+
+
+                    {/* Description */}
+                    <p className="text-gray-200 text-[15px]  max-w-xl">
+                        {service.shortDescription}
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                        <button className="flex text-[14px] items-center gap-2 bg-[#C9A240] text-gray-900 px-8 py-3 rounded-md font-semibold cursor-pointer hover:opacity-90 transition w-full sm:w-auto">
+                            Request Consultation
+                            <span>→</span> {/* Right arrow */}
+                        </button>
+
+
+
+                    </div>
+                </div>
+
+            </section>
+            <div className="w-full  flex items-center justify-center overflow-hidden px-4 py-16">
+                <div className="max-w-6xl w-full space-y-14">
+
+                    {/* ===== Title + Description ===== */}
+                    <div className="text-center space-y-6">
+                        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#212940] leading-tight">
+                                {service.title2}
+                            </h2>
+                            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#C9A240] leading-tight">
+                                {service.titles2}
+                            </h2>
+                        </div>
+
+                        <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                            {service.title2dec}
+                        </p>
+                    </div>
+
+                    {/* ===== 2 Row / 2 Column Cards ===== */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 ">
+                        {service.children.map((item) => (
+                            <div
+                                key={item.id}
+                                className="group relative bg-white rounded-md p-8 border border-gray-200
+          transition-all duration-300 hover:border-[#C9A240] hover:-translate-y-1 hover:shadow-xl"
+                            >
+                                {/* Top Accent Border */}
+                                <span className="absolute top-0 left-0 h-1 w-0 bg-[#C9A240] transition-all duration-300 group-hover:w-full rounded-t-full" />
+
+                                {/* Icon */}
+                                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#212940]/5
+            text-[#212940] group-hover:text-[#C9A240] transition-colors duration-300">
+                                    {item.icon}
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="mt-6 text-lg font-bold text-[#212940] group-hover:text-[#C9A240] transition-colors">
+                                    {item.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                                    {item.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+             {card.children1 && (
+        <AdvantageSection items={card.children1} />
+      )}
+
+
+
+
+
+
+        </div>
+
+    );
+}

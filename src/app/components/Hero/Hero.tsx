@@ -1,275 +1,118 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { GrFormNext } from "react-icons/gr";
+import React from "react";
 
 export default function HeroSection() {
-  const images = [
-    "/assets/banner/prop.png",
-    "/assets/banner/prop3.png", // second image
-    "/assets/banner/prop2.png", // second image
-  ];
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // change every 2 seconds
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   return (
-    <section className="relative w-full text-white overflow-hidden md:mt-[3rem] mt-[3rem] ">
-      {/* 🔆 Background abstract light shape */}
-      <div className="absolute top-1/2 left-1/2 w-[120px] h-[120px] -translate-x-1/2 -translate-y-1/2  rounded-full blur-[100px] z-0" />
+    <section className="relative w-full bg-[#142964] px-4 py-20 lg:py-32 overflow-hidden">
+      <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center gap-12">
 
-      <div className="relative z-10 container mx-auto px-4 py-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
-        {/* Left: Content */}
-        <div className="lg:w-1/2 w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1 }}
-            className="text-base lg:text-lg text-gray-400 max-w-xl mb-6"
-          >
+        {/* ================= LEFT SIDE ================= */}
+        <div className="flex-1 flex flex-col gap-4">
+          {/* Trusted By */}
+          <div className="flex items-center gap-2 bg-yellow-600/10 border border-yellow-700/10 backdrop-blur-lg px-6 py-2 rounded-full w-max">
+            <span className="w-2 h-2 bg-[#C9A240] rounded-full" />
+            <p className="text-[13px] text-[#C9A240]  font-bold">
+              Trusted by Fortune 500 Leaders
+            </p>
+          </div>
 
-            How PropTech Is Powering the New Office Paradigm
+          {/* Headings */}
+          <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Strategic Excellence In
+          </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#C9A240] leading-tight">
+            Advisory Services
+          </h2>
 
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-4xl font-extrabold mb-6 leading-tight 
-           text-white tracking-tight font-sans text-start"
-          >
-            Be{" "}
-            <motion.span
-              animate={{
-                y: [0, -8, 0],
-                opacity: [1, 0.9, 1],
-                textShadow: [
-                  "0px 0px 5px rgba(255,255,0,0.3)",
-                  "0px 0px 12px rgba(255,255,0,0.5)",
-                  "0px 0px 5px rgba(255,255,0,0.3)",
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-yellow-400 font-light italic tracking-wide inline-block"
-            >
-              FROM
-            </motion.span>{" "}
-            SQUARE{" "}
-            <motion.span
-              animate={{
-                y: [0, 8, 0],
-                opacity: [1, 0.9, 1],
-                textShadow: [
-                  "0px 0px 5px rgba(200,200,200,0.3)",
-                  "0px 0px 12px rgba(200,200,200,0.4)",
-                  "0px 0px 5px rgba(200,200,200,0.3)",
-                ]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-gray-300 inline-block font-serif"
-            >
-              FOOTAGE
-            </motion.span>{" "}
-            <br />
-            <span className="text-white tracking-[0.1em]"> TO SMART FOOTAGE</span>
-          </motion.h1>
+          {/* Description */}
+          <p className="text-gray-200 text-[15px]  max-w-xl">
+            CapValue delivers exceptional advisory services across business strategy, real estate investments, and growth capital — empowering leaders to achieve extraordinary outcomes.
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1 }}
-            className="text-base lg:text-lg text-gray-400 max-w-xl mb-6"
-          >
-            India’s commercial real estate is entering a decisive phase of <br/> digital transformation.
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <button className="flex text-[12px] items-center gap-2 bg-[#C9A240] text-gray-900 px-8 py-3 rounded-md font-semibold cursor-pointer hover:opacity-90 transition w-full sm:w-auto">
+              Schedule Consultation
+              <span>→</span> {/* Right arrow */}
+            </button>
 
+            <button className="bg-transparent text-[12px] border border-gray-500 text-white px-8 py-3 rounded-md font-semibold  tracking-wide
+  w-full sm:w-auto cursor-pointer
+  transition-all duration-300 hover:bg-white hover:text-[#142964]">
+              Explore Service
+            </button>
 
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 mt-6"
-          >
-           <Link href="/about" className="w-full md:max-w-max">
-  <motion.button
-    whileHover={{ scale: 1.04 }}
-    whileTap={{ scale: 0.96 }}
-    className="
-      relative group overflow-hidden cursor-pointer
-      rounded-xl px-6 py-4 sm:px-7 sm:py-3
-      font-medium w-full text-sm sm:text-base
-      shadow-lg transition-all duration-300
-      bg-gradient-to-r from-gray-900 to-gray-800
-      group-hover:border-yellow-400  "
-  >
-    {/* Text */}
-    <span className="relative z-10 flex items-center justify-center gap-2
-      text-white transition-all duration-300
-      group-hover:text-yellow-400 group-hover:border-yellow-400">
-      Learn More <GrFormNext size={20} />
-    </span>
-
-   
-  </motion.button>
-</Link>
-
-
-            {/* Book Appointment Button
-            <Link href="/book-apointment" className="w-full md:max-w-max">
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                className="relative group overflow-hidden justify-center items-center cursor-pointer rounded-2xl px-6 py-4 sm:px-7 sm:py-3 font-medium w-full  shadow-md border border-gray-700 text-gray-200  text-sm sm:text-base text-center  transition-all duration-300"
-              >
-                <span className="relative z-10 flex items-center justify-center gap-2 transition-all duration-400 group-hover:text-gray-800">
-                  Book Appointment <FaCalendarCheck />
-                </span>
-                {/* Tarang-style Animated BG */}
-                {/* <span className="absolute top-full right-full w-full h-full bg-gradient-to-r from-gray-200 to-gray-300 group-hover:top-0 group-hover:right-0 transition-all duration-700 ease-in-out z-0 rounded-2xl" />
-              </motion.button>
-            </Link> */} 
-          </motion.div>
+          </div>
         </div>
 
-        {/* Right: Image with glow and effects */}
-        <motion.div className="relative lg:w-1/2 w-full flex items-center justify-center">
-          {/* 🔆 Background blur glow */}
-          <div className="absolute " />
 
-          {/* 🎖️ Tag sticker */}
-          <motion.div
-            className="absolute lg:top-14 tracking-[0.15em] top-8 lg:right-24 right-7 border border-gray-700 text-white text-sm font-semibold  px-3 py-1 rounded-full shadow-md z-20 "
-            animate={{
-              textShadow: [
-                "0 0 0px #fff",
-                "0 0 8px #20fa15ff",
-                "0 0 12px #facc15",
-                "0 0 8px #facc15",
-                "0 0 12px #15fa19ff",
-                "0 0 8px #facc15",
-                "0 0 0px #fff",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            #PropertyAdvisor
-          </motion.div>
+        {/* ================= RIGHT SIDE ================= */}
+        <div className="flex-1 grid grid-cols-1 md:grid-row-3 gap-4">
+          {/* Box 1: Business Advisory */}
+          <div className="bg-gray-400/10 border border-gray-300/20 backdrop-blur-md  rounded-lg p-6 flex flex-row items-center gap-4
+    hover:scale-102 hover:shadow-xl hover:bg-gray-300/10 transition-all duration-300">
 
-          {/* ✨ Sparkles */}
-          {/* ✨ Sparkles with 3s smooth ping via Framer Motion */}
-          <motion.div
-            className="absolute top-20 left-13 md:left-20 w-8 h-8 bg-white/30 rounded-full z-10"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
-            transition={{
-              duration: 4,
-              delay: 0,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: ["easeOut", "easeIn"],
-            }}
-          />
+            {/* Icon */}
+            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-yellow-900/20 backdrop-blur-md">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-[#C9A240]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c1.5 0 2.5 1.5 3 3m0 0c.5 1.5 1.5 3 3 3m-6-6a3 3 0 00-3 3c0 1.5 1.5 2.5 3 3m0-6v6m0 0c1.5 0 2.5-1.5 3-3m0 0c.5-1.5 1.5-3 3-3" />
+              </svg>
+            </div>
 
-          <motion.div
-            className="absolute bottom-6 right-7 w-3 h-3 bg-yellow-300/40 rounded-full z-10"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
-            transition={{
-              duration: 4,
-              delay: 0.8,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: ["easeOut", "easeIn"],
-            }}
-          />
+            {/* Text */}
+            <div className="flex flex-col items-start justify-center">
+              <h3 className="text-white font-bold text-md lg:text-lg mb-1 tracking-wide">
+                Business Advisory
+              </h3>
+              <p className="text-gray-300 text-sm text-[13px]">
+                Strategic guidance for complex business challenges.
+              </p>
+            </div>
+          </div>
 
-          <motion.div
-            className="absolute top-5 left-10 w-2 h-2 bg-white/30 rounded-full z-10"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
-            transition={{
-              duration: 4,
-              delay: 1.6,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: ["easeOut", "easeIn"],
-            }}
-          />
 
-          <motion.div
-            className="absolute top-60 left-15 w-12 h-12 bg-yellow-500/10 rounded-full z-10"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
-            transition={{
-              duration: 4,
-              delay: 1.6,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: ["easeOut", "easeIn"],
-            }}
-          />
+          {/* Box 2: Real Estate Investment */}
+          <div className="bg-gray-400/10 backdrop-blur-md border border-gray-300/20   rounded-lg p-6 flex flex-row items-center gap-4
+  hover:scale-102 hover:shadow-xl hover:bg-gray-300/10 transition-all duration-300">
 
-          <motion.div
-            className="absolute bottom-20 right-7 w-5 h-5 bg-yellow-300/40 rounded-full z-10"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: [0.8, 1.6], opacity: [0, 0.8, 0] }}
-            transition={{
-              duration: 4,
-              delay: 2.4,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: ["easeOut", "easeIn"],
-            }}
-          />
+            {/* Icon */}
+            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-yellow-900/20 backdrop-blur-md">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-[#C9A240]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-4v-5H8v5H4a1 1 0 01-1-1V10z" />
+              </svg>
+            </div>
 
-          <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 w-full mt-0 lg:mt-10 lg:p-5 p-0"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <Image
-                  src={images[index]}
-                  alt="Beauty Service"
-                  width={600}
-                  height={600}
-                  className="rounded-2xl w-full h-[500px] object-contain drop-shadow-[0_10px_30px_rgba(156,163,175,0.4)]"
-                  quality={100}
-                  priority
-                />
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
-        </motion.div>
+            {/* Text */}
+            <div className="flex flex-col items-start justify-center">
+              <h3 className="text-white font-bold text-md lg:text-lg mb-1 tracking-wide ">Real Estate Investment</h3>
+              <p className="text-gray-300 text-sm text-[13px">Institutional-grade real estate opportunities.</p>
+            </div>
+          </div>
+
+          {/* Box 3: Growth Capital */}
+          <div className="bg-gray-400/10 backdrop-blur-md  border border-gray-300/20  rounded-lg p-6 flex flex-row items-center gap-4
+ hover:scale-102 hover:shadow-xl hover:bg-gray-300/10transition-all duration-300">
+
+            {/* Icon */}
+            <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-yellow-900/20 backdrop-blur-md">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-[#C9A240]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v8m0 0l3-3m-3 3l-3-3M4 12a8 8 0 1116 0 8 8 0 01-16 0z" />
+              </svg>
+            </div>
+
+            {/* Text */}
+            <div className="flex flex-col items-start justify-center">
+              <h3 className="text-white font-bold text-md lg:text-lg mb-1 tracking-wide">Growth Capital</h3>
+              <p className="text-gray-300 text-sm text-[13px]">Fuel expansion with tailored capital solutions.</p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
       </div>
     </section>
   );
