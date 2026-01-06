@@ -591,7 +591,7 @@ export const resourcesData: ResourceItem[] = [
     id: 3,
     category: "Growth Capital",
     date: "October 2025",
-    title: "Growth Capital for Emerging Companies", cate: "Market Insight", icon: TbReportSearch,
+    title: "Growth Capital for Emerging Companies", cate: "Research report", icon: TbReportSearch,
 
 
     description:
