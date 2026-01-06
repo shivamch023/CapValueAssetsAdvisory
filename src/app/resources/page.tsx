@@ -13,17 +13,17 @@ export default function ResourcesPage() {
             <Banner
                 titlePrimary="Insights &"
                 titleSecondary="Resources"
-                description="Stay informed with our latest research, market insights, and thought leadership from CapValue's advisory team.."
+                description="Stay informed with our latest research, market insights, and thought leadership from CapValue's advisory team."
                 height="h-[60vh]"
             />
 
             <ResourcesSection />
 
             <Subscribe
-        title="Stay Ahead of the Curve"
-        description="Subscribe to receive our latest insights, market updates, and exclusive research delivered directly to your inbox."
-        onSubmit={(email) => alert(`Subscribed with: ${email}`)}
-      />
+                title="Stay Ahead of the Curve"
+                description="Subscribe to receive our latest insights, market updates, and exclusive research delivered directly to your inbox."
+                onSubmit={(email) => alert(`Subscribed with: ${email}`)}
+            />
 
             <CtaSection
                 titleWhite="Need Tailored "
@@ -36,14 +36,9 @@ export default function ResourcesPage() {
                         href: "/contact",
                         variant: "primary",
                         icon: FaArrowRightLong,
-
                     },
-
                 ]}
             />
-
-
-
         </>
     );
 }

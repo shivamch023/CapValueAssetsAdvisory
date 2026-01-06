@@ -66,7 +66,7 @@ export default function Navbar() {
           {/* RIGHT BUTTON */}
           <div className="hidden lg:block">
             <Link
-              href="/contactus"
+              href="/contact"
               className="bg-[#142964] text-white px-4 py-3 rounded-md text-[13px] uppercase tracking-wide hover:opacity-90 transition"
             >
               Get Started
@@ -112,7 +112,7 @@ export default function Navbar() {
               })}
 
               <Link
-                href="/contactus"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-6 w-full text-center bg-[#142964] text-white px-8 py-3 rounded-md text-sm uppercase tracking-wide"
               >
