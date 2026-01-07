@@ -106,21 +106,21 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  123 Financial District, New York, NY 10004
+                  Delhi NCR, India
                 </a>
               </li>
 
               {/* Phone */}
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoCallOutline />
-                <a href="tel:+12125550100">+1 (212) 555-0100</a>
+                <a href="tel:+919811310951">+91-9811310951</a>
               </li>
 
               {/* Email */}
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoMailOutline />
-                <a href="mailto:contact@capvalue.com">
-                  contact@capvalue.com
+                <a href="mailto:info@capvaluez.com">
+                  info@capvaluez.com
                 </a>
               </li>
             </ul>

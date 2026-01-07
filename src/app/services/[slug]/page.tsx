@@ -28,7 +28,7 @@ export default function ServiceDetailPage({ params }: Props) {
 
     return (
         <div className="relative bg-gray-100/40  w-full  overflow-hidden">
-            <section className="relative container w-full bg-[#142964] px-4 py-20 lg:py-32 overflow-hidden">
+            <section className="relative container w-full px-4 py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-[#142964] to-[#2D2E30]">
                 <div className="flex-1 flex flex-col gap-4">
                     {/* Trusted By */}
                     <div className="flex items-center gap-2 bg-yellow-600/10 border border-yellow-700/10 backdrop-blur-lg px-6 py-2 rounded-full w-max">
@@ -118,9 +118,9 @@ export default function ServiceDetailPage({ params }: Props) {
 
                 </div>
             </div>
-             {card.children1 && (
-        <AdvantageSection items={card.children1} />
-      )}
+            {card.children1 && (
+                <AdvantageSection items={card.children1} />
+            )}
 
 
 

@@ -42,7 +42,7 @@ export default function StatsSection() {
               animate={controls}
             >
               <p className="md:text-5xl text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1B2D5C] via-[#142964] to-[#C9A240] drop-shadow-lg">
-                <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} redraw={true} />
+                <CountUp end={stat.value} duration={10} suffix={stat.suffix} redraw={true} />
               </p>
               <p className="text-gray-500 mt-2 text-sm">{stat.label}</p>
             </motion.div>

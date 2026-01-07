@@ -64,7 +64,7 @@ export const cardsData: CardData[] = [
     id: "1",
     slug: "business-advisory",
     title: "Business Advisory",
-    titles: "Strategic Guidance for ",
+    titles: "Strategic Guidance for",
     titles1: "Complex Challenges",
     title2: "Core ",
     titles2: "Capabilities",
@@ -194,14 +194,14 @@ export const cardsData: CardData[] = [
   {
     id: "2",
     slug: "real-estate",
-    title: "Real Estate Investment", titles1: "Complex Challenges",
+    title: "Real Estate Investment", titles1: "Real Estate Expertise",
     title2dec: "From deal sourcing through exit, we provide comprehensive support across the entire investment lifecycle.",
 
-    titles: "Strategic Guidance for ",
+    titles: "Institutional-Grade",
     title2: "Full-Spectrum ",
     titles2: "Advisory Services",
 
-    shortDescription: "Institutional-grade opportunities",
+    shortDescription: "IAccess sophisticated real estate investment opportunities with the guidance of advisors who have executed billions in transactions across global markets.",
     description:
       "Access institutional-grade real estate opportunities with advisory services across acquisition, development, and portfolio strategy.",
     coreCapabilities: [
@@ -320,14 +320,15 @@ export const cardsData: CardData[] = [
     slug: "growth-capital",
     title2dec: "From early-stage growth to pre-IPO positioning, we guide companies through every stage of their capital journey.",
 
-    title: "Growth Capital", titles1: "Complex Challenges",
+    title: "Growth Capital",
+        titles: "Fuel Your Ambition with",
 
-    titles: "Strategic Guidance for ",
+     titles1: "Strategic Capital",
     title2: "Comprehensive  ",
     titles2: "Capital Solutions",
 
 
-    shortDescription: "Fuel expansion with capital",
+    shortDescription: "Connect with the right investors and secure capital on terms that empower long-term success. Our relationships and expertise open doors that matter.",
     description:
       "We help ambitious companies raise and structure capital that fuels sustainable expansion.",
     coreCapabilities: [

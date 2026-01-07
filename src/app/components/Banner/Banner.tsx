@@ -19,7 +19,7 @@ export default function Banner({
     >
       {/* Background */}
       <div className="absolute inset-0 bg-[#122557]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#222428]/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#222428]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full mt-15">

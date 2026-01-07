@@ -48,8 +48,8 @@ export default function CtaSection({
               className={`flex items-center gap-2 px-6 py-3 rounded-md transition-all duration-300
                 ${
                   btn.variant === "outline"
-                    ? "border border-[#C9A240] hover:bg-[#C9A240] hover:text-[#152D5B]"
-                    : "bg-[#C9A240] text-[#152D5B] hover:bg-[#d6b55a] "
+                    ? "border border-[#C9A240] text-white hover:bg-[#C9A240] hover:text-[#152D5B]"
+                    : "bg-[#C9A240]  hover:bg-[#d6b55a] "
                 }
               `}
             >

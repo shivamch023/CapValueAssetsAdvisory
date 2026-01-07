@@ -37,10 +37,18 @@ export default function Navbar() {
           
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <h1 className="text-[26px] font-extrabold tracking-wider">
-              <span className="text-[#142964]">Cap</span>
-              <span className="text-[#C9A240]">Value</span>
-            </h1>
+    <h1 className="text-[36px] font-medium tracking-tight">
+  <span className="text-[#142964]">
+    <span className="text-[1.2em] font-semibold">C</span>ap
+  </span>
+  <span className="text-[#C9A240]">
+    <span className="text-[1.2em] font-semibold">V</span>aluez
+  </span>
+</h1>
+
+
+
+
           </Link>
 
           {/* DESKTOP NAV */}

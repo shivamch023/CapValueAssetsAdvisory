@@ -94,13 +94,13 @@ export default function ContactSection() {
                     <InfoCard
                         icon={<FaPhoneAlt />}
                         title="Call Us"
-                        content={`+1 (212) 555-0100\n+1 (212) 555-0101`}
+                        content={`+919811310951`}
                     />
 
                     <InfoCard
                         icon={<FaEnvelope />}
                         title="Email Us"
-                        content={`contact@capvalue.com\ninquiries@capvalue.com`}
+                        content={`info@capvaluez.com`}
                     />
 
                     <InfoCard
