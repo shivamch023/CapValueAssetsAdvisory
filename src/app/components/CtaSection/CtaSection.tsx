@@ -25,7 +25,7 @@ export default function CtaSection({
   return (
     <div className="flex flex-col items-center text-center gap-5 p-12 bg-[#152D5B]">
       {/* Heading */}
-      <h2 className="text-3xl sm:text-4xl leading-[1.05] tracking-tight">
+      <h2 className="text-3xl sm:text-4xl leading-[1.05] font-poppins tracking-tight">
         <span className="text-white block">{titleWhite}</span>
         <span className="text-[#B79643] block -mt-1">
           {titleHighlight}

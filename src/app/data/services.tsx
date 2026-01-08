@@ -317,10 +317,10 @@ export const cardsData: CardData[] = [
 
   {
     id: "3",
-    slug: "growth-capital",
+    slug: "fund-raise",
     title2dec: "From early-stage growth to pre-IPO positioning, we guide companies through every stage of their capital journey.",
 
-    title: "Growth Capital",
+    title: "Fund Raise",
         titles: "Fuel Your Ambition with",
 
      titles1: "Strategic Capital",
@@ -554,7 +554,7 @@ export const teamData = [
 //resource data
 export type ResourceItem = {
   id: number;
-  category: "Business Advisory" | "Real Estate" | "Growth Capital";
+  category: "Business Advisory" | "Real Estate" | "Fund Raise";
   date: string; // e.g., "December 2025"
   title: string;
   description: string;
@@ -590,7 +590,7 @@ export const resourcesData: ResourceItem[] = [
   },
   {
     id: 3,
-    category: "Growth Capital",
+    category: "Fund Raise",
     date: "October 2025",
     title: "Growth Capital for Emerging Companies", cate: "Research report", icon: TbReportSearch,
 

@@ -11,8 +11,10 @@ export default function Page() {
         titlePrimary="Let's Start a"
         titleSecondary="Conversation"
         description="Whether you're exploring strategic options or ready to engage, our team is here to provide confidential, thoughtful guidance."
-        height="h-[60vh]"
-      />
+          imageSrc="/assets/banner/con.png"
+        imageAlt="contact Banner Image"
+        />
+       
       <ContactSection />
     </div>
   );

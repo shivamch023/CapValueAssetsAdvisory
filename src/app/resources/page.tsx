@@ -14,7 +14,8 @@ export default function ResourcesPage() {
                 titlePrimary="Insights &"
                 titleSecondary="Resources"
                 description="Stay informed with our latest research, market insights, and thought leadership from CapValue's advisory team."
-                height="h-[60vh]"
+                imageSrc="/assets/banner/res.png"
+                imageAlt="Resources Banner Image"
             />
 
             <ResourcesSection />
