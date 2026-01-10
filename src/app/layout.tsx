@@ -8,6 +8,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton"
 import Footer from "./components/Footer/Footer";
 
 import { Poppins } from "next/font/google";
+import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`antialiased ${poppins.className}`}
-      >
+      ><ScrollProgressBar />
         <Navbar />
         {children}
         <WhatsAppButton />

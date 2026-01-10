@@ -58,6 +58,7 @@ export interface CardData {
 
   children: ChildCard[];
   children1?: AdvantageCard[];
+  image: string;
 }
 
 
@@ -70,6 +71,7 @@ export const cardsData: CardData[] = [
     titles1: "Complex Challenges",
     title2: "Core ",
     titles2: "Capabilities",
+    image: "/assets/banner/consultbui.png",
 
     title2dec:
       "Comprehensive advisory services designed to address your most pressing strategic needs.",
@@ -83,7 +85,7 @@ export const cardsData: CardData[] = [
     coreCapabilities: [
       "Strategic Planning",
       "Process Optimization",
-      
+
       "Technology Solutions",
     ],
 
@@ -195,6 +197,8 @@ export const cardsData: CardData[] = [
     titles: "Institutional-Grade",
     title2: "Full-Spectrum ",
     titles2: "Advisory Services",
+    image: "/assets/banner/realestate.png",
+
 
     shortDescription: "IAccess sophisticated real estate investment opportunities with the guidance of advisors who have executed billions in transactions across global markets.",
     description:
@@ -208,9 +212,9 @@ export const cardsData: CardData[] = [
     ],
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-4v-5H8v5H4a1 1 0 01-1-1V10z" />
-                </svg>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+          d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-4v-5H8v5H4a1 1 0 01-1-1V10z" />
+      </svg>
     ),
     children: [
       {
@@ -317,11 +321,14 @@ export const cardsData: CardData[] = [
     title2dec: "From early-stage growth to pre-IPO positioning, we guide companies through every stage of their capital journey.",
 
     title: "Growth Capital",
-        titles: "Fuel Your Ambition with",
+    titles: "Fuel Your Ambition with",
 
-     titles1: "Strategic Capital",
+    titles1: "Strategic Capital",
     title2: "Comprehensive  ",
     titles2: "Capital Solutions",
+
+    image: "/assets/banner/growth.png",
+
 
 
     shortDescription: "Connect with the right investors and secure capital on terms that empower long-term success. Our relationships and expertise open doors that matter.",
