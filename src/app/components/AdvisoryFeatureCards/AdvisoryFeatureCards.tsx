@@ -61,13 +61,13 @@ export default function AdvisoryFeatureCards() {
     <section className="w-full px-4 py-10 bg-white overflow-hidden mb-10">
       {/* =================== Heading =================== */}
       <motion.h2
-        className="text-4xl md:text-5xl font-extrabold  text-center mb-12 text-[#1B2D5A]"
+        className="text-2xl md:text-4xl font-extrabold  text-center mb-12 text-[#1B2D5A]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: easeOut }}
       >
-        Why <span className="text-[#C9A240]">Capso ? </span>
+        Why <span className="text-[#C9A240]">CapValue ? </span>
       </motion.h2>
 
       {/* =================== Cards =================== */}
@@ -96,7 +96,7 @@ export default function AdvisoryFeatureCards() {
           >
             {/* Icon */}
             <div
-              className="w-16 h-16 mb-6 flex shadow-lg items-center justify-center rounded-md transition-all duration-300"
+              className="w-12 h-12 mb-6 flex shadow-lg items-center justify-center rounded-md transition-all duration-300"
               style={{
                 backgroundColor: card.color,
                 color: "#fff",

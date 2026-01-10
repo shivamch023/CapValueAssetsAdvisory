@@ -30,14 +30,12 @@ export default function Footer() {
                 Cap
               </span>
               <span className="text-[#B79643] font-medium text-[1.15em]">
-                Value
+                Valuez
               </span>
             </h3>
 
             <p className="text-gray-400 text-[15px] mb-4 mt-3">
-              Strategic advisory services for discerning clients seeking
-              exceptional outcomes in business, real estate, and capital
-              markets.
+             Strategic advisory services delivering exceptional outcomes in business, real estate, and capital.
             </p>
           </div>
 
@@ -50,20 +48,20 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400 text-[15px]">
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/business-advisory">
-                  Business Advisory
+                <Link href="/services/business-consulting">
+                  Business Consulting
                 </Link>
               </li>
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/real-estate">
-                  Real Estate Investment
+                <Link href="/services/real-estate-services">
+                   Real Estate Services
                 </Link>
               </li>
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
                 <Link href="/services/growth-capital">
-                  Growth Capital
+                  Capital Advisory
                 </Link>
               </li>
             </ul>
@@ -129,7 +127,7 @@ export default function Footer() {
 
         {/* ================= BOTTOM BAR ================= */}
         <div className="border-t border-gray-700 pt-6 flex flex-col lg:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
-          <p>© 2026 CapValue Advisory. All rights reserved.</p>
+          <p>© CapValue Assets Advisory Private Limited. All rights reserved.</p>
           <div className="flex gap-4 mt-2 lg:mt-0">
             <Link href="/privacy-policy" className="hover:text-[#C9A240] transition">
               Privacy Policy

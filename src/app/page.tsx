@@ -33,7 +33,7 @@ const page = () => {
           },
           {
             label: "Meet Our Team",
-            href: "/team",
+            href: "/meet-our-team",
             variant: "outline",
             icon: RiTeamFill, // 🔥
           },

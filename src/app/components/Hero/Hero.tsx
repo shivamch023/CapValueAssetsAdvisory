@@ -5,6 +5,7 @@ import { CgToolbox } from "react-icons/cg";
 import { FiTrendingUp } from "react-icons/fi";
 import { motion, easeOut } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 export default function HeroSection() {
   const [ref, inView] = useInView({
@@ -103,7 +104,7 @@ export default function HeroSection() {
               }}
             />
 
-            <p className="text-[13px] text-[#C9A240] font-bold">
+            <p className="text-[12px] text-[#C9A240] font-bold">
               Trusted by Businesses and Investors
             </p>
           </motion.div>
@@ -116,7 +117,7 @@ export default function HeroSection() {
   custom={1}
   className="text-4xl lg:text-5xl font-bold italic text-white leading-none"
 >
-  Capture Value and
+ Smart Solutions
 </motion.h2>
 
 <motion.h2
@@ -126,7 +127,7 @@ export default function HeroSection() {
   custom={2}
   className="text-4xl lg:text-5xl font-bold italic text-[#C9A240] leading-none -mt-1"
 >
-  Growth with Advisory Solutions.
+ For Real Growth
 </motion.h2>
 
 
@@ -136,10 +137,9 @@ export default function HeroSection() {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             custom={3}
-            className="text-gray-300 text-[16px] max-w-xl"
+            className="text-gray-300 text-[15px] max-w-xl"
           >
-            CapValue empowers clients with smarter decisions in Business,
-            Real Estate, and Funding through focused advisory and value-added solutions.
+            CapValue empowers clients to make smarter decisions across Business, Real Estate, and Capital through advisory and value-driven solutions.
           </motion.p>
 
           {/* Buttons */}
@@ -150,17 +150,17 @@ export default function HeroSection() {
             custom={4}
             className="flex flex-col sm:flex-row gap-4 mt-4"
           >
-            <button className="flex text-[12px] items-center gap-2
+           <Link href="/contact" className="cursor-pointer"> <button className="flex cursor-pointer text-[12px] items-center gap-2
               bg-[#C9A240] text-gray-900 px-8 py-3 rounded-md font-semibold
               hover:opacity-90 transition">
               Schedule Consultation <span>→</span>
-            </button>
+            </button></Link>
 
-            <button className="bg-transparent text-[12px] border border-gray-500
+          <Link href="#services">  <button  className="bg-transparent cursor-pointer  text-[12px] border border-gray-500
               text-white px-8 py-3 rounded-md font-semibold tracking-wide
               transition-all duration-300 hover:bg-white hover:text-[#142964]">
               Explore Service
-            </button>
+            </button></Link>
           </motion.div>
         </div>
 
@@ -169,12 +169,12 @@ export default function HeroSection() {
 
           {[ 
             {
-              title: "Business Advisory",
+              title: "Business Consulting",
               desc: "Strategic guidance for complex business challenges.",
               icon: <CgToolbox className="w-6 h-6 text-[#C9A240]" />,
             },
             {
-              title: "Real Estate Investment",
+              title: "Real Estate Services",
               desc: "Institutional-grade real estate opportunities.",
               icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#C9A240]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -184,7 +184,7 @@ export default function HeroSection() {
               ),
             },
             {
-              title: "Fund Raise",
+              title: "Growth Capital",
               desc: "Fueling business expansion with right capital solutions.",
               icon: <FiTrendingUp className="w-6 h-6 text-[#C9A240]" />,
             },

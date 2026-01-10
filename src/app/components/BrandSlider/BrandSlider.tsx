@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, animate } from "framer-motion";
+import { useEffect, useRef } from "react";
 import {
   FaShoppingBasket,
   FaUserTie,
@@ -25,43 +26,60 @@ const brands = [
   { name: "Anekant Ventures", icon: FaRocket, color: "text-orange-500" },
 ];
 
-// duplicate for seamless infinite scroll
+// 🔁 duplicate data
 const marqueeBrands = [...brands, ...brands];
 
 export default function BrandSlider() {
+  const x = useMotionValue(0);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!listRef.current) return;
+
+    const halfWidth = listRef.current.scrollWidth / 2;
+
+    const controls = animate(x, -halfWidth, {
+      duration: 14,
+      ease: "linear",
+      repeat: Infinity,
+    });
+
+    return () => controls.stop();
+  }, [x]);
+
   return (
-    <div className="bg-white container py-10 overflow-hidden">
-      {/* Wrapper width control */}
-      <div className="mx-auto w-full md:w-[90%]">
-        <div className="  overflow-hidden py-10">
-            <motion.div
+    <div className="bg-white container py-10 overflow-hidden m-5">
+      <div className="mx-auto w-full md:w-[90%] relative overflow-hidden">
+
+        {/* Left white fade */}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-10 md:w-20
+                        bg-gradient-to-r from-white to-transparent z-10" />
+
+        {/* Right white fade */}
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-10 md:w-20
+                        bg-gradient-to-l from-white to-transparent z-10" />
+
+        <motion.div
+          ref={listRef}
+          style={{ x }}
           className="flex gap-6"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 10,
-          }}
         >
           {marqueeBrands.map((brand, index) => {
             const Icon = brand.icon;
             return (
               <div
                 key={index}
-                className="min-w-[180px] bg-gray-200/40 rounded-xl shadow-xs hover:shadow-md transition-all duration-300
+                className="min-w-[180px] bg-gray-200/40 rounded-xl
                            flex flex-col items-center justify-center p-4"
               >
                 <Icon size={42} className={brand.color} />
-                <p
-                  className={`mt-2 text-xs font-semibold text-center ${brand.color}`}
-                >
+                <p className={`mt-2 text-xs font-semibold text-center ${brand.color}`}>
                   {brand.name}
                 </p>
               </div>
             );
           })}
         </motion.div>
-        </div>
       </div>
     </div>
   );

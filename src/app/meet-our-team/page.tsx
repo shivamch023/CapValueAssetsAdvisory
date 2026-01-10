@@ -36,7 +36,7 @@ export default function MeetOurTeamPage() {
 
           {
             label: "Get in Touch",
-            href: "/get-in-touch",
+            href: "/contact",
             variant: "outline",
             icon: IoIosArrowRoundForward, // 🔥
           },

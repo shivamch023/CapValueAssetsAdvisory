@@ -1,6 +1,8 @@
 import { title } from "process";
 import { ReactNode } from "react";
 import { IconType } from "react-icons";
+import { CgToolbox } from "react-icons/cg";
+import { FiTrendingUp } from "react-icons/fi";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { MdInsights } from "react-icons/md";
 import { TbReportSearch } from "react-icons/tb";
@@ -62,8 +64,8 @@ export interface CardData {
 export const cardsData: CardData[] = [
   {
     id: "1",
-    slug: "business-advisory",
-    title: "Business Advisory",
+    slug: "business-consulting",
+    title: "Business Consulting",
     titles: "Strategic Guidance for",
     titles1: "Complex Challenges",
     title2: "Core ",
@@ -76,24 +78,17 @@ export const cardsData: CardData[] = [
       "Partner with seasoned advisors who bring deep industry expertise and proven methodologies to your most critical business decisions.",
 
     description:
-      "From strategic planning to operational excellence, we partner with leadership teams to navigate complex business challenges and unlock sustainable growth.",
+      "We help leadership teams solve complex business challenges through strategic planning, process optimization, and technology-driven solutions that drive growth and efficiency.",
 
     coreCapabilities: [
       "Strategic Planning",
-      "M&A Advisory",
-      "Operational Optimization",
-      "Board Advisory",
+      "Process Optimization",
+      
+      "Technology Solutions",
     ],
 
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M12 8c1.5 0 2.5 1.5 3 3m0 0c.5 1.5 1.5 3 3 3"
-        />
-      </svg>
+      <CgToolbox className="w-6 h-6 text-[#1B2D5B]" />
     ),
 
     /* 👇 CHILD CARDS */
@@ -193,8 +188,8 @@ export const cardsData: CardData[] = [
 
   {
     id: "2",
-    slug: "real-estate",
-    title: "Real Estate Investment", titles1: "Real Estate Expertise",
+    slug: "real-estate-services",
+    title: "Real Estate Services", titles1: "Real Estate Expertise",
     title2dec: "From deal sourcing through exit, we provide comprehensive support across the entire investment lifecycle.",
 
     titles: "Institutional-Grade",
@@ -203,18 +198,19 @@ export const cardsData: CardData[] = [
 
     shortDescription: "IAccess sophisticated real estate investment opportunities with the guidance of advisors who have executed billions in transactions across global markets.",
     description:
-      "Access institutional-grade real estate opportunities with advisory services across acquisition, development, and portfolio strategy.",
+      "Access institutional-grade real estate opportunities with our comprehensive investment advisory services that integrate acquisition excellence, regulatory incentive optimization, and structured exit strategies",
     coreCapabilities: [
-      "Acquisition Strategy",
+      "Real Estate Investment Advisory",
       "Due Diligence",
-      "Asset Management",
+      "Govt. Policy & Incentive Advisory",
+      "RERA Advisory & Compliance",
       "Exit Planning",
     ],
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-          d="M3 10l9-7 9 7v10" />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-4v-5H8v5H4a1 1 0 01-1-1V10z" />
+                </svg>
     ),
     children: [
       {
@@ -317,10 +313,10 @@ export const cardsData: CardData[] = [
 
   {
     id: "3",
-    slug: "fund-raise",
+    slug: "growth-capital",
     title2dec: "From early-stage growth to pre-IPO positioning, we guide companies through every stage of their capital journey.",
 
-    title: "Fund Raise",
+    title: "Growth Capital",
         titles: "Fuel Your Ambition with",
 
      titles1: "Strategic Capital",
@@ -330,18 +326,14 @@ export const cardsData: CardData[] = [
 
     shortDescription: "Connect with the right investors and secure capital on terms that empower long-term success. Our relationships and expertise open doors that matter.",
     description:
-      "We help ambitious companies raise and structure capital that fuels sustainable expansion.",
+      "Secure the capital your business needs to scale. We connect ambitious companies with the right investors and structure deals that fuel long-term success.",
     coreCapabilities: [
-      "Capital Raising",
-      "Investor Relations",
+      "Capital Sourcing",
       "Deal Structuring",
-      "Valuation",
+      "Valuation Services",
     ],
     icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-          d="M12 8v8m0 0l3-3m-3 3l-3-3" />
-      </svg>
+      <FiTrendingUp className="w-6 h-6 text-[#1B2D5B]" />
     ),
     children: [
       {

@@ -45,10 +45,10 @@ const fadeScale: Variants = {
 
 export default function AdvisoryCards() {
   return (
-    <section className="w-full px-4 py-15 bg-white overflow-hidden">
+    <section id="services" className="w-full  px-4 py-15 bg-white overflow-hidden">
       {/* ================= HEADING ================= */}
       {/* ================= HEADING ================= */}
-<div className="flex flex-col items-center mb-12 text-center">
+<div  className="flex flex-col items-center mb-12 text-center">
   <motion.h1
   initial="hidden"
   whileInView="visible"
