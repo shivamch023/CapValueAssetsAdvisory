@@ -2,13 +2,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Navbar from "./components/Navbar/Navbar";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import Footer from "./components/Footer/Footer";
 
 import { Poppins } from "next/font/google";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
+import Nav from "./components/Nav/Nav";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`antialiased ${poppins.className}`}
       ><ScrollProgressBar />
-        <Navbar />
+        <Nav />
         {children}
         <WhatsAppButton />
         <ScrollToTopButton />
