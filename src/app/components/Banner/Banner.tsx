@@ -2,11 +2,10 @@ import React from "react";
 import Image from "next/image";
 
 type BannerProps = {
-  titlePrimary: string;     // white text
-  titleSecondary: string;   // gold text
+  titlePrimary: string;
+  titleSecondary: string;
   description?: string;
-  height?: string;
-  imageSrc?: string;       // 👈 NEW (right side image)
+  imageSrc?: string;
   imageAlt?: string;
 };
 
@@ -18,39 +17,39 @@ export default function Banner({
   imageAlt = "Banner Image",
 }: BannerProps) {
   return (
-    <section className={`relative w-full h-[60vh] overflow-hidden mt-15`}>
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#122557]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#222428]" />
+    <section className="relative w-full min-h-[55vh] lg:min-h-[65vh] overflow-hidden pt-24">
+      {/* 🔹 Background */}
+      <div className="absolute inset-0 bg-[#0B1D3A]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1D3A]/70 via-[#0B1D3A]/60 to-[#08112A]/95" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full h-full flex items-center ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-8">
-          
-          {/* LEFT CONTENT */}
-          <div className="max-w-3xl text-left">
-            <h1 className="text-3xl sm:text-3xl font-bold md:text-4xl leading-[1.1] tracking-tight">
+      {/* 🔹 Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 w-full">
+
+          {/* 🔹 LEFT CONTENT */}
+          <div className="text-left max-w-2xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight">
               <span className="text-white">{titlePrimary} </span>
               <span className="text-[#B79643]">{titleSecondary}</span>
             </h1>
 
             {description && (
-              <p className="mt-4 text-gray-300 text-sm sm:text-base max-w-xl">
+              <p className="mt-4 text-gray-300 text-sm sm:text-base leading-relaxed">
                 {description}
               </p>
             )}
           </div>
 
-          {/* RIGHT IMAGE (via props) */}
+          {/* 🔹 RIGHT IMAGE (Mobile + Desktop) */}
           {imageSrc && (
-            <div className="hidden lg:flex justify-end bootom-0">
-              <div className="relative w-[350px] mt-14 h-[350px] xl:w-[420px] xl:h-[430px]">
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-[180px] h-[180px] sm:w-[260px] sm:h-[260px] lg:w-[320px] lg:h-[320px] xl:w-[400px] xl:h-[400px]">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
                   fill
                   priority
-                  className="object-contain "
+                  className="object-contain"
                 />
               </div>
             </div>

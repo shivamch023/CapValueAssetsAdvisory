@@ -66,6 +66,33 @@ export default function ContactSection() {
                                 className="field-input resize-none"
                             />
                         </div>
+                                    {/* CHECKBOX */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                required
+                className="mt-1 accent-[#152D5B] cursor-pointer"
+              />
+              <p className="text-xs text-gray-500 leading-relaxed">
+                I agree to the{" "}
+                <a
+                  href="/privacy-policy"
+                  className="text-[#152D5B] underline hover:text-[#0f1f4a]"
+                  target="_blank"
+                >
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a
+                  href="/terms-and-conditions"
+                  className="text-[#152D5B] underline hover:text-[#0f1f4a]"
+                  target="_blank"
+                >
+                  Terms & Conditions
+                </a>.
+              </p>
+            </div>
+
 
                         <button
                             type="submit"

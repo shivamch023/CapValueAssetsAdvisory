@@ -10,7 +10,6 @@ import {
   FaBuilding,
   FaHome,
   FaHandsHelping,
-  FaLaptopCode,
   FaRocket,
 } from "react-icons/fa";
 
@@ -22,7 +21,6 @@ const brands = [
   { name: "Shree Gaur Hari Infratech Pvt Ltd", icon: FaBuilding, color: "text-gray-700" },
   { name: "Shree Gaur Hari Ashiana Pvt Ltd", icon: FaHome, color: "text-indigo-500" },
   { name: "SocioRich Foundation", icon: FaHandsHelping, color: "text-red-500" },
-  { name: "CXP Technology Services", icon: FaLaptopCode, color: "text-purple-500" },
   { name: "Anekant Ventures", icon: FaRocket, color: "text-orange-500" },
 ];
 
@@ -62,15 +60,17 @@ export default function BrandSlider() {
         <motion.div
           ref={listRef}
           style={{ x }}
-          className="flex gap-6"
+          className="flex gap-6 p-4"
         >
           {marqueeBrands.map((brand, index) => {
             const Icon = brand.icon;
             return (
               <div
                 key={index}
-                className="min-w-[180px] bg-gray-200/40 rounded-xl
-                           flex flex-col items-center justify-center p-4"
+               className="min-w-[180px]   backdrop-blur-lg border border-[#0B1D3A]/10 shadow-md rounded-xl
+           flex flex-col items-center justify-center p-4"
+
+
               >
                 <Icon size={42} className={brand.color} />
                 <p className={`mt-2 text-xs font-semibold text-center ${brand.color}`}>

@@ -10,15 +10,10 @@ import {
   IoLocationOutline,
 } from "react-icons/io5";
 
-
-
-
 export default function Footer() {
   return (
-    <footer className="bg-[#152D5B] text-white py-12 font-sans">
+    <footer className="bg-[#0B1D3A] text-white py-12 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
 
         {/* ================= MAIN FOOTER GRID ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-sm sm:text-base">
@@ -26,54 +21,42 @@ export default function Footer() {
           {/* -------- CapValue Info -------- */}
           <div>
             <h3 className="text-2xl md:text-3xl font-bold tracking-wide flex items-baseline ">
-              <span className="text-white font-light">
-                Cap
-              </span>
-              <span className="text-[#B79643] font-medium text-[1.15em]">
-                Valuez
-              </span>
+              <span className="text-white font-light">Cap</span>
+              <span className="text-[#B79643] font-medium text-[1.15em]">Valuez</span>
             </h3>
 
-            <p className="text-gray-400 text-[15px] mb-4 mt-3">
-             Strategic advisory services delivering exceptional outcomes in business, real estate, and capital.
+            <p className="text-gray-300 text-[15px] mb-4 mt-3">
+              Strategic advisory services delivering exceptional outcomes in business, real estate, and capital.
             </p>
           </div>
 
           {/* -------- Services -------- */}
           <div>
-            <h3 className="flex items-center gap-2 text-lg mb-3">
-              <IoBriefcaseOutline className="text-[#B79643]" />
-              Services
+            <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
+              <IoBriefcaseOutline /> Services
             </h3>
-            <ul className="space-y-2 text-gray-400 text-[15px]">
+            <ul className="space-y-2 text-gray-300 text-[15px]">
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/business-consulting">
-                  Business Consulting
-                </Link>
+                <Link href="/services/business-consulting">Business Consulting</Link>
               </li>
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/real-estate-services">
-                   Real Estate Services
-                </Link>
+                <Link href="/services/real-estate-services">Real Estate Services</Link>
               </li>
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/growth-capital">
-                  Capital Advisory
-                </Link>
+                <Link href="/services/growth-capital">Capital Advisory</Link>
               </li>
             </ul>
           </div>
 
           {/* -------- Company -------- */}
           <div>
-            <h3 className="flex items-center gap-2 text-lg mb-3 ">
-              <IoPeopleOutline className="text-[#B79643]" />
-              Company
+            <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
+              <IoPeopleOutline /> Company
             </h3>
-            <ul className="space-y-2 text-gray-400 text-[15px]">
+            <ul className="space-y-2 text-gray-300 text-[15px]">
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
                 <Link href="/meet-our-team">Our Team</Link>
@@ -89,14 +72,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* -------- Contact (CLICKABLE) -------- */}
+          {/* -------- Contact -------- */}
           <div>
-            <h3 className="flex items-center gap-2 text-lg mb-3">
-              <IoCallOutline className="text-[#B79643]" />
-              Contact
+            <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
+              <IoCallOutline /> Contact
             </h3>
-            <ul className="space-y-3 text-gray-400 text-[15px]">
-              {/* Location */}
+            <ul className="space-y-3 text-gray-300 text-[15px]">
               <li className="flex items-start gap-2 hover:text-[#C9A240] transition">
                 <IoLocationOutline className="mt-1" />
                 <a
@@ -107,22 +88,17 @@ export default function Footer() {
                   Delhi NCR, India
                 </a>
               </li>
-
-              {/* Phone */}
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoCallOutline />
                 <a href="tel:+919811310951">+91-9811310951</a>
               </li>
-
-              {/* Email */}
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoMailOutline />
-                <a href="mailto:info@capvaluez.com">
-                  info@capvaluez.com
-                </a>
+                <a href="mailto:info@capvaluez.com">info@capvaluez.com</a>
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* ================= BOTTOM BAR ================= */}
