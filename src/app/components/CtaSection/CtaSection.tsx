@@ -6,7 +6,7 @@ type ButtonProps = {
   label: string;
   href: string;
   variant?: "primary" | "outline";
-  icon?: IconType; // 👈 ANY icon allowed
+  icon?: IconType;
 };
 
 type CtaSectionProps = {
@@ -23,37 +23,69 @@ export default function CtaSection({
   buttons,
 }: CtaSectionProps) {
   return (
-    <div className="flex flex-col items-center text-center gap-5 p-12 bg-[#0B1D3A]">
-      {/* Heading */}
-      <h2 className="text-3xl sm:text-4xl leading-[1.05] font-poppins tracking-tight">
-        <span className="text-white block">{titleWhite}</span>
-        <span className="text-[#B79643] block -mt-1">{titleHighlight}</span>
-      </h2>
+    <section
+      className="
+        relative w-full overflow-hidden
+        bg-[url('/assets/banner/cont.jpg')]
+        bg-cover bg-center bg-no-repeat
+      "
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-[#0B1D3A]/70" />
 
-      {/* Description */}
-      <p className="text-gray-300 max-w-2xl text-sm sm:text-base">{description}</p>
+      {/* Content */}
+      <div
+        className="
+          relative z-10
+          flex flex-col items-center text-center gap-6
+          px-6 py-16
+          sm:px-10 sm:py-20
+          lg:px-20 lg:py-28
+        "
+      >
+        {/* Heading */}
+        <h2 className="leading-tight font-poppins tracking-tight">
+          <span className="block text-white text-3xl sm:text-4xl lg:text-5xl font-semibold">
+            {titleWhite}
+          </span>
+          <span className="block text-[#B79643] text-3xl sm:text-4xl lg:text-5xl font-semibold -mt-1">
+            {titleHighlight}
+          </span>
+        </h2>
 
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 mt-4">
-        {buttons.map((btn, index) => {
-          const Icon = btn.icon;
-          return (
-            <Link
-              key={index}
-              href={btn.href}
-              className={`flex items-center gap-2 px-6 py-3 rounded-md transition-all duration-300
-                ${
-                  btn.variant === "outline"
-                    ? "border border-[#B79643] text-white hover:bg-[#C9A240] hover:text-[#0B1D3A]"
-                    : "bg-[#B79643] hover:bg-[#C9A240] text-white"
-                }
-              `}
-            >
-              {btn.label} {Icon && <Icon className="text-lg" />}
-            </Link>
-          );
-        })}
+        {/* Description */}
+        <p className="max-w-2xl text-gray-300 text-sm sm:text-base leading-relaxed">
+          {description}
+        </p>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          {buttons.map((btn, index) => {
+            const Icon = btn.icon;
+            const isOutline = btn.variant === "outline";
+
+            return (
+              <Link
+                key={index}
+                href={btn.href}
+                className={`
+                  inline-flex items-center justify-center gap-2
+                  px-7 py-3 rounded-md font-medium
+                  transition-all duration-300
+                  ${
+                    isOutline
+                      ? "border border-[#B79643] text-white hover:bg-[#C9A240] hover:text-[#0B1D3A]"
+                      : "bg-[#B79643] text-[#0B1D3A] hover:bg-[#C9A240]"
+                  }
+                `}
+              >
+                {btn.label}
+                {Icon && <Icon className="text-lg" />}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

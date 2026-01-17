@@ -73,7 +73,7 @@ export default function ContactSection() {
                 required
                 className="mt-1 accent-[#152D5B] cursor-pointer"
               />
-              <p className="text-xs text-gray-500 leading-relaxed">
+              <p className="text-[10px] md:text-xs text-gray-500 leading-relaxed">
                 I agree to the{" "}
                 <a
                   href="/privacy-policy"
@@ -112,11 +112,15 @@ export default function ContactSection() {
                     viewport={{ once: true }}
                     className="space-y-5"
                 >
-                    <InfoCard
-                        icon={<FaMapMarkerAlt />}
-                        title="Visit Us"
-                        content={`123 Financial District\nNew York, NY 10004`}
-                    />
+                   <InfoCard
+  icon={<FaMapMarkerAlt />}
+  title="Visit Us"
+  content={`CapValue Assets Advisory Private Limited
+109, KH No. 487, First Floor,
+Peera Garhi, Sunder Vihar,
+Delhi – 110087, India`}
+/>
+
 
                     <InfoCard
                         icon={<FaPhoneAlt />}

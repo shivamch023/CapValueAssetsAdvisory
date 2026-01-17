@@ -26,15 +26,15 @@ const cards = [
     id: 1,
     title: "Excellence",
     description:
-      "We consistently deliver top-tier advisory services, exceeding expectations and positioning your business for maximum impact.",
+      "We focus on delivering high-quality, well-considered guidance that helps clients make stronger decisions and achieve meaningful outcomes.",
     icon: <FaStar size={28} />,
     color: "#FBBF24", // yellow
   },
   {
     id: 2,
-    title: "Minimal Upfront Payment",
+    title: "Minimal Upfront Commitment",
     description:
-      "Our upfront fees are minimal and cover essential services, ensuring your business attracts the right opportunities.",
+      "Our initial fees are kept minimal and focused on essential work, ensuring clarity and alignment before deeper engagement.",
     icon: <FaMoneyBillWave size={28} />,
     color: "#22C55E", // green
   },
@@ -42,7 +42,7 @@ const cards = [
     id: 3,
     title: "Personal Attention",
     description:
-      "You’ll never be on your own. Our experienced team provides dedicated support throughout every step of your advisory journey.",
+      "Clients work closely with experienced professionals and receive direct, hands-on support throughout the engagement.",
     icon: <FaUserFriends size={28} />,
     color: "#3B82F6", // blue
   },
@@ -50,7 +50,7 @@ const cards = [
     id: 4,
     title: "Strong Client Relationships",
     description:
-      "We build lasting, trusted relationships with our clients, grounded in transparency, integrity, and exceptional service.",
+      "We build long-term relationships based on trust, transparency, and consistent delivery rather than one-time transactions.",
     icon: <FaHandshake size={28} />,
     color: "#EF4444", // red
   },
@@ -67,7 +67,7 @@ export default function AdvisoryFeatureCards() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: easeOut }}
       >
-        Why <span className="text-[#C9A240]">CapValue ? </span>
+        Our <span className="text-[#C9A240]">Approach</span>
       </motion.h2>
 
       {/* =================== Cards =================== */}

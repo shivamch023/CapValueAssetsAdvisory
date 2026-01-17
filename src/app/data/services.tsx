@@ -65,8 +65,8 @@ export interface CardData {
 export const cardsData: CardData[] = [
   {
     id: "1",
-    slug: "business-consulting",
-    title: "Business Consulting",
+    slug: "real-estate-assets",
+    title: "Real Estate Assets",
     titles: "Strategic Guidance for",
     titles1: "Complex Challenges",
     title2: "Core ",
@@ -80,13 +80,15 @@ export const cardsData: CardData[] = [
       "Partner with seasoned advisors who bring deep industry expertise and proven methodologies to your most critical business decisions.",
 
     description:
-      "We help leadership teams solve complex business challenges through strategic planning, process optimization, and technology-driven solutions that drive growth and efficiency.",
+      "We introduce select real estate asset opportunities and help investors clearly understand the property before investing. Our role is to explain location benefits, key strengths, possible risks, and long-term potential, so decisions are made with clarity—not urgency or sales pressure.",
 
     coreCapabilities: [
-      "Strategic Planning",
-      "Process Optimization",
+      "Residential plots",
+      "Agricultural land",
 
-      "Technology Solutions",
+      "Industrial park plots",
+      "Warehouses",
+      "Commercial spaces",
     ],
 
     icon: (
@@ -190,8 +192,8 @@ export const cardsData: CardData[] = [
 
   {
     id: "2",
-    slug: "real-estate-services",
-    title: "Real Estate Services", titles1: "Real Estate Expertise",
+    slug: "professional-advisory",
+    title: "Professional Advisory ", titles1: "Real Estate Expertise",
     title2dec: "From deal sourcing through exit, we provide comprehensive support across the entire investment lifecycle.",
 
     titles: "Institutional-Grade",
@@ -202,13 +204,13 @@ export const cardsData: CardData[] = [
 
     shortDescription: "IAccess sophisticated real estate investment opportunities with the guidance of advisors who have executed billions in transactions across global markets.",
     description:
-      "Access institutional-grade real estate opportunities with our comprehensive investment advisory services that integrate acquisition excellence, regulatory incentive optimization, and structured exit strategies",
+      "These services focus on independent, professional guidance, regardless of whether a client invests in any specific property or not. The objective is to help clients understand, evaluate, and plan real estate decisions properly.",
     coreCapabilities: [
-      "Real Estate Investment Advisory",
-      "Due Diligence",
-      "Govt. Policy & Incentive Advisory",
-      "RERA Advisory & Compliance",
-      "Exit Planning",
+      "Due diligence and document review",
+      "Guidance on government policies, rules, and available incentives",
+      "RERA-related advisory and compliance overview",
+      "Support in evaluating pricing, risks, and feasibility",
+      "Exit planning and future holding strategies",
     ],
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -317,10 +319,10 @@ export const cardsData: CardData[] = [
 
   {
     id: "3",
-    slug: "growth-capital",
+    slug: "funding-solutions",
     title2dec: "From early-stage growth to pre-IPO positioning, we guide companies through every stage of their capital journey.",
 
-    title: "Growth Capital",
+    title: "Funding Solutions",
     titles: "Fuel Your Ambition with",
 
     titles1: "Strategic Capital",
@@ -333,11 +335,12 @@ export const cardsData: CardData[] = [
 
     shortDescription: "Connect with the right investors and secure capital on terms that empower long-term success. Our relationships and expertise open doors that matter.",
     description:
-      "Secure the capital your business needs to scale. We connect ambitious companies with the right investors and structure deals that fuel long-term success.",
+      "We help founders and businesses make well-considered funding decisions with clarity and practicality and, where appropriate, connect them with investors aligned to their stage and goals.",
     coreCapabilities: [
-      "Capital Sourcing",
-      "Deal Structuring",
-      "Valuation Services",
+      "Funding need assessment",
+      "Guidance on funding structure",
+      "Preparation and expectation alignment",
+      "Investor connections (where appropriate)",
     ],
     icon: (
       <FiTrendingUp className="w-6 h-6 text-[#1B2D5B]" />

@@ -32,8 +32,8 @@ export default function ServiceDetailPage({ params }: Props) {
     }
 
     return (
-        <div className="relative bg-gray-100/40  w-full  overflow-hidden  mt-5  lg:mt-20">
-            <section className="relative  w-full px-4 pt-25  md:py-0   overflow-hidden bg-gradient-to-br from-[#142964] to-[#2D2E30]">
+        <div className="relative bg-gray-100/40  w-full  overflow-hidden ">
+            <section className="relative  w-full px-4 md:px-8 pt-25  md:pt-20   overflow-hidden bg-gradient-to-br from-[#142964] to-[#2D2E30]">
                 <div className="grid grid-cols-1 container md:grid-cols-2 gap-0 md:gap-12 items-center">
 
                     {/* LEFT CONTENT — unchanged */}
@@ -46,21 +46,21 @@ export default function ServiceDetailPage({ params }: Props) {
                         </div>
 
                         <div className="flex flex-col items-start">
-                            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                            <h2 className="text-2xl lg:text-4xl font-bold text-white leading-tight">
                                 {service.titles}
                             </h2>
-                            <h2 className="text-4xl lg:text-5xl font-bold text-[#C9A240] leading-tight">
+                            <h2 className="text-2xl lg:text-4xl font-bold text-[#C9A240] leading-tight">
                                 {service.titles1}
                             </h2>
                         </div>
 
-                        <p className="text-gray-200 text-[15px] max-w-xl">
+                        <p className="text-gray-200 text-[14px] max-w-xl">
                             {service.shortDescription}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                        <div className="flex flex-col w-[70%] md:w-none sm:flex-row gap-4 mt-4">
                             <Link href="/contact">
-                                <button className="flex text-[14px] items-center gap-2 bg-[#C9A240] text-gray-900 px-8 py-3 rounded-md font-semibold hover:opacity-90 transition w-full sm:w-auto">
+                                <button className="flex cursor-pointer text-center text-[14px] items-center gap-2 bg-[#C9A240] text-gray-900 px-8 py-3 rounded-md font-semibold hover:opacity-90 transition w-full sm:w-auto">
                                     Request Consultation
                                     <FaArrowRight />
                                 </button>

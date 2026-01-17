@@ -3,41 +3,37 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
-import { usePathname } from "next/navigation";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Image from "next/image";
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("home");
-  const pathname = usePathname();
-
-
+  const [advisoryOpen, setAdvisoryOpen] = useState(false);
+  const [mobileAdvisoryOpen, setMobileAdvisoryOpen] = useState(false);
 
   // Scroll background
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ CLOSE MOBILE MENU WHEN SCREEN GOES DESKTOP
+  // Close mobile menu on desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setMenuOpen(false);
+        setMobileAdvisoryOpen(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <>
+      {/* ================= HEADER ================= */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
@@ -45,70 +41,85 @@ const Nav = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex items-center justify-between">
           {/* Logo */}
-          {/* <Link href="/" className="text-white text-xl font-bold tracking-wide">
-            CAPVALUEZ
-          </Link> */}
           <Link href="/" className="flex items-center">
-  <Image
-    src="/assets/logo.png"
-    alt="CAPVALUEZ Logo"
-    width={160}
-    height={40}
-    priority
-    className="object-contain"
-  />
-</Link>
+            <Image
+              src="/assets/logo.png"
+              alt="CAPVALUEZ Logo"
+              width={160}
+              height={40}
+              priority
+              className="object-contain"
+            />
+          </Link>
 
+          {/* ================= DESKTOP NAV ================= */}
+          <div className="hidden md:flex items-center gap-10">
+            <nav className="flex items-center gap-10 text-md text-white/90">
+              <Link href="/" className="relative group">
+                Home
+                <span className="absolute left-0 -bottom-1 h-[2px] bg-gray-400 w-0 group-hover:w-full transition-all" />
+              </Link>
 
-          {/* Desktop Nav */}
-         {/* Desktop Nav */}
-{/* Desktop Nav */}
-<div className="hidden md:flex items-center gap-10">
-  <nav className="flex items-center gap-10 text-md text-white/90">
-  {[
-    { name: "Home", href: "/" },
-    { name: "Advisory", href: "/advisory" },
-    { name: "Asset Solutions", href: "/asset-solutions" },
-    { name: "Insights", href: "/insights" },
-  ].map((item) => {
-    const isActive = pathname === item.href;
+              {/* Advisory Dropdown (NO LINK) */}
+              <div
+                className="relative cursor-pointer"
+                onMouseEnter={() => setAdvisoryOpen(true)}
+                onMouseLeave={() => setAdvisoryOpen(false)}
+              >
+                <div className="flex items-center gap-1 select-none">
+                  Services <FiChevronDown size={14} />
+                </div>
 
-    return (
-      <Link
-        key={item.name}
-        href={item.href}
-        className="relative px-1 py-1 font-medium text-white/90 transition-colors group"
-      >
-        {item.name}
+                <AnimatePresence>
+                  {advisoryOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-4 w-60 bg-[#0B1D3A] border border-white/10 rounded-md shadow-xl overflow-hidden"
+                    >
+                      <Link
+                        href="/services/professional-advisory"
+                        className="block px-4 py-3 text-sm text-white/90 hover:bg-white/10"
+                      >
+                        Professional Advisory
+                      </Link>
+                      <Link
+                        href="/services/funding-solutions"
+                        className="block px-4 py-3 text-sm text-white/90 hover:bg-white/10"
+                      >
+                        Funding Solutions
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
-        {/* underline */}
-        <span
-          className={`absolute left-0 -bottom-0.5 h-[2px] bg-gray-400 transition-all duration-300
-            ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
-        />
-      </Link>
-    );
-  })}
-</nav>
+              <Link href="/asset-solutions" className="relative group">
+                Asset Solutions
+                <span className="absolute left-0 -bottom-1 h-[2px] bg-gray-400 w-0 group-hover:w-full transition-all" />
+              </Link>
 
+              <Link href="/insights" className="relative group">
+                Insights
+                <span className="absolute left-0 -bottom-1 h-[2px] bg-gray-400 w-0 group-hover:w-full transition-all" />
+              </Link>
+            </nav>
 
-  {/* Divider */}
-  <span className="h-6 w-px bg-white/30" />
+            <span className="h-6 w-px bg-white/30" />
 
-  {/* CTA */}
-  <Link
-    href="/contact"
-    className="bg-red-800 hover:bg-red-700 text-white px-5 py-2 rounded-md text-md transition"
-  >
-    Contact Us
-  </Link>
-</div>
+            <Link
+              href="/contact"
+              className="bg-red-800 hover:bg-red-700 text-white px-5 py-2 rounded-md transition"
+            >
+              Contact Us
+            </Link>
+          </div>
 
-
-
-          {/* Mobile Hamburger */}
+          {/* ================= MOBILE BUTTON ================= */}
           <button
             onClick={() => setMenuOpen(true)}
             className="md:hidden text-white text-2xl"
@@ -118,74 +129,95 @@ const Nav = () => {
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      {/* Mobile Menu */}
-<AnimatePresence>
-  {menuOpen && (
-    <>
-      {/* 🔹 Overlay */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        onClick={() => setMenuOpen(false)}
-        className="fixed inset-0 bg-black/50 z-[55]"
-      />
-
-      {/* 🔹 Drawer */}
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="fixed top-0 right-0 h-full w-[78%] sm:w-[65%] bg-[#0B1D3A] z-[60] shadow-2xl"
-      >
-        {/* Top Bar */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
-          <span className="text-white text-md font-semibold">
-            CAPVALUEZ
-          </span>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="text-white text-2xl"
-          >
-            <FiX />
-          </button>
-        </div>
-
-        {/* Menu Links */}
-        <motion.nav
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 }}
-          className="flex flex-col px-6 pt-8 gap-6 text-white text-base"
-        >
-          {["Home", "Advisory", "Asset Solutions", "Insights"].map((item) => (
-            <Link
-              key={item}
-              href="#"
+      {/* ================= MOBILE MENU ================= */}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setMenuOpen(false)}
-              className="border-b border-white/10 pb-2"
+              className="fixed inset-0 bg-black/50 z-[55]"
+            />
+
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.35 }}
+              className="fixed top-0 right-0 h-full w-[78%] sm:w-[65%] bg-[#0B1D3A] z-[60]"
             >
-              {item}
-            </Link>
-          ))}
+              <div className="flex justify-between items-center px-6 py-5 border-b border-white/10">
+                <span className="text-white font-semibold">CAPVALUEZ</span>
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="text-white text-2xl"
+                >
+                  <FiX />
+                </button>
+              </div>
 
-          <span className="h-px w-full bg-white/20 my-2" />
+              <div className="flex flex-col px-6 pt-8 gap-6 text-white">
+                <Link href="/" onClick={() => setMenuOpen(false)}>
+                  Home
+                </Link>
 
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-md font-semibold transition"
-          >
-            Contact Us
-          </Link>
-        </motion.nav>
-      </motion.div>
-    </>
-  )}
-</AnimatePresence>
+                {/* Mobile Advisory Dropdown */}
+                <div>
+                  <button
+                    onClick={() => setMobileAdvisoryOpen(!mobileAdvisoryOpen)}
+                    className="flex justify-between w-full"
+                  >
+                    Advisory
+                    <span>{mobileAdvisoryOpen ? "−" : "+"}</span>
+                  </button>
 
+                  <AnimatePresence>
+                    {mobileAdvisoryOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="pl-4 mt-3 flex flex-col gap-3 text-sm text-white/80"
+                      >
+                        <Link
+                          href="/services/professional-advisory"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          Professional Advisory
+                        </Link>
+                        <Link
+                          href="/services/funding-solutions"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          Funding Solutions
+                        </Link>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link href="/asset-solutions" onClick={() => setMenuOpen(false)}>
+                  Asset Solutions
+                </Link>
+
+                <Link href="/insights" onClick={() => setMenuOpen(false)}>
+                  Insights
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="bg-red-600 text-center py-3 rounded-md font-semibold"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };

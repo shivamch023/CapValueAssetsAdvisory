@@ -21,9 +21,9 @@ const page = () => {
       <BrandSlider/>
       
           <CtaSection 
-        titleWhite="Ready to Accelerate Your" 
-        titleHighlight="Enterprise Value?"
-        description="Align your business and investment strategies with institutional-grade insight. Partner with CapValue to navigate your next phase of growth."
+        titleWhite="Exploring your next growth " 
+        titleHighlight="opportunity?"
+        description="Reach out to CapValuez to bring clarity and achieve growth."
         buttons={[
           {
             label: "Start a Conversation",

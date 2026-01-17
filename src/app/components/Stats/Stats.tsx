@@ -44,7 +44,7 @@ export default function StatsSection() {
 
 
   return (
-    <section className="w-full px-4 py-16 bg-[#F3F4F6]">
+    <section className="w-full px-12 py-16 bg-[#F3F4F6]">
       <div className="container mx-auto" ref={ref}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((stat, index) => (
@@ -54,7 +54,7 @@ export default function StatsSection() {
               variants={cardVariants}
               initial="hidden"
               animate={controls}
-              className="group p-6 rounded-lg bg-white/10 backdrop-blur-md shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="group p-6 rounded-lg bg-white/80 backdrop-blur-md shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               {/* NUMBER */}
               <motion.p

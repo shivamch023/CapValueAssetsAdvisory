@@ -11,27 +11,27 @@ const container: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.18,
+      staggerChildren: 0.2,
       ease: easeOut,
     },
   },
 };
 
-const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -60 },
+const fadeLeft: Variants = {
+  hidden: { opacity: 0, x: -50 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: easeOut },
+    transition: { duration: 0.7, ease: easeOut },
   },
 };
 
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 60 },
+const fadeRight: Variants = {
+  hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: easeOut },
+    transition: { duration: 0.7, ease: easeOut },
   },
 };
 
@@ -39,70 +39,90 @@ const fadeInRight: Variants = {
 
 export default function WhoWeAreSection() {
   return (
-    <section className="relative w-full py-20 px-4 overflow-hidden bg-[#0B1D3A]">
-      
-      {/* subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1D3A] via-[#0F2550] to-[#08112A] opacity-90" />
+    <section className="relative w-full overflow-hidden bg-[#0B1D3A]">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0B1D3A] via-[#0F2550] to-[#08112A]" />
 
       <motion.div
-        className="relative max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12"
+        className="
+          relative z-10 max-w-7xl mx-auto
+          px-6 sm:px-10 lg:px-16
+          py-20 lg:py-28
+          flex flex-col lg:flex-row items-center gap-14
+        "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={container}
       >
-        {/* LEFT IMAGE */}
+        {/* IMAGE */}
         <motion.div
           className="w-full lg:w-1/2 flex justify-center"
-          variants={fadeInLeft}
+          variants={fadeLeft}
         >
-          <div className="relative w-full h-72 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
+          <div
+            className="
+              relative w-full max-w-lg
+              h-72 sm:h-96 lg:h-[440px]
+              rounded-2xl overflow-hidden
+              shadow-[0_25px_80px_rgba(0,0,0,0.45)]
+              border border-white/10
+            "
+          >
             <Image
               src="/assets/about/who.png"
-              alt="Who We Are"
+              alt="About CapValuez"
               fill
+              priority
               className="object-cover"
             />
           </div>
         </motion.div>
 
-        {/* RIGHT CONTENT */}
+        {/* CONTENT */}
         <motion.div
           className="w-full lg:w-1/2 text-white"
-          variants={fadeInRight}
+          variants={fadeRight}
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
-            Who We Are
+         
+
+          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            About <span className="text-[#C9A240]">CapValuez</span>
           </h2>
 
-          <p className="text-gray-300 mb-4 leading-relaxed">
-            CapValue is a boutique advisory firm delivering specialised,
-            high-value solutions for businesses, real estate investors,
-            and clients seeking funding support.
-          </p>
+          <div className="mt-6 space-y-5 text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            <p>
+              In asset investing and business growth, challenges rarely arise from a lack of opportunity. They emerge from poor asset selection, mispricing, regulatory blind spots, and weak due diligence.
+            </p>
 
-          <p className="text-gray-300 mb-8 leading-relaxed">
-            We combine strategic insight with practical execution to help
-            clients unlock growth, optimise capital, and make confident
-            decisions.
-          </p>
+            <p>
+              CapValuez is a boutique advisory firm delivering specialised, value-focused solutions for businesses, real estate investors, and capital allocation decisions. Our founders have advised clients independently for years, building trust through disciplined analysis and execution.
+            </p>
 
-          {/* CTA BUTTON */}
+            <p>
+              We combine deep market insight with practical execution to help clients evaluate opportunities clearly, allocate capital wisely, and make confident long-term decisions.
+            </p>
+          </div>
+
+          {/* CTA */}
           <motion.div
+            className="mt-10"
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-block"
+            whileTap={{ scale: 0.96 }}
           >
             <Link href="/contact">
-              <motion.button
-                className="relative px-8 py-3 font-semibold rounded-lg text-[#0B1D3A]
-                           bg-gradient-to-r from-[#C9A240] to-[#FBBF24]
-                           shadow-lg overflow-hidden"
-                whileHover={{ y: -2 }}
-                transition={{ type: "spring", stiffness: 220, damping: 18 }}
+              <button
+                className="
+                  inline-flex items-center justify-center
+                  px-9 py-3 rounded-lg
+                  font-semibold text-[#0B1D3A]
+                  bg-gradient-to-r from-[#C9A240] to-[#FBBF24]
+                  shadow-lg hover:shadow-xl
+                  transition-all duration-300
+                "
               >
                 Schedule a Call
-              </motion.button>
+              </button>
             </Link>
           </motion.div>
         </motion.div>

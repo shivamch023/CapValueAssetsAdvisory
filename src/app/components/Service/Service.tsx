@@ -57,7 +57,7 @@ export default function AdvisoryCards() {
   className="text-3xl sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight"
   style={{ fontVariant: "small-caps" }}
 >
-  <span className="text-[#1B2D5C]">Comprehensive Advisory </span>
+  <span className="text-[#1B2D5C]">Comprehensive </span>
   <span className="text-[#B79643]">Solutions</span>
 </motion.h1>
 
@@ -70,7 +70,7 @@ export default function AdvisoryCards() {
     variants={fadeUp}
     className="mt-2 text-gray-500 text-[15px]"
   >
-    Three pillars of expertise, one unwavering commitment to your success.
+   Three areas of expertise. One clear commitment to your success.
   </motion.p>
 </div>
 
@@ -131,7 +131,7 @@ export default function AdvisoryCards() {
             </motion.p>
 
             {/* Core Capabilities */}
-            <motion.ul variants={container} className="space-y-2 mb-3">
+            <motion.ul variants={container} className="space-y-2 mb-2">
               {card.coreCapabilities.map((item) => (
                 <motion.li
                   key={item}

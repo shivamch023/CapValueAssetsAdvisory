@@ -25,7 +25,7 @@ const Hero = () => {
 
     return (
         <section
-            className="relative min-h-screen flex items-center justify-center px-4 pt-24 md:pt-28 py-5 overflow-hidden"
+            className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 pt-24 md:pt-28 py-10"
             style={{
                 backgroundImage: "url('/assets/banner/herogtf.jpeg')",
                 backgroundSize: "cover",
@@ -101,7 +101,7 @@ const Hero = () => {
                         Questions investors typically ask before committing funds                    </p>
 
                     {/* Chips Grid */}
-                    <div className="grid text-nowrap  grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div className="grid   grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {[
                             {
                                 label: "Location Risk",
@@ -133,7 +133,7 @@ const Hero = () => {
                                 href={item.href}
                                 className="group flex items-center justify-center gap-6
                  px-2 py-3
-                 text-[12px] sm:text-[12px] md:text-[15px]
+                 text-[8px] sm:text-[8px] md:text-[15px]
                  rounded-md bg-white/10 border border-white/20
                  backdrop-blur-md font-medium text-white
                  hover:bg-white/20 hover:border-white/30

@@ -26,8 +26,7 @@ export default function Footer() {
             </h3>
 
             <p className="text-gray-300 text-[15px] mb-4 mt-3">
-              Strategic advisory services delivering exceptional outcomes in business, real estate, and capital.
-            </p>
+              Helping businesses and investors make stronger decisions across real estate and funding.            </p>
           </div>
 
           {/* -------- Services -------- */}
@@ -38,16 +37,13 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300 text-[15px]">
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/business-consulting">Business Consulting</Link>
+                <Link href="/services/professional-advisory">Professional Advisory</Link>
               </li>
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
-                <Link href="/services/real-estate-services">Real Estate Services</Link>
+                <Link href="/services/funding-solutions">Funding Solutions</Link>
               </li>
-              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
-                <IoChevronForward />
-                <Link href="/services/growth-capital">Capital Advisory</Link>
-              </li>
+
             </ul>
           </div>
 
@@ -77,17 +73,25 @@ export default function Footer() {
             <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
               <IoCallOutline /> Contact
             </h3>
-            <ul className="space-y-3 text-gray-300 text-[15px]">
+            <ul className="space-y-3 text-gray-300 text-[13px]">
               <li className="flex items-start gap-2 hover:text-[#C9A240] transition">
-                <IoLocationOutline className="mt-1" />
+                <IoLocationOutline className="mt-1 text-lg" />
                 <a
-                  href="https://www.google.com/maps?q=123+Financial+District,+New+York,+NY+10004"
+                  href="https://www.google.com/maps?q=109,+KH+No.+487,+Peera+Garhi,+Sunder+Vihar,+Delhi+110087"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="leading-snug"
                 >
-                  Delhi NCR, India
+                  <span className="font-medium">
+                    CapValue Assets Advisory Private Limited
+                  </span>
+                  <br />
+                  109, KH No. 487, First Floor, Peera Garhi, Sunder Vihar,
+                  <br />
+                  Delhi – 110087, India
                 </a>
               </li>
+
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoCallOutline />
                 <a href="tel:+919811310951">+91-9811310951</a>
