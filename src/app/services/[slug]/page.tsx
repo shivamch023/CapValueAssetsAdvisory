@@ -58,7 +58,7 @@ export default function ServiceDetailPage({ params }: Props) {
                             {service.shortDescription}
                         </p>
 
-                        <div className="flex flex-col w-[70%] md:w-none sm:flex-row gap-4 mt-4">
+                        <div className="flex flex-col xs:w-[70%]  text-center md:w-none sm:flex-row gap-4 mt-4">
                             <Link href="/contact">
                                 <button className="flex cursor-pointer text-center text-[14px] items-center gap-2 bg-[#C9A240] text-gray-900 px-8 py-3 rounded-md font-semibold hover:opacity-90 transition w-full sm:w-auto">
                                     Request Consultation

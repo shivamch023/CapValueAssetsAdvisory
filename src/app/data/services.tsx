@@ -191,131 +191,152 @@ export const cardsData: CardData[] = [
   ,
 
   {
-    id: "2",
-    slug: "professional-advisory",
-    title: "Professional Advisory ", titles1: "Real Estate Expertise",
-    title2dec: "From deal sourcing through exit, we provide comprehensive support across the entire investment lifecycle.",
+  id: "2",
+  slug: "professional-advisory",
+  title: "Professional Advisory",
+  titles1: "Independent Real Estate",
+  title2dec:
+    "Objective, professional guidance to help clients make informed real estate decisions — independent of any transaction.",
 
-    titles: "Institutional-Grade",
-    title2: "Full-Spectrum ",
-    titles2: "Advisory Services",
-    image: "/assets/banner/realestate.png",
+  titles: "Institutional-Grade",
+  title2: "Real Estate",
+  titles2: "Advisory Services",
 
+  image: "/assets/banner/realestate.png",
 
-    shortDescription: "IAccess sophisticated real estate investment opportunities with the guidance of advisors who have executed billions in transactions across global markets.",
-    description:
-      "These services focus on independent, professional guidance, regardless of whether a client invests in any specific property or not. The objective is to help clients understand, evaluate, and plan real estate decisions properly.",
-    coreCapabilities: [
-      "Due diligence and document review",
-      "Guidance on government policies, rules, and available incentives",
-      "RERA-related advisory and compliance overview",
-      "Support in evaluating pricing, risks, and feasibility",
-      "Exit planning and future holding strategies",
-    ],
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-          d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-4v-5H8v5H4a1 1 0 01-1-1V10z" />
-      </svg>
-    ),
-    children: [
-      {
-        id: "c1",
-        title: "Strategic Planning",
-        description:
-          "Develop comprehensive strategic roadmaps that align organizational capabilities with market opportunities.",
-        icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M9 17v-6h13M9 5v6h13M5 12h.01" />
-          </svg>
-        ),
-      },
-      {
-        id: "c2",
-        title: "M&A Advisory",
-        description:
-          "End-to-end transaction support from target identification through integration planning and execution.",
-        icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2" />
-          </svg>
-        ),
-      },
-      {
-        id: "c3",
-        title: "Organizational Design",
-        description:
-          "Optimize organizational structures, governance frameworks, and leadership effectiveness.",
-        icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        ),
-      },
-      {
-        id: "c4",
-        title: "Performance Improvement",
-        description:
-          "Identify and capture value through operational excellence and efficiency initiatives.",
-        icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M17 20h5V4H2v16h5m10 0v-6H7v6" />
-          </svg>
-        ),
-      },
-    ],
-    children1: [
-      {
-        id: "d1",
-        titled: "Sector Expertise",
-        descriptiond:
-          "Our deep sector knowledge enables us to identify opportunities and risks that others miss, delivering superior risk-adjusted returns.",
+  shortDescription:
+    "Independent professional advisory services focused on due diligence, regulatory clarity, compliance, and exit planning across real estate investments.",
 
-        advantages: [
-          "Office & Commercial",
-          "Multifamily Residential",
-          "Industrial & Logistics",
-          "Hospitality",
-          "Mixed-Use Developments",
-          "Special Situations",
-        ],
+  description:
+    "CapValuez provides independent, professional guidance to help clients make informed real estate decisions. These services are offered irrespective of whether a client invests in any specific property, ensuring advice remains objective, unbiased, and value focused.",
 
-        lay2: [
-          {
-            title: "Risk Management",
-            descrption: "Rigorous due diligence processes and market analysis to protect and grow your capital.",
-          }
-        ]
-        ,
-        metrics: [
-          {
-            value: "$4.2B+",
-            label: "in real estate assets advised",
-          },
-          {
-            value: "18%",
-            label: "average IRR delivered to clients",
-          },
-        ],
+  coreCapabilities: [
+    "Due diligence and document review",
+    "Guidance on government policies, rules, and available incentives",
+    "RERA registration advisory and compliance support",
+    "Pricing, risk assessment, and feasibility evaluation",
+    "Exit planning and holding strategy support",
+  ],
 
-        icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 3l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 3.5 1-6.3L3 9.9 9 9z"
-            />
-          </svg>
-        ),
-        variant: "layoutB",
-      }
-    ]
-  },
+  icon: (
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"
+      />
+    </svg>
+  ),
+
+  /* ===================== MAIN SERVICE BLOCKS ===================== */
+
+  children: [
+    {
+      id: "c1",
+      title: "Due Diligence & Document Review",
+      description:
+        "High-level due diligence support to help clients identify risks, gaps, and red flags before committing to a property or investment.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M9 12h6m-6 4h6M5 4h14v16H5z" />
+        </svg>
+      ),
+    },
+
+    {
+      id: "c2",
+      title: "Government Policies & Incentive Guidance",
+      description:
+        "End-to-end support in identifying, understanding, and securing applicable government policies, schemes, and incentives for projects and investments.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M3 21h18M6 21V7l6-4 6 4v14" />
+        </svg>
+      ),
+    },
+
+    {
+      id: "c3",
+      title: "RERA Registration & Compliance Advisory",
+      description:
+        "Practical guidance for developers on RERA registration, disclosures, and ongoing compliance across the project lifecycle.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+        </svg>
+      ),
+    },
+
+    {
+      id: "c4",
+      title: "Pricing, Risk & Exit Support",
+      description:
+        "Support for investors seeking clarity on asset valuation, risks, and realistic exit or holding strategies.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M13 17h8m-8-4h8m-8-4h8M3 3v18l6-3 6 3" />
+        </svg>
+      ),
+    },
+  ],
+
+  /* ===================== DEEP DIVE / HIGHLIGHT SECTION ===================== */
+
+  children1: [
+    {
+      id: "d1",
+      titled: "Why Professional Advisory Matters",
+      descriptiond:
+        "Independent advisory ensures decisions are based on facts, compliance, and long-term viability — not sales pressure or incomplete information.",
+
+      advantages: [
+        "Objective, transaction-independent advice",
+        "Early identification of legal and regulatory risks",
+        "Clear understanding of compliance obligations",
+        "Realistic pricing and exit expectations",
+        "Reduced uncertainty in decision-making",
+      ],
+
+      lay2: [
+        {
+          title: "Risk & Compliance Focus",
+          descrption:
+            "Our advisory approach prioritizes risk identification, regulatory clarity, and practical feasibility to protect client interests.",
+        },
+      ],
+
+      metrics: [
+        {
+          value: "100+",
+          label: "advisory engagements supported",
+        },
+        {
+          value: "Multi-State",
+          label: "regulatory exposure across India",
+        },
+      ],
+
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 3.5 1-6.3L3 9.9 9 9z"
+          />
+        </svg>
+      ),
+
+      variant: "layoutB",
+    },
+  ],
+},
+
 
   {
     id: "3",
