@@ -48,31 +48,31 @@ export default function AdvisoryCards() {
     <section id="services" className="w-full  px-4 py-15 bg-white overflow-hidden">
       {/* ================= HEADING ================= */}
       {/* ================= HEADING ================= */}
-<div  className="flex flex-col items-center mb-12 text-center">
-  <motion.h1
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={fadeUp}
-  className="text-3xl sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight"
-  style={{ fontVariant: "small-caps" }}
->
-  <span className="text-[#1B2D5C]">Comprehensive </span>
-  <span className="text-[#B79643]">Solutions</span>
-</motion.h1>
+      <div className="flex flex-col items-center mb-12 text-center ">
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeUp}
+          className="text-3xl sm:text-3xl md:text-4xl font-bold leading-[1.1] tracking-tight"
+          style={{ fontVariant: "small-caps" }}
+        >
+          <span className="text-[#1B2D5C]">Comprehensive </span>
+          <span className="text-[#B79643]">Solutions</span>
+        </motion.h1>
 
 
 
-  <motion.p
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-    variants={fadeUp}
-    className="mt-2 text-gray-500 text-[15px]"
-  >
-   Three areas of expertise. One clear commitment to your success.
-  </motion.p>
-</div>
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeUp}
+          className="mt-2 text-gray-500 text-[15px]"
+        >
+          Three areas of expertise. One clear commitment to your success.
+        </motion.p>
+      </div>
 
 
       {/* ================= CARDS ================= */}
@@ -88,7 +88,7 @@ export default function AdvisoryCards() {
             key={card.id}
             variants={fadeScale}
             className="
-              group relative rounded-2xl bg-white p-8
+              group relative rounded-2xl bg-white p-6
               border border-gray-200
               transition-all duration-300
               hover:-translate-y-2

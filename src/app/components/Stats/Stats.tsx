@@ -44,8 +44,8 @@ export default function StatsSection() {
 
 
   return (
-    <section className="w-full px-12 py-16 bg-[#F3F4F6]">
-      <div className="container mx-auto" ref={ref}>
+    <section className="w-full flex items-center px-4 py-16 bg-[#F3F4F6]">
+      <div className="container max-w-7xl mx-auto    flex items-center justify-center mx-auto" ref={ref}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((stat, index) => (
             <motion.div

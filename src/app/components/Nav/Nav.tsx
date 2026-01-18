@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Image from "next/image";
+import { FaChartLine } from "react-icons/fa";
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,16 +44,12 @@ const Nav = () => {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/assets/logo.png"
-              alt="CAPVALUEZ Logo"
-              width={160}
-              height={40}
-              priority
-              className="object-contain"
-            />
-          </Link>
+      <Link href="/" className="flex items-center gap-2">
+
+  <span className="text-xl md:text-2xl  text-white normal-case">
+    CapValuez
+  </span>
+</Link>
 
           {/* ================= DESKTOP NAV ================= */}
           <div className="hidden md:flex items-center gap-10">
