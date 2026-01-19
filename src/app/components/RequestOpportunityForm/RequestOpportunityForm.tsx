@@ -9,7 +9,6 @@ export default function RequestOpportunityForm() {
   const [contact, setContact] = useState("");
   const [location, setLocation] = useState("");
   const [assetCategories, setAssetCategories] = useState<string[]>([]);
-  const [investmentPurposes, setInvestmentPurposes] = useState<string[]>([]);
   const [consent, setConsent] = useState(false);
 
   const handleCheckbox = (
@@ -36,7 +35,6 @@ Full Name: ${fullName || "N/A"}
 Email: ${email}
 Contact Number: ${contact || "N/A"}
 Interested Asset Categories: ${assetCategories.join(", ") || "N/A"}
-Investment Purpose: ${investmentPurposes.join(", ") || "N/A"}
 Preferred Location(s): ${location || "N/A"}
 
 Thank you!`;
@@ -56,7 +54,7 @@ Thank you!`;
         </h2>
 
         {/* Full Name */}
-        <div className="mb-4">
+        <div className="mb-2">
           <label className="block text-sm text-gray-700 mb-1">Full Name</label>
           <input
             type="text"
@@ -68,7 +66,7 @@ Thank you!`;
         </div>
 
         {/* Email */}
-        <div className="mb-4">
+        <div className="mb-2">
           <label className="block text-sm text-gray-700 mb-1">
             Email Address <span className="text-red-500">*</span>
           </label>
@@ -82,7 +80,7 @@ Thank you!`;
         </div>
 
         {/* Contact */}
-        <div className="mb-5">
+        <div className="mb-3">
           <label className="block text-sm text-gray-700 mb-1">
             Contact Number (Optional)
           </label>
@@ -100,90 +98,45 @@ Thank you!`;
           </div>
         </div>
 
-        {/* Checkboxes */}
-        <div className="grid grid-cols-1 gap-6 mb-6">
-          {/* Asset Category */}
-          <div>
-            <p className="text-sm font-semibold text-gray-700 mb-3">
-              Interested Asset Category
-            </p>
-            <div className="space-y-3">
-              {[
-                "Residential Plots",
-                "Agricultural Land",
-                "Industrial Park Plots",
-                "Warehouses",
-                "Commercial Spaces",
-              ].map((item) => (
-                <label
-                  key={item}
-                  className={`flex gap-3 items-start p-3 rounded-lg border cursor-pointer
-                  ${
-                    assetCategories.includes(item)
-                      ? "border-[#C9A240] bg-[#FFF8E6]"
-                      : "border-gray-300 bg-white"
+        {/* Asset Category */}
+        <div className="mb-4">
+          <p className="text-sm font-semibold text-gray-700 mb-3">
+            Interested Asset Category
+          </p>
+          <div className="space-y-3">
+            {[
+              "Residential Plots",
+              "Agricultural Land",
+              "Industrial Park Plots",
+              "Warehouses",
+              "Commercial Spaces",
+            ].map((item) => (
+              <label
+                key={item}
+                className={`flex gap-3 items-start p-3 rounded-lg border cursor-pointer
+                ${assetCategories.includes(item)
+                    ? "border-[#C9A240] bg-[#FFF8E6]"
+                    : "border-gray-300 bg-white"
                   }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={assetCategories.includes(item)}
-                    onChange={() =>
-                      handleCheckbox(item, assetCategories, setAssetCategories)
-                    }
-                    className="mt-1 accent-[#C9A240]"
-                  />
-                  <span className="text-sm text-gray-700 leading-snug">
-                    {item}
-                  </span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Purpose */}
-          <div>
-            <p className="text-sm font-semibold text-gray-700 mb-3">
-              Investment Purpose
-            </p>
-            <div className="space-y-3">
-              {[
-                "Personal use",
-                "Long-term investment",
-                "Business / operational use",
-                "Yet to decide",
-              ].map((item) => (
-                <label
-                  key={item}
-                  className={`flex gap-3 items-start p-3 rounded-lg border cursor-pointer
-                  ${
-                    investmentPurposes.includes(item)
-                      ? "border-[#C9A240] bg-[#FFF8E6]"
-                      : "border-gray-300 bg-white"
-                  }`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={investmentPurposes.includes(item)}
-                    onChange={() =>
-                      handleCheckbox(
-                        item,
-                        investmentPurposes,
-                        setInvestmentPurposes
-                      )
-                    }
-                    className="mt-1 accent-[#C9A240]"
-                  />
-                  <span className="text-sm text-gray-700 leading-snug">
-                    {item}
-                  </span>
-                </label>
-              ))}
-            </div>
+              >
+                <input
+                  type="checkbox"
+                  checked={assetCategories.includes(item)}
+                  onChange={() =>
+                    handleCheckbox(item, assetCategories, setAssetCategories)
+                  }
+                  className="mt-1 accent-[#C9A240]"
+                />
+                <span className="text-sm text-gray-700 leading-snug">
+                  {item}
+                </span>
+              </label>
+            ))}
           </div>
         </div>
 
         {/* Location */}
-        <div className="mb-4">
+        <div className="mb-3">
           <label className="block text-sm text-gray-700 mb-1">
             Preferred Location(s)
           </label>
@@ -202,10 +155,10 @@ Thank you!`;
             type="checkbox"
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
-            className="mt-1"
+            className=""
           />
-          Submitting this request does not constitute an offer or solicitation.
-        </label>
+
+          I agree to the Privacy Policy and Terms & Conditions.        </label>
 
         {/* CTA */}
         <button

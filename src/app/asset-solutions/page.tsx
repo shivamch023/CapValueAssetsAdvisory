@@ -30,7 +30,7 @@ export default function AssetSolutionsSection() {
       </section>
 
       {/* ================== MAIN CONTENT ================== */}
-      <section className="py-14 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
+      <section className="py-8 sm:py-8 md:py-10 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
 
           {/* LEFT CONTENT */}
@@ -109,9 +109,7 @@ export default function AssetSolutionsSection() {
                 and design clear ownership & exit frameworks.
               </p>
 
-              <p className="text-sm sm:text-base text-gray-700">
-                Reach out to explore suitable opportunities based on your investment goals.
-              </p>
+
             </div>
           </div>
 
@@ -119,6 +117,18 @@ export default function AssetSolutionsSection() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <RequestOpportunityForm />
+              <div className="bg-[#FFF8E6] border-l-4 mt-5 border-[#C9A240] p-4 sm:p-5 rounded-lg flex items-start gap-3 shadow-sm">
+                {/* Icon */}
+                <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-[#C9A240] text-white rounded-full text-xs sm:text-sm font-bold">
+                  i
+                </div>
+
+                {/* Text */}
+                <p className="text-sm sm:text-base text-gray-700 leading-snug">
+                  Reach out to explore suitable opportunities based on your investment goals.
+                </p>
+              </div>
+
             </div>
           </div>
 

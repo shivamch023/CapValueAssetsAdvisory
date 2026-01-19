@@ -32,12 +32,7 @@ const page = () => {
             icon: FaArrowRightLong ,
             
           },
-          {
-            label: "Meet Our Team",
-            href: "/meet-our-team",
-            variant: "outline",
-            icon: RiTeamFill, // 🔥
-          },
+         
         ]}
       />
 

@@ -2,10 +2,12 @@ import { title } from "process";
 import { ReactNode } from "react";
 import { IconType } from "react-icons";
 import { CgToolbox } from "react-icons/cg";
+import { FaChartLine, FaClipboardCheck, FaFileContract, FaLandmark, } from "react-icons/fa";
 import { FiTrendingUp } from "react-icons/fi";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { MdInsights } from "react-icons/md";
 import { TbReportSearch } from "react-icons/tb";
+
 
 
 export interface ChildCard {
@@ -191,259 +193,125 @@ export const cardsData: CardData[] = [
   ,
 
   {
-  id: "2",
-  slug: "professional-advisory",
-  title: "Professional Advisory",
-  titles1: "Independent Real Estate",
-  title2dec:
-    "Objective, professional guidance to help clients make informed real estate decisions — independent of any transaction.",
+    id: "2",
+    slug: "professional-advisory",
+    title: "Professional Advisory",
+    titles1: "Independent Real Estate",
+    title2dec:
+      "Objective, professional guidance to help clients make informed real estate decisions — independent of any transaction.",
 
-  titles: "Institutional-Grade",
-  title2: "Real Estate",
-  titles2: "Advisory Services",
+    titles: "Institutional-Grade",
+    title2: "Real Estate",
+    titles2: "Advisory Services",
 
-  image: "/assets/banner/realestate.png",
+    image: "/assets/banner/realestate.png",
 
-  shortDescription:
-    "Independent professional advisory services focused on due diligence, regulatory clarity, compliance, and exit planning across real estate investments.",
+    shortDescription:
+      "Clear and independent guidance covering due diligence, regulations, compliance, and exit planning for real estate investments.",
 
-  description:
-    "CapValuez provides independent, professional guidance to help clients make informed real estate decisions. These services are offered irrespective of whether a client invests in any specific property, ensuring advice remains objective, unbiased, and value focused.",
-
-  coreCapabilities: [
-    "Due diligence and document review",
-    "Guidance on government policies, rules, and available incentives",
-    "RERA registration advisory and compliance support",
-    "Pricing, risk assessment, and feasibility evaluation",
-    "Exit planning and holding strategy support",
-  ],
-
-  icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"
-      />
-    </svg>
-  ),
-
-  /* ===================== MAIN SERVICE BLOCKS ===================== */
-
-  children: [
-    {
-      id: "c1",
-      title: "Due Diligence & Document Review",
-      description:
-        "High-level due diligence support to help clients identify risks, gaps, and red flags before committing to a property or investment.",
-      icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-            d="M9 12h6m-6 4h6M5 4h14v16H5z" />
-        </svg>
-      ),
-    },
-
-    {
-      id: "c2",
-      title: "Government Policies & Incentive Guidance",
-      description:
-        "End-to-end support in identifying, understanding, and securing applicable government policies, schemes, and incentives for projects and investments.",
-      icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-            d="M3 21h18M6 21V7l6-4 6 4v14" />
-        </svg>
-      ),
-    },
-
-    {
-      id: "c3",
-      title: "RERA Registration & Compliance Advisory",
-      description:
-        "Practical guidance for developers on RERA registration, disclosures, and ongoing compliance across the project lifecycle.",
-      icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-            d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
-        </svg>
-      ),
-    },
-
-    {
-      id: "c4",
-      title: "Pricing, Risk & Exit Support",
-      description:
-        "Support for investors seeking clarity on asset valuation, risks, and realistic exit or holding strategies.",
-      icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-            d="M13 17h8m-8-4h8m-8-4h8M3 3v18l6-3 6 3" />
-        </svg>
-      ),
-    },
-  ],
-
-  /* ===================== DEEP DIVE / HIGHLIGHT SECTION ===================== */
-
-  children1: [
-    {
-      id: "d1",
-      titled: "Why Professional Advisory Matters",
-      descriptiond:
-        "Independent advisory ensures decisions are based on facts, compliance, and long-term viability — not sales pressure or incomplete information.",
-
-      advantages: [
-        "Objective, transaction-independent advice",
-        "Early identification of legal and regulatory risks",
-        "Clear understanding of compliance obligations",
-        "Realistic pricing and exit expectations",
-        "Reduced uncertainty in decision-making",
-      ],
-
-      lay2: [
-        {
-          title: "Risk & Compliance Focus",
-          descrption:
-            "Our advisory approach prioritizes risk identification, regulatory clarity, and practical feasibility to protect client interests.",
-        },
-      ],
-
-      metrics: [
-        {
-          value: "100+",
-          label: "advisory engagements supported",
-        },
-        {
-          value: "Multi-State",
-          label: "regulatory exposure across India",
-        },
-      ],
-
-      icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 3l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 3.5 1-6.3L3 9.9 9 9z"
-          />
-        </svg>
-      ),
-
-      variant: "layoutB",
-    },
-  ],
-},
-
-
-  {
-    id: "3",
-    slug: "funding-solutions",
-    title2dec: "From early-stage growth to pre-IPO positioning, we guide companies through every stage of their capital journey.",
-
-    title: "Funding Solutions",
-    titles: "Fuel Your Ambition with",
-
-    titles1: "Strategic Capital",
-    title2: "Comprehensive  ",
-    titles2: "Capital Solutions",
-
-    image: "/assets/banner/growth.png",
-
-
-
-    shortDescription: "Connect with the right investors and secure capital on terms that empower long-term success. Our relationships and expertise open doors that matter.",
     description:
-      "We help founders and businesses make well-considered funding decisions with clarity and practicality and, where appropriate, connect them with investors aligned to their stage and goals.",
+      "CapValuez provides independent, professional guidance to help clients make informed real estate decisions. These services are offered irrespective of whether a client invests in any specific property, ensuring advice remains objective, unbiased, and value focused.",
+
     coreCapabilities: [
-      "Funding need assessment",
-      "Guidance on funding structure",
-      "Preparation and expectation alignment",
-      "Investor connections (where appropriate)",
+      "Due diligence and document review",
+      "Guidance on government policies, rules, and available incentives",
+      "RERA registration advisory and compliance support",
+      "Pricing, risk assessment, and feasibility evaluation",
+      "Exit planning and holding strategy support",
     ],
+
     icon: (
-      <FiTrendingUp className="w-6 h-6 text-[#1B2D5B]" />
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#1B2D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h5l5 5v11a2 2 0 01-2 2z"
+        />
+      </svg>
     ),
+
+    /* ===================== MAIN SERVICE BLOCKS ===================== */
+
     children: [
       {
         id: "c1",
-        title: "Strategic Planning",
+        title: "Due Diligence & Document Review",
         description:
-          "Develop comprehensive strategic roadmaps that align organizational capabilities with market opportunities.",
+          "High-level due diligence support to help clients identify risks, gaps, and red flags before committing to a property or investment.",
         icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M9 17v-6h13M9 5v6h13M5 12h.01" />
-          </svg>
+          <FaClipboardCheck className="w-7 h-7 text-current" />
+
         ),
       },
+
       {
         id: "c2",
-        title: "M&A Advisory",
+        title: "Government Policies & Incentive Guidance",
         description:
-          "End-to-end transaction support from target identification through integration planning and execution.",
+          "End-to-end support in identifying, understanding, and securing applicable government policies, schemes, and incentives for projects and investments.",
         icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2" />
-          </svg>
+          <FaLandmark className="w-7 h-7 text-current" />
+
         ),
       },
+
       {
         id: "c3",
-        title: "Organizational Design",
+        title: "RERA Registration & Compliance Advisory",
         description:
-          "Optimize organizational structures, governance frameworks, and leadership effectiveness.",
+          "Practical guidance for developers on RERA registration, disclosures, and ongoing compliance across the project lifecycle.",
         icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+          <FaFileContract className="w-7 h-7 text-current" />
+
         ),
       },
+
       {
         id: "c4",
-        title: "Performance Improvement",
+        title: "Pricing, Risk & Exit Support",
         description:
-          "Identify and capture value through operational excellence and efficiency initiatives.",
+          "Support for investors seeking clarity on asset valuation, risks, and realistic exit or holding strategies.",
         icon: (
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
-              d="M17 20h5V4H2v16h5m10 0v-6H7v6" />
-          </svg>
+          <FaChartLine className="w-7 h-7 text-current" />
+
         ),
       },
     ],
+
+    /* ===================== DEEP DIVE / HIGHLIGHT SECTION ===================== */
+
     children1: [
       {
         id: "d1",
-        titled: "Capital Across All Stages",
+        titled: "Why Professional Advisory Matters",
         descriptiond:
-          "Whether you're raising your Series A or preparing for a public offering, we have the expertise and relationships to support your capital needs.",
+          "Independent advisory ensures decisions are based on facts, compliance, and long-term viability — not sales pressure or incomplete information.",
 
-        features: [
-          { ptext: "Series A/B", pnumber: "$5M - $50M" },
-          { ptext: " Growth Equity", pnumber: "$50M - $250M" },
-          { ptext: "Pre-IPO", pnumber: "$100M+" },
-          { ptext: "Recapitalization", pnumber: "Custom " },
+        advantages: [
+          "Objective, transaction-independent advice",
+          "Early identification of legal and regulatory risks",
+          "Clear understanding of compliance obligations",
+          "Realistic pricing and exit expectations",
+          "Reduced uncertainty in decision-making",
         ],
+
         lay2: [
           {
-            title: "Investor Network",
-            descrption: "Direct relationships with 200+ institutional investors, growth equity firms, and family offices globally.",
-          }
+            title: "Risk & Compliance Focus",
+            descrption:
+              "Our advisory approach prioritizes risk identification, regulatory clarity, and practical feasibility to protect client interests.",
+          },
         ],
 
         metrics: [
           {
-            value: "$3.5B+",
-            label: "capital raised for clients",
+            value: "100+",
+            label: "advisory engagements supported",
           },
           {
-            value: "45+",
-            label: "successful funding rounds closed",
+            value: "Multi-State",
+            label: "regulatory exposure across India",
           },
         ],
 
@@ -457,11 +325,207 @@ export const cardsData: CardData[] = [
             />
           </svg>
         ),
-        variant: "layoutC",
-      }
-    ]
+
+        variant: "layoutB",
+      },
+    ],
   },
+
+
+ {
+  id: "3",
+  slug: "funding-solutions",
+  title: "Funding Solutions",
+  title2dec: "Our Funding Solutions are designed to help founders and business owners make well-considered funding decisions grounded in business reality, not market hype.",
+  titles: "Fuel Your Ambition with",
+  titles1: "Strategic Capital",
+  title2: "Comprehensive",
+  titles2: "Funding Solutions",
+  image: "/assets/banner/growth.png",
+
+  shortDescription: "We work closely with promoters to bring clarity, structure, and preparedness to the funding journey and, where appropriate, facilitate introductions to investors aligned with their business stage, sector, and long-term objectives.",
+  description:
+    "Our Funding Solutions are designed to help founders and business owners make well-considered funding decisions grounded in business reality, not market hype",
+
+  coreCapabilities: [
+    "Funding Need Assessment",
+    "Guidance on Funding Structure",
+    "Preparation and Expectation Alignment",
+    "Investor Connections (Where Appropriate)",
+  ],
+  icon: <FiTrendingUp className="w-6 h-6 text-[#1B2D5B]" />,
+
+  children: [
+    {
+      id: "c1",
+      title: "Funding Need Assessment",
+      description: "Understand business position, growth plans, cash flow, and risk profile to assess funding requirements, type, and amount.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M12 3v4m0 10v4m8-8h-4M4 12H0m16.24-6.24l-2.83 2.83M6.59 17.41l-2.83 2.83M17.41 17.41l2.83 2.83M6.59 6.59L3.76 3.76" />
+        </svg>
+      ),
+    },
+    {
+      id: "c2",
+      title: "Guidance on Funding Structure",
+      description: "Structure capital correctly with equity, debt, or hybrid instruments considering founder control, dilution, compliance, and sustainability.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M12 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+        </svg>
+      ),
+    },
+    {
+      id: "c3",
+      title: "Preparation and Expectation Alignment",
+      description: "Align expectations for founders and investors, review narrative & financials, identify gaps, and set realistic timelines for discussions.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M5 13l4 4L19 7" />
+        </svg>
+      ),
+    },
+    {
+      id: "c4",
+      title: "Investor Connections (Where Appropriate)",
+      description: "Facilitate selective introductions to investors aligned to stage, sector, and long-term business philosophy.",
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M17 20h5V4H2v16h5m10 0v-6H7v6" />
+        </svg>
+      ),
+    },
+  ],
+
+  children1: [
+    {
+      id: "d1",
+      titled: "Capital Across All Stages",
+      descriptiond: "Whether raising Series A or preparing for public offerings, we support all capital stages with clarity and structure.",
+      features: [
+        { ptext: "Series A/B", pnumber: "$5M - $50M" },
+        { ptext: "Growth Equity", pnumber: "$50M - $250M" },
+        { ptext: "Pre-IPO", pnumber: "$100M+" },
+        { ptext: "Recapitalization", pnumber: "Custom" },
+      ],
+      lay2: [
+        {
+          title: "Investor Network",
+          descrption: "Direct relationships with 200+ institutional investors, growth equity firms, and family offices globally.",
+        }
+      ],
+      metrics: [
+        { value: "$3.5B+", label: "capital raised for clients" },
+        { value: "45+", label: "successful funding rounds closed" },
+      ],
+      icon: (
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"
+            d="M12 3l3 6 6 .9-4.5 4.3 1 6.3L12 17l-5.5 3.5 1-6.3L3 9.9 9 9z" />
+        </svg>
+      ),
+      variant: "layoutC",
+    }
+  ]
+}
+
 ];
+
+
+import {
+  FiTarget,
+  FiDollarSign,
+  FiClipboard,
+  FiUsers,
+} from "react-icons/fi";
+
+export const fundingSolutionsData = {
+  meta: {
+    title: "Funding Solutions",
+    description:
+      "We help founders take clear, well-structured funding decisions rooted in business fundamentals—not market noise.",
+  },
+
+  solutions: [
+    {
+      id: "assessment",
+      heading: "Funding Need Assessment",
+      summary:
+        "We analyse your business position, growth intent, and capital efficiency to determine whether funding is required and what kind truly fits.",
+      highlights: [
+        "Purpose and urgency of funding",
+        "Capital efficiency & runway clarity",
+        "Growth readiness assessment",
+        "Alternatives to raising capital",
+      ],
+      media: {
+        image: "/assets/funding-need.jpg",
+        icon: FiTarget,
+      },
+    },
+
+    {
+      id: "structure",
+      heading: "Funding Structure Advisory",
+      summary:
+        "We help you structure capital intelligently—balancing control, dilution, compliance, and long-term outcomes.",
+      highlights: [
+        "Equity, debt & hybrid instruments",
+        "Founder dilution implications",
+        "Stage-appropriate capital",
+        "Future round & exit alignment",
+      ],
+      note:
+        "Our focus is to ensure capital strengthens the business, not restricts it.",
+      media: {
+        image: "/assets/funding-structure.jpg",
+        icon: FiDollarSign,
+      },
+    },
+
+    {
+      id: "preparation",
+      heading: "Investor Readiness & Alignment",
+      summary:
+        "Strong investor conversations begin with preparation. We align expectations, narratives, and readiness before outreach.",
+      highlights: [
+        "Business & financial readiness review",
+        "Investor expectation clarity",
+        "Gap identification before outreach",
+        "Realistic timelines & outcomes",
+      ],
+      note:
+        "This improves credibility and prevents wasted cycles.",
+      media: {
+        image: "/assets/preparation.jpg",
+        icon: FiClipboard,
+      },
+    },
+
+    {
+      id: "connections",
+      heading: "Selective Investor Introductions",
+      summary:
+        "When the business is ready, we facilitate thoughtful introductions to aligned investors—never volume-driven.",
+      highlights: [
+        "Relationship-led approach",
+        "Stage & sector aligned investors",
+        "Long-term philosophy match",
+      ],
+      media: {
+        image: "/assets/investor-connections.jpg",
+        icon: FiUsers,
+      },
+    },
+  ],
+};
+
+
 
 
 

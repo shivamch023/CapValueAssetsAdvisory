@@ -6,8 +6,8 @@ type Props = { card: AdvantageCard };
 
 export default function LayoutB({ card }: Props) {
   return (
-    <section className="bg-[#F5F7FA] py-16 sm:py-20 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+    <section className="bg-[#F5F7FA] py-10 sm:py-12 px-4 sm:px-6 lg:px-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
         {/* ================= LEFT CONTENT ================= */}
         <div className="space-y-6">
@@ -81,7 +81,7 @@ export default function LayoutB({ card }: Props) {
                 shadow-md hover:shadow-lg
                 transition-all duration-300 border border-gray-200"
               >
-                <p className="text-xl md:text-4xl font-extrabold text-[#0B1D3A]">
+                <p className="text-xl md:text-2xl font-extrabold text-[#0B1D3A]">
                   {metric.value}
                 </p>
                 <p className="mt-2 text-gray-600 text-sm sm:text-base">

@@ -36,20 +36,24 @@ const Nav = () => {
     <>
       {/* ================= HEADER ================= */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#0B1D3A]/90 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+          ? "bg-[#0B1D3A]/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex items-center justify-between">
           {/* Logo */}
-      <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/assets/logo.png"
+              alt="CapValuez Logo"
+              width={160}
+              height={40}
+              priority
+              className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
+            />
+          </Link>
 
-  <span className="text-xl md:text-2xl  text-white normal-case">
-    CapValuez
-  </span>
-</Link>
 
           {/* ================= DESKTOP NAV ================= */}
           <div className="hidden md:flex items-center gap-10">

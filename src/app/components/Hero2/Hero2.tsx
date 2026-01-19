@@ -98,7 +98,7 @@ const Hero = () => {
                 {/* Popular Questions */}
                 <div className="mt-10 w-full px-4 md:px-0">
                     <p className="text-[12px] sm:text-[16px] md:text-[18px] text-white/70 mb-5">
-                        Questions investors typically ask before committing funds                    </p>
+                        Frequently Asked Questions On                    </p>
 
                     {/* Chips Grid */}
                     <div className="grid   grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -224,12 +224,23 @@ const Hero = () => {
                 placeholder="Phone Number"
                 className="w-full px-4 py-2 rounded-md bg-white/10 border border-white/20 outline-none"
               />
+<input
+  required
+  type="email"
+  placeholder="Email Address"
+  className="w-full px-4 py-2 rounded-md bg-white/10 border border-white/20 outline-none"
+ />
 
               <textarea
                 rows={3}
                 placeholder="Additional message (optional)"
                 className="w-full px-4 py-2 rounded-md bg-white/10 border border-white/20 outline-none"
               />
+              <label className="flex items-center gap-2 text-xs text-white/60">
+  <input type="checkbox" required className="accent-[#C4161C]" />
+  I agree to be contacted by CapValue Assets Advisory.
+</label>
+
 
               <button
                 type="submit"

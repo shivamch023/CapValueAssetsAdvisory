@@ -1,7 +1,12 @@
 "use client";
 
 import { motion, type Variants, easeOut } from "framer-motion";
-import { FaStar, FaMoneyBillWave, FaUserFriends, FaHandshake } from "react-icons/fa";
+import {
+  FaStar,
+  FaMoneyBillWave,
+  FaUserFriends,
+  FaHandshake,
+} from "react-icons/fa";
 
 const container: Variants = {
   hidden: {},
@@ -28,7 +33,7 @@ const cards = [
     description:
       "We focus on delivering high-quality, well-considered guidance that helps clients make stronger decisions and achieve meaningful outcomes.",
     icon: <FaStar size={28} />,
-    color: "#FBBF24", // yellow
+    color: "#FBBF24",
   },
   {
     id: 2,
@@ -36,7 +41,7 @@ const cards = [
     description:
       "Our initial fees are kept minimal and focused on essential work, ensuring clarity and alignment before deeper engagement.",
     icon: <FaMoneyBillWave size={28} />,
-    color: "#22C55E", // green
+    color: "#22C55E",
   },
   {
     id: 3,
@@ -44,7 +49,7 @@ const cards = [
     description:
       "Clients work closely with experienced professionals and receive direct, hands-on support throughout the engagement.",
     icon: <FaUserFriends size={28} />,
-    color: "#3B82F6", // blue
+    color: "#3B82F6",
   },
   {
     id: 4,
@@ -52,16 +57,16 @@ const cards = [
     description:
       "We build long-term relationships based on trust, transparency, and consistent delivery rather than one-time transactions.",
     icon: <FaHandshake size={28} />,
-    color: "#EF4444", // red
+    color: "#EF4444",
   },
 ];
 
 export default function AdvisoryFeatureCards() {
   return (
-    <section className="w-full px-4 py-10 bg-white overflow-hidden mb-10">
+    <section className="w-full px-4 py-2 bg-white overflow-hidden mb-10">
       {/* =================== Heading =================== */}
       <motion.h2
-        className="text-2xl md:text-4xl font-extrabold  text-center mb-12 text-[#1B2D5A]"
+        className="text-2xl md:text-4xl font-extrabold text-center mb-12 text-[#1B2D5A]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -72,7 +77,7 @@ export default function AdvisoryFeatureCards() {
 
       {/* =================== Cards =================== */}
       <motion.div
-        className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center items-center"
+        className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch"
         variants={container}
         initial="hidden"
         whileInView="visible"
@@ -82,21 +87,16 @@ export default function AdvisoryFeatureCards() {
           <motion.div
             key={card.id}
             variants={fadeUp}
-            className="group relative bg-white p-8 rounded-2xl border border-transparent shadow-md transition-all duration-300 flex flex-col items-center text-center"
+            className="group relative bg-white p-6 rounded-2xl border border-transparent shadow-md transition-all duration-300 flex flex-col items-center text-center h-full"
             whileHover={{
               y: -6,
               boxShadow: `0 10px 20px ${card.color}33`,
               borderColor: card.color,
             }}
-            style={{
-              minHeight: "360px",
-              maxWidth: "320px",
-              margin: "0 auto",
-            }}
           >
             {/* Icon */}
             <div
-              className="w-12 h-12 mb-6 flex shadow-lg items-center justify-center rounded-md transition-all duration-300"
+              className="w-12 h-12 mb-5 flex shadow-lg items-center justify-center rounded-md transition-all duration-300"
               style={{
                 backgroundColor: card.color,
                 color: "#fff",
@@ -106,12 +106,12 @@ export default function AdvisoryFeatureCards() {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-extrabold mb-3 text-gray-600">
+            <h3 className="text-lg font-semibold mb-3 text-gray-700">
               {card.title}
             </h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm font-normal leading-relaxed mt-auto">
               {card.description}
             </p>
           </motion.div>

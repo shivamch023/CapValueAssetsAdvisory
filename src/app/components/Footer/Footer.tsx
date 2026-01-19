@@ -9,6 +9,7 @@ import {
   IoMailOutline,
   IoLocationOutline,
 } from "react-icons/io5";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -20,13 +21,20 @@ export default function Footer() {
 
           {/* -------- CapValue Info -------- */}
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold tracking-wide flex items-baseline ">
-              <span className="text-white font-light">Cap</span>
-              <span className="text-[#B79643] font-medium text-[1.15em]">Valuez</span>
-            </h3>
+          <Link href="/" className="flex items-center">
+  <Image
+    src="/assets/logo.png"
+    alt="CapValuez Logo"
+    width={160}
+    height={40}
+    priority
+    className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
+  />
+</Link>
+
 
             <p className="text-gray-300 text-[15px] mb-4 mt-3">
-              Helping businesses and investors make stronger decisions across real estate and funding.            </p>
+              Helping you make smart business and asset investment decisions.            </p>
           </div>
 
           {/* -------- Services -------- */}
@@ -34,7 +42,7 @@ export default function Footer() {
             <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
               <IoBriefcaseOutline /> Services
             </h3>
-            <ul className="space-y-2 text-gray-300 text-[15px]">
+            <ul className="space-y-2 ml-2 text-gray-300 text-[15px]">
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
                 <Link href="/services/professional-advisory">Professional Advisory</Link>
@@ -42,6 +50,9 @@ export default function Footer() {
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
                 <Link href="/services/funding-solutions">Funding Solutions</Link>
+              </li><li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/asset-solutions">Assets Solutions</Link>
               </li>
 
             </ul>
@@ -52,11 +63,8 @@ export default function Footer() {
             <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
               <IoPeopleOutline /> Company
             </h3>
-            <ul className="space-y-2 text-gray-300 text-[15px]">
-              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
-                <IoChevronForward />
-                <Link href="/meet-our-team">Our Team</Link>
-              </li>
+            <ul className="space-y-2 ml-2 text-gray-300 text-[15px]">
+              
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
                 <Link href="/resources">Resources</Link>
@@ -73,24 +81,8 @@ export default function Footer() {
             <h3 className="flex items-center gap-2 text-lg mb-3 text-[#B79643]">
               <IoCallOutline /> Contact
             </h3>
-            <ul className="space-y-3 text-gray-300 text-[13px]">
-              <li className="flex items-start gap-2 hover:text-[#C9A240] transition">
-                <IoLocationOutline className="mt-1 text-lg" />
-                <a
-                  href="https://www.google.com/maps?q=109,+KH+No.+487,+Peera+Garhi,+Sunder+Vihar,+Delhi+110087"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="leading-snug"
-                >
-                  <span className="font-medium">
-                    CapValue Assets Advisory Private Limited
-                  </span>
-                  <br />
-                  109, KH No. 487, First Floor, Peera Garhi, Sunder Vihar,
-                  <br />
-                  Delhi – 110087, India
-                </a>
-              </li>
+            <ul className="space-y-3 ml-2 text-gray-300 text-[13px]">
+             
 
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoCallOutline />
