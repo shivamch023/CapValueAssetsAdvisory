@@ -41,18 +41,20 @@ const Nav = () => {
           : "bg-transparent"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/assets/logo.png"
-              alt="CapValuez Logo"
-              width={160}
-              height={40}
-              priority
-              className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
-            />
-          </Link>
+          <Link href="/" className="flex flex-col items-center">
+  <Image
+    src="/assets/logo.png"
+    alt="CapValuez Logo"
+    width={160}
+    height={40}
+    priority
+    className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
+  />
+  <span className=" md:text-sm text-[10px] text-gray-500">Real Estate Solutions</span>
+</Link>
+
 
 
           {/* ================= DESKTOP NAV ================= */}

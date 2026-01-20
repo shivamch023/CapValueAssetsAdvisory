@@ -44,27 +44,24 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="font-serif font-normal 
-                     text-[28px] sm:text-[38px] md:text-[54px] 
+                     text-[20px] sm:text-[38px] md:text-[40px] 
                      leading-snug tracking-wide md:mb-14 mb-10"
                 >
-                    What are you trying to
+                    Have a question or looking for clarity? 
                     <br />
-                    understand or decide?
-                </motion.h1>
+ Ask our advisor                </motion.h1>
 
 
 
                 {/* Search Section */}
-                <div className="w-full max-w-[760px] mx-auto text-left md:mb-10 px-6 md:px-0">
-                    <p className="mb-2 text-[12px] sm:text-[13px] text-white/70 font-medium">
-                        Ask an Advisor
-                    </p>
+                <div className="w-full max-w-[760px] mx-auto text-left md:mb-5 px-6 md:px-0">
+                    
 
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="flex w-full bg-white rounded-md overflow-hidden shadow-xl "
+                        className="flex w-full bg-white rounded-md overflow-hidden shadow-2xl"
                     >
                         {/* Input */}
                         <div className="relative flex-1">
