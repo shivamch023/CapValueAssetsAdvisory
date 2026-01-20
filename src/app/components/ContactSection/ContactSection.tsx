@@ -66,32 +66,32 @@ export default function ContactSection() {
                                 className="field-input resize-none"
                             />
                         </div>
-                                    {/* CHECKBOX */}
-            <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                required
-                className="mt-1 accent-[#152D5B] cursor-pointer"
-              />
-              <p className="text-[10px] md:text-xs text-gray-500 leading-relaxed">
-                I agree to the{" "}
-                <a
-                  href="/privacy-policy"
-                  className="text-[#152D5B] underline hover:text-[#0f1f4a]"
-                  target="_blank"
-                >
-                  Privacy Policy
-                </a>{" "}
-                and{" "}
-                <a
-                  href="/terms-and-conditions"
-                  className="text-[#152D5B] underline hover:text-[#0f1f4a]"
-                  target="_blank"
-                >
-                  Terms & Conditions
-                </a>.
-              </p>
-            </div>
+                        {/* CHECKBOX */}
+                        <div className="flex items-start gap-3">
+                            <input
+                                type="checkbox"
+                                required
+                                className="mt-1 accent-[#152D5B] cursor-pointer"
+                            />
+                            <p className="text-[10px] md:text-xs text-gray-500 leading-relaxed">
+                                I agree to the{" "}
+                                <a
+                                    href="/privacy-policy"
+                                    className="text-[#152D5B] underline hover:text-[#0f1f4a]"
+                                    target="_blank"
+                                >
+                                    Privacy Policy
+                                </a>{" "}
+                                and{" "}
+                                <a
+                                    href="/terms-and-conditions"
+                                    className="text-[#152D5B] underline hover:text-[#0f1f4a]"
+                                    target="_blank"
+                                >
+                                    Terms & Conditions
+                                </a>.
+                            </p>
+                        </div>
 
 
                         <button
@@ -112,14 +112,14 @@ export default function ContactSection() {
                     viewport={{ once: true }}
                     className="space-y-5"
                 >
-                   <InfoCard
-  icon={<FaMapMarkerAlt />}
-  title="Visit Us"
-  content={`CapValue Assets Advisory Private Limited
+                    <InfoCard
+                        icon={<FaMapMarkerAlt />}
+                        title="Visit Us"
+                        content={`CapValue Assets Advisory Private Limited
 109, KH No. 487, First Floor,
 Peera Garhi, Sunder Vihar,
 Delhi – 110087, India`}
-/>
+                    />
 
 
                     <InfoCard
@@ -137,7 +137,7 @@ Delhi – 110087, India`}
                     <InfoCard
                         icon={<FaClock />}
                         title="Office Hours"
-                        content={`Monday - Friday\n9:00 AM - 6:00 PM EST`}
+                        content={`Monday - Saturday\n9:00 AM - 6:00 PM IST`}
                     />
 
                     {/* MAP CARD */}

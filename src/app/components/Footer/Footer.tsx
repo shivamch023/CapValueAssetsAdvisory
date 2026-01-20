@@ -1,6 +1,7 @@
 // app/components/Footer/Footer.tsx
 import React from "react";
 import Link from "next/link";
+
 import {
   IoChevronForward,
   IoBriefcaseOutline,
@@ -9,15 +10,74 @@ import {
   IoMailOutline,
   IoLocationOutline,
 } from "react-icons/io5";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+
 import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-[#0B1D3A] text-white py-12 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+{/* ================= SOCIAL CONNECT ================= */}
+<div className="mb-12 w-full flex flex-col items-center">
+  <h3 className="text-white text-lg font-semibold mb-5 tracking-wide">
+    Connect with us
+  </h3>
+
+  <div className="flex items-center gap-5 justify-center">
+    
+    {/* Facebook */}
+    <a
+      href="#"
+      target="_blank"
+      className="group w-11 h-11 flex items-center justify-center rounded-xl
+      bg-[#1877F2] transition-all duration-300
+      hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(24,119,242,0.45)]"
+    >
+      <FaFacebookF className="text-white text-lg group-hover:scale-110 transition" />
+    </a>
+
+    {/* Instagram */}
+    <a
+      href="#"
+      target="_blank"
+      className="group w-11 h-11 flex items-center justify-center rounded-xl
+      bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af]
+      transition-all duration-300
+      hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(221,42,123,0.45)]"
+    >
+      <FaInstagram className="text-white text-lg group-hover:scale-110 transition" />
+    </a>
+
+    {/* X */}
+    <a
+      href="#"
+      target="_blank"
+      className="group w-11 h-11 flex items-center justify-center rounded-xl
+      bg-[#111111] transition-all duration-300
+      hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+    >
+      <FaXTwitter className="text-white text-lg group-hover:scale-110 transition" />
+    </a>
+
+    {/* LinkedIn */}
+    <a
+      href="#"
+      target="_blank"
+      className="group w-11 h-11 flex items-center justify-center rounded-xl
+      bg-[#0A66C2] transition-all duration-300
+      hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(10,102,194,0.45)]"
+    >
+      <FaLinkedinIn className="text-white text-lg group-hover:scale-110 transition" />
+    </a>
+
+  </div>
+</div>
+
 
         {/* ================= MAIN FOOTER GRID ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-sm sm:text-base">
+          
 
           {/* -------- CapValue Info -------- */}
           <div>
