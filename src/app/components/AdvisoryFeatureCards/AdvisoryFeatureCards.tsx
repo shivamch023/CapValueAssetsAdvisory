@@ -77,7 +77,7 @@ export default function AdvisoryFeatureCards() {
 
       {/* =================== Cards =================== */}
       <motion.div
-        className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch"
+        className="max-w-6xl mx-auto pb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch"
         variants={container}
         initial="hidden"
         whileInView="visible"
@@ -87,7 +87,7 @@ export default function AdvisoryFeatureCards() {
           <motion.div
             key={card.id}
             variants={fadeUp}
-            className="group relative bg-white p-6 rounded-2xl border border-transparent shadow-md transition-all duration-300 flex flex-col items-center text-center h-full"
+            className="group overflow-hidden relative bg-white p-6 rounded-2xl border border-transparent shadow-md transition-all duration-300 flex flex-col items-center text-center h-full"
             whileHover={{
               y: -6,
               boxShadow: `0 10px 20px ${card.color}33`,

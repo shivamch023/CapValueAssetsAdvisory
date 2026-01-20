@@ -2,7 +2,6 @@ import { title } from "process";
 import { ReactNode } from "react";
 import { IconType } from "react-icons";
 import { CgToolbox } from "react-icons/cg";
-import { FaChartLine, FaClipboardCheck, FaFileContract, FaLandmark, } from "react-icons/fa";
 import { FiTrendingUp } from "react-icons/fi";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { MdInsights } from "react-icons/md";
@@ -431,16 +430,106 @@ export const cardsData: CardData[] = [
       ),
       variant: "layoutC",
     }
-  ]
+    ]
+  }
+
+  ];
+
+
+
+
+
+
+// src/app/data/fundingData.ts
+import {
+  FaChartLine,
+  FaBalanceScale,
+  FaClipboardCheck,
+  FaHandshake,
+  FaCheckCircle,
+  FaRocket,
+  FaCoins,
+  FaLightbulb,
+  FaChartPie,
+  FaLandmark,
+  FaFileContract,
+} from "react-icons/fa";
+
+export interface ChipType {
+  text: string;
+  icon: any;
+  color: string;
 }
 
+export interface SectionType {
+  id: number;
+  title: string;
+  description: string;
+  icon: any;
+  imageSrc: string;
+  chips: ChipType[];
+  reverse?: boolean; // optional to reverse image/text on desktop
+}
+
+export const fundingSections: SectionType[] = [
+  {
+    id: 1,
+    title: "Funding Need Assessment",
+    description:
+      "We deeply understand your business position, growth plans, cash flow and risk profile before recommending funding.",
+    icon: FaChartLine,
+    imageSrc: "/assets/banner/fundneed.jpg",
+    chips: [
+      { text: "Funding purpose & urgency", icon: FaCheckCircle, color: "emerald-600" },
+      { text: "Capital efficiency", icon: FaCoins, color: "blue-600" },
+      { text: "Runway planning", icon: FaChartPie, color: "purple-600" },
+      { text: "Growth readiness", icon: FaRocket, color: "amber-600" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Funding Structure Guidance",
+    description:
+      "We help structure capital while balancing control, dilution and long-term sustainability.",
+    icon: FaBalanceScale,
+    imageSrc: "/assets/banner/PE_Fund_Structure.webp",
+    chips: [
+      { text: "Equity vs Debt vs Hybrid", icon: FaCoins, color: "indigo-600" },
+      { text: "Founder dilution impact", icon: FaChartPie, color: "rose-600" },
+      { text: "Stage-appropriate funding", icon: FaRocket, color: "emerald-600" },
+      { text: "Exit alignment", icon: FaLightbulb, color: "yellow-600" },
+    ],
+    reverse: true,
+  },
+  {
+    id: 3,
+    title: "Preparation & Alignment",
+    description:
+      "We prepare founders for realistic and confident investor conversations.",
+    icon: FaClipboardCheck,
+    imageSrc: "/assets/banner/Preparation.jpg",
+    chips: [
+      { text: "Pitch & financial readiness", icon: FaCheckCircle, color: "emerald-600" },
+      { text: "Investor expectations", icon: FaLightbulb, color: "blue-600" },
+      { text: "Gap identification", icon: FaChartPie, color: "purple-600" },
+      { text: "Timeline clarity", icon: FaRocket, color: "amber-600" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Investor Connections",
+    description:
+      "We connect you with aligned investors based on stage, sector and philosophy.",
+    icon: FaHandshake,
+    imageSrc: "/assets/banner/Investor.jpg",
+    chips: [
+      { text: "Relationship-driven", icon: FaHandshake, color: "emerald-600" },
+      { text: "Stage & sector fit", icon: FaChartLine, color: "blue-600" },
+      { text: "Long-term focus", icon: FaLightbulb, color: "purple-600" },
+    ],
+    reverse: true,
+  },
 ];
-
-
-
-
-
-
 
 
 

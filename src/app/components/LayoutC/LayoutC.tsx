@@ -1,68 +1,102 @@
-import { AdvantageCard } from "@/app/data/services";
-import { RiSkullLine } from "react-icons/ri";
+"use client";
 
-type Props = { card: AdvantageCard };
+import Image from "next/image";
+import { motion, Variants, Easing } from "framer-motion";
+import { fundingSections, SectionType } from "@/app/data/services";
+import Link from "next/link";
 
-export default function LayoutC({ card }: Props) {
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as Easing } },
+};
+
+const fadeImage: Variants = {
+  hidden: { opacity: 0, scale: 0.94 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as unknown as Easing[] } },
+};
+
+function Chip({ text, icon: Icon, color }: { text: string; icon: any; color: string }) {
   return (
-    <section className="bg-gray-100 py-16 px-4 md:px-10">
-     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-  {/* LEFT SIDE */}
-<div>
-  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-    {card.titled}
-  </h2>
-  <p className="text-gray-600 text-lg mb-6">{card.descriptiond}</p>
+    <motion.div
+      whileHover={{ scale: 1.06 }}
+      className={`flex items-center gap-2 px-4 py-2 rounded-full bg-${color}/10 text-${color} text-sm md:text-base font-medium shadow-sm cursor-pointer`}
+    >
+      <Icon className={`text-${color}`} />
+      {text}
+    </motion.div>
+  );
+}
 
-  {/* Features in 2 columns */}
-  <ul className="grid grid-cols-1 sm:grid-cols-1 gap-4 ">
-    {card.features && card.features.map((feature, i) => (
-      <li key={i} className="flex justify-between items-center bg-white p-4 rounded-md shadow-sm">
-        <span className="text-gray-700 font-medium">{feature.ptext}</span>
-        <span className="text-[#C9A240] font-bold">{feature.pnumber}</span>
-      </li>  
-    ))}
-  </ul>
-</div>
+export default function FundingSolutionsPage() {
+  return (
+    <section className="w-full bg-white overflow-hidden -mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+        {fundingSections.map((section: SectionType, index: number) => {
+          const isEven = index % 2 === 0; // Even index = image left, text right
+
+          return (
+            <motion.div
+              key={section.id}
+              className="grid gap-10 items-start lg:grid-cols-2"
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {/* Text */}
+              <motion.div
+                variants={fadeUp}
+                className={`lg:col-span-1 ${!isEven ? "lg:order-2" : ""}`}
+              >
+                <div className="flex items-center gap-4 mb-5 py-2">
+                  <div className="w-14 h-14 rounded-xl bg-[#C9A240]/15 flex items-center justify-center text-[#C9A240]">
+                    <section.icon size={26} />
+                  </div>
+                  <h2 className="text-xl md:text-3xl font-bold text-[#0B1D3A]">{section.title}</h2>
+                </div>
+                <p className="text-gray-700 text-base md:text-lg leading-relaxed">{section.description}</p>
+                <motion.div className="flex flex-wrap gap-3 mt-6">
+                  {section.chips.map((chip, idx) => (
+                    <Chip key={idx} {...chip} />
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* Image */}
+              <motion.div
+  variants={fadeImage}
+  className={`lg:col-span-1 relative group ${!isEven ? "lg:order-1" : ""}`}
+>
+  {/* Image */}
+  <Image
+    src={section.imageSrc}
+    alt={section.title}
+    width={600}
+    height={340} // slightly smaller height
+    className="rounded-xl shadow-md w-full h-[340px] object-cover transition-transform duration-300 group-hover:scale-105"
+  />
+
+  {/* Overlay button */}
+  <Link
+    href="/contact"
+    className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"
+  >
+    <button className="px-6 py-3 bg-[#C9A240] text-white font-semibold rounded-md hover:bg-[#b59030]">
+      Enquiry Now
+    </button>
+  </Link>
+</motion.div>
 
 
-
-  {/* RIGHT SIDE (LAY2 + METRICS stacked) */}
-  <div className="flex flex-col gap-6">
-    {/* LAY2 SECTION */}
-    {card.lay2 && card.lay2.length > 0 && (
-      <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-        {card.lay2.map((item, i) => (
-          <div key={i} className="mb-6 last:mb-0">
-            {/* Title + Icon */}
-            <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#D8BF81] text-white text-xl">
-                <RiSkullLine />
-              </span>
-              <h3 className="text-lg font-bold text-[#212940]">{item.title}</h3>
-            </div>
-
-            {/* Description */}
-            <p className="mt-2 text-gray-600 text-sm leading-relaxed">
-              {item.descrption}
-            </p>
-          </div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
-    )}
-
-    {/* METRICS SECTION */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-      {card.metrics.map((metric, i) => (
-        <div key={i} className="bg-white rounded-xl p-8 text-center shadow-md">
-          <p className="text-5xl font-bold text-gray-900">{metric.value}</p>
-          <p className="mt-2 text-gray-600">{metric.label}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-
     </section>
   );
 }
