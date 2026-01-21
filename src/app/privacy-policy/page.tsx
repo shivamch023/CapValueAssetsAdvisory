@@ -80,7 +80,7 @@ export default function PrivacyHeroWithIntro() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-4 text-start md:text-left"
+              className="space-y-4 text-start md:text-left overflow-hidden"
             >
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 This Privacy Notice applies to any individual <b>(“you”, “your”)</b> who
