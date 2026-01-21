@@ -177,7 +177,7 @@ const Nav = () => {
                     onClick={() => setMobileAdvisoryOpen(!mobileAdvisoryOpen)}
                     className="flex justify-between w-full"
                   >
-                    Advisory
+                    Services
                     <span>{mobileAdvisoryOpen ? "−" : "+"}</span>
                   </button>
 
