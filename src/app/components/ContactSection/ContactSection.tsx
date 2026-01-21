@@ -84,7 +84,7 @@ export default function ContactSection() {
                                 </a>{" "}
                                 and{" "}
                                 <a
-                                    href="/terms-and-conditions"
+                                    href="/terms-conditions"
                                     className="text-[#152D5B] underline hover:text-[#0f1f4a]"
                                     target="_blank"
                                 >
@@ -150,11 +150,13 @@ Delhi – 110087, India`}
                         </div>
 
                         <iframe
-                            className="w-full h-40 border-0"
+                            className="w-full h-40 border-0 rounded-md"
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps?q=123%20Financial%20District%20New%20York%2010004&output=embed"
+                            src="https://www.google.com/maps?q=109,%20KH%20No.%20487,%20First%20Floor,%20Peera%20Garhi,%20Sunder%20Vihar,%20Delhi%20110087,%20India&output=embed"
                         />
+
+
                     </motion.div>
                 </motion.div>
 

@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Image from "next/image";
-import { FaChartLine } from "react-icons/fa";
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -50,7 +49,7 @@ const Nav = () => {
     width={160}
     height={40}
     priority
-    className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
+    className="object-contain w-[100px] h-auto sm:w-[120px] md:w-[140px]"
   />
   <span className=" md:text-sm text-[10px] text-gray-500">Real Estate Solutions</span>
 </Link>
@@ -65,7 +64,13 @@ const Nav = () => {
                 <span className="absolute left-0 -bottom-1 h-[2px] bg-gray-400 w-0 group-hover:w-full transition-all" />
               </Link>
 
-              {/* Advisory Dropdown (NO LINK) */}
+             
+
+              <Link href="/asset-solutions" className="relative group">
+                Asset Solutions
+                <span className="absolute left-0 -bottom-1 h-[2px] bg-gray-400 w-0 group-hover:w-full transition-all" />
+              </Link>
+               {/* Advisory Dropdown (NO LINK) */}
               <div
                 className="relative cursor-pointer"
                 onMouseEnter={() => setAdvisoryOpen(true)}
@@ -100,11 +105,6 @@ const Nav = () => {
                   )}
                 </AnimatePresence>
               </div>
-
-              <Link href="/asset-solutions" className="relative group">
-                Asset Solutions
-                <span className="absolute left-0 -bottom-1 h-[2px] bg-gray-400 w-0 group-hover:w-full transition-all" />
-              </Link>
 
               <Link href="/insights" className="relative group">
                 Insights
@@ -167,7 +167,12 @@ const Nav = () => {
                 </Link>
 
                 {/* Mobile Advisory Dropdown */}
-                <div>
+               
+
+                <Link href="/asset-solutions" onClick={() => setMenuOpen(false)}>
+                  Asset Solutions
+                </Link>
+                 <div>
                   <button
                     onClick={() => setMobileAdvisoryOpen(!mobileAdvisoryOpen)}
                     className="flex justify-between w-full"
@@ -200,10 +205,6 @@ const Nav = () => {
                     )}
                   </AnimatePresence>
                 </div>
-
-                <Link href="/asset-solutions" onClick={() => setMenuOpen(false)}>
-                  Asset Solutions
-                </Link>
 
                 <Link href="/insights" onClick={() => setMenuOpen(false)}>
                   Insights

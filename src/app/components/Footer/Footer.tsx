@@ -18,79 +18,79 @@ export default function Footer() {
   return (
     <footer className="bg-[#0B1D3A] text-white py-12 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-{/* ================= SOCIAL CONNECT ================= */}
-<div className="mb-12 w-full flex flex-col items-center">
-  <h3 className="text-white text-lg font-semibold mb-5 tracking-wide">
-    Connect with us
-  </h3>
+        {/* ================= SOCIAL CONNECT ================= */}
+        <div className="mb-12 w-full flex flex-col items-center">
+          <h3 className="text-white text-lg font-semibold mb-5 tracking-wide">
+            Connect with us
+          </h3>
 
-  <div className="flex items-center gap-5 justify-center">
-    
-    {/* Facebook */}
-    <a
-      href="#"
-      target="_blank"
-      className="group w-11 h-11 flex items-center justify-center rounded-xl
+          <div className="flex items-center gap-5 justify-center">
+
+            {/* Facebook */}
+            <a
+              href="#"
+              target="_blank"
+              className="group w-11 h-11 flex items-center justify-center rounded-xl
       bg-[#1877F2] transition-all duration-300
       hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(24,119,242,0.45)]"
-    >
-      <FaFacebookF className="text-white text-lg group-hover:scale-110 transition" />
-    </a>
+            >
+              <FaFacebookF className="text-white text-lg group-hover:scale-110 transition" />
+            </a>
 
-    {/* Instagram */}
-    <a
-      href="#"
-      target="_blank"
-      className="group w-11 h-11 flex items-center justify-center rounded-xl
+            {/* Instagram */}
+            <a
+              href="#"
+              target="_blank"
+              className="group w-11 h-11 flex items-center justify-center rounded-xl
       bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af]
       transition-all duration-300
       hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(221,42,123,0.45)]"
-    >
-      <FaInstagram className="text-white text-lg group-hover:scale-110 transition" />
-    </a>
+            >
+              <FaInstagram className="text-white text-lg group-hover:scale-110 transition" />
+            </a>
 
-    {/* X */}
-    <a
-      href="#"
-      target="_blank"
-      className="group w-11 h-11 flex items-center justify-center rounded-xl
+            {/* X */}
+            <a
+              href="#"
+              target="_blank"
+              className="group w-11 h-11 flex items-center justify-center rounded-xl
       bg-[#111111] transition-all duration-300
       hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-    >
-      <FaXTwitter className="text-white text-lg group-hover:scale-110 transition" />
-    </a>
+            >
+              <FaXTwitter className="text-white text-lg group-hover:scale-110 transition" />
+            </a>
 
-    {/* LinkedIn */}
-    <a
-      href="#"
-      target="_blank"
-      className="group w-11 h-11 flex items-center justify-center rounded-xl
+            {/* LinkedIn */}
+            <a
+              href="#"
+              target="_blank"
+              className="group w-11 h-11 flex items-center justify-center rounded-xl
       bg-[#0A66C2] transition-all duration-300
       hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(10,102,194,0.45)]"
-    >
-      <FaLinkedinIn className="text-white text-lg group-hover:scale-110 transition" />
-    </a>
+            >
+              <FaLinkedinIn className="text-white text-lg group-hover:scale-110 transition" />
+            </a>
 
-  </div>
-</div>
+          </div>
+        </div>
 
 
         {/* ================= MAIN FOOTER GRID ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12 text-sm sm:text-base">
-          
+
 
           {/* -------- CapValue Info -------- */}
           <div>
-          <Link href="/" className="flex items-center">
-  <Image
-    src="/assets/logo.png"
-    alt="CapValuez Logo"
-    width={160}
-    height={40}
-    priority
-    className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
-  />
-</Link>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/assets/logo.png"
+                alt="CapValuez Logo"
+                width={160}
+                height={40}
+                priority
+                className="object-contain w-[120px] h-auto sm:w-[140px] md:w-[160px]"
+              />
+            </Link>
 
 
             <p className="text-gray-300 text-[15px] mb-4 mt-3">
@@ -124,10 +124,17 @@ export default function Footer() {
               <IoPeopleOutline /> Company
             </h3>
             <ul className="space-y-2 ml-2 text-gray-300 text-[15px]">
-              
+
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
                 <Link href="/resources">Resources</Link>
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li> <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
+                <IoChevronForward />
+                <Link href="/terms-conditions">Terms of Service</Link>
               </li>
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoChevronForward />
@@ -142,7 +149,7 @@ export default function Footer() {
               <IoCallOutline /> Contact
             </h3>
             <ul className="space-y-3 ml-2 text-gray-300 text-[13px]">
-             
+
 
               <li className="flex items-center gap-2 hover:text-[#C9A240] transition">
                 <IoCallOutline />
@@ -164,7 +171,7 @@ export default function Footer() {
             <Link href="/privacy-policy" className="hover:text-[#C9A240] transition">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-[#C9A240] transition">
+            <Link href="/terms-conditions" className="hover:text-[#C9A240] transition">
               Terms of Service
             </Link>
           </div>

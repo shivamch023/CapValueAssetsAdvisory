@@ -98,56 +98,51 @@ const Hero = () => {
                         Frequently Asked Questions On                    </p>
 
                     {/* Chips Grid */}
-                    <div className="grid   grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                        {[
-                            {
-                                label: "Location Risk",
-                                href: "/advisory/location-risk",
-                                icon: <FiMapPin />,
-                                iconColor: "text-red-400", // 🔴 red
-                            },
-                            {
-                                label: "Is the Price Fair?",
-                                href: "/advisory/price-fairness",
-                                icon: <FiBarChart2 />,
-                                iconColor: "text-sky-400", // 🔵 sky
-                            },
-                            {
-                                label: "Legal Due Diligence",
-                                href: "/advisory/legal-due-diligence",
-                                icon: <FiShield />,
-                                iconColor: "text-yellow-400", // 🟡 yellow
-                            },
-                            {
-                                label: "Project Feasibility",
-                                href: "/advisory/project-feasibility",
-                                icon: <FiTrendingUp />,
-                                iconColor: "text-cyan-400", // 🔷 sky blue
-                            },
-                        ].map((item) => (
-                            <Link
-                                key={item.label}
-                                href={item.href}
-                                className="group flex items-center justify-center gap-6
-                 px-2 py-3
-                 text-[8px] sm:text-[8px] md:text-[15px]
-                 rounded-md bg-white/10 border border-white/20
-                 backdrop-blur-md font-medium text-white
-                 hover:bg-white/20 hover:border-white/30
-                 transition"
-                            >
-                                <span
-                                    className={`text-[16px] ${item.iconColor} group-hover:scale-110 transition-transform`}
-                                >
-                                    {item.icon}
-                                </span>
+                   <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+  {[
+    {
+      label: "Location Risk",
+      icon: <FiMapPin />,
+      iconColor: "text-red-400",
+    },
+    {
+      label: "Is the Price Fair?",
+      icon: <FiBarChart2 />,
+      iconColor: "text-sky-400",
+    },
+    {
+      label: "Legal Due Diligence",
+      icon: <FiShield />,
+      iconColor: "text-yellow-400",
+    },
+    {
+      label: "Project Feasibility",
+      icon: <FiTrendingUp />,
+      iconColor: "text-cyan-400",
+    },
+  ].map((item) => (
+    <div
+      key={item.label}
+      className="group flex items-center justify-center gap-6
+      px-2 py-3
+      text-[8px] sm:text-[8px] md:text-[15px]
+      rounded-md bg-white/10 border border-white/20
+      backdrop-blur-md font-medium text-white
+      hover:bg-white/20 hover:border-white/30
+      transition cursor-default"
+    >
+      <span
+        className={`text-[16px] ${item.iconColor} group-hover:scale-110 transition-transform`}
+      >
+        {item.icon}
+      </span>
 
-                                <span className="text-center leading-tight">
-                                    {item.label}
-                                </span>
-                            </Link>
-                        ))}
-                    </div>
+      <span className="text-center leading-tight">
+        {item.label}
+      </span>
+    </div>
+  ))}
+</div>
 
 
 
