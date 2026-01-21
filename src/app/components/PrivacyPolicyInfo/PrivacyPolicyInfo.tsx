@@ -41,7 +41,7 @@ const Card = ({
 
 export default function PrivacyPolicyCards() {
   return (
-    <section className="bg-white py-10 px-4 sm:px-6 lg:px-12">
+    <section className="bg-white py-10 px-4 sm:px-6 lg:px-12 overflow-hidden">
       <div className="max-w-6xl mx-auto grid grid-cols-1 gap-6">
 
         {/* Information We Collect */}

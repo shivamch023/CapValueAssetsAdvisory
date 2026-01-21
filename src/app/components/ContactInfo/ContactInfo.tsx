@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ContactInfo() {
   return (
-    <section className="bg-white py-8">
+    <section className="bg-white py-8 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

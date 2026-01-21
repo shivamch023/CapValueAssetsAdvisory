@@ -13,7 +13,7 @@ const TermsAndConditions = () => {
   return (
     <>
       {/* ================= Banner Section ================= */}
-      <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[80vh]   md:h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -57,8 +57,8 @@ const TermsAndConditions = () => {
       </section>
 
       {/* ================= T&C Content Section ================= */}
-      <section className="w-full bg-gray-50 py-12 px-4 sm:px-6 md:px-0 flex justify-center">
-        <div className="max-w-6xl w-full">
+      <section className="w-full overflow-hidden bg-gray-50 py-12 px-4 sm:px-6 md:px-0 flex justify-center">
+        <div className="max-w-6xl w-full overflow-hidden ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

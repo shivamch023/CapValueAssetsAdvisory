@@ -45,7 +45,7 @@ const privacyDetails = [
 
 export default function PrivacyCookiesSection() {
   return (
-    <section className="bg-white py-5">
+    <section className="bg-white py-5 overflow-hidden ">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-8">
