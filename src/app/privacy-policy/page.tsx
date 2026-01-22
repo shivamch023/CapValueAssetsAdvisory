@@ -28,7 +28,7 @@ export default function PrivacyHeroWithIntro() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
+          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center overflow-hidden"
         >
           <div className="flex justify-center mb-5">
             <div className="w-14 h-14 rounded-full bg-[#FDC13E]/15 flex items-center justify-center">

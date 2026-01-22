@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import { Poppins } from "next/font/google";
 import ScrollProgressBar from "./components/ScrollProgressBar/ScrollProgressBar";
 import Nav from "./components/Nav/Nav";
+import CookieConsent from "./components/CookieConsent/CookieConsent";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       ><ScrollProgressBar />
         <Nav />
         {children}
+        <CookieConsent/>
         <WhatsAppButton />
         <ScrollToTopButton />
         <Footer />
