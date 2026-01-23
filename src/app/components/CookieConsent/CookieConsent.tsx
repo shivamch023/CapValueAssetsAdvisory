@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 export default function CookieConsent() {
   const [show, setShow] = useState(false);
@@ -21,43 +22,47 @@ export default function CookieConsent() {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="max-w-3xl w-full mx-4 rounded-lg bg-[#0B0B0B] text-white p-8 shadow-2xl">
+    <div className="fixed bottom-0 left-0 right-0 z-50">
+      {/* Full width blurred background */}
+      <div className="bg-white/80 backdrop-blur-md border-t border-yellow-200 shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
         
-        <h2 className="text-2xl font-semibold mb-4">
-          We use cookies to enhance your experience
-        </h2>
+        {/* Content container */}
+        <div className="mx-auto max-w-7xl px-4 py-4">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            
+            {/* Content */}
+            <div className="text-sm text-gray-700 leading-relaxed">
+              <h2 className="text-base font-semibold text-sky-700 mb-1">
+                🍪 We use cookies to improve your experience
+              </h2>
+              <p>
+                Capvaluez Assets Advisory uses cookies to ensure smooth website
+                functionality, enhance user experience, and analyse engagement.
+                Some cookies are essential for secure access and performance.
+                <Link
+                  href="/privacy-policy"
+                  className="ml-1 underline text-sky-600 hover:text-sky-700"
+                >
+                  Read our Cookie Policy
+                </Link>
+              </p>
+            </div>
 
-        <p className="text-sm text-gray-300 leading-relaxed mb-6">
-          Capvaluez Assets Advisory uses cookies and similar technologies to
-          ensure the efficient functioning of our website, improve user
-          experience, and understand how visitors interact with our services.
-          Cookies help us remember your preferences, support secure access, and
-          provide insights that allow us to deliver relevant content and
-          advisory solutions.
-          <br /><br />
-          You may choose to accept all cookies or customise your preferences.
-          Please note that disabling certain cookies may impact the
-          functionality and performance of the website.
-          <a
-            href="/cookie-policy"
-            className="underline ml-1 text-white"
-          >
-            Read our Cookie Policy
-          </a>
-        </p>
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <button className="text-sm underline text-gray-500 hover:text-gray-700">
+                Customize cookies
+              </button>
 
-        <div className="flex flex-col sm:flex-row justify-end gap-4">
-          <button className="text-sm underline text-gray-300 hover:text-white">
-            Customize cookies
-          </button>
+              <button
+                onClick={acceptCookies}
+                className="rounded-full cursor-pointer bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 text-sm font-medium transition"
+              >
+                Accept all cookies
+              </button>
+            </div>
 
-          <button
-            onClick={acceptCookies}
-            className="bg-[#2F6FED] hover:bg-[#255ad1] text-white px-6 py-2 rounded-full text-sm font-medium"
-          >
-            Accept all cookies
-          </button>
+          </div>
         </div>
       </div>
     </div>
