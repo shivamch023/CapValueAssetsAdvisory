@@ -340,7 +340,7 @@ export const cardsData: CardData[] = [
   titles1: "Strategic Capital",
   title2: "Comprehensive",
   titles2: "Funding Solutions",
-  image: "/assets/banner/growth.png",
+  image: "/assets/banner/fundsol.png",
 
   shortDescription: "We work closely with promoters to bring clarity, structure, and preparedness to the funding journey and, where appropriate, facilitate introductions to investors aligned with their business stage, sector, and long-term objectives.",
   description:
