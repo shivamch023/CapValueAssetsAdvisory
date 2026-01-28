@@ -51,7 +51,7 @@ const Nav = () => {
     priority
     className="object-contain w-[100px] h-auto sm:w-[120px] md:w-[140px]"
   />
-  <span className=" md:text-sm text-[10px] text-gray-500">Real Estate Solutions</span>
+  <span className="  text-[10px] text-gray-500">Real Estate Solutions</span>
 </Link>
 
 
