@@ -19,6 +19,11 @@ export default function CookieConsent() {
     setShow(false);
   };
 
+  const rejectCookies = () => {
+    Cookies.set("cookie_consent", "rejected", { expires: 365 });
+    setShow(false);
+  };
+
   if (!show) return null;
 
   return (
@@ -50,8 +55,11 @@ export default function CookieConsent() {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <button className="text-sm underline text-gray-500 hover:text-gray-700">
-                Customize cookies
+              <button
+                onClick={rejectCookies}
+                className="rounded-full cursor-pointer bg-gray-200 hover:bg-gray-300 text-black px-6 py-2 text-sm font-medium transition"
+              >
+                Reject all cookies
               </button>
 
               <button

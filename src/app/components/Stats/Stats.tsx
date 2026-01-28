@@ -171,11 +171,9 @@ export default function OurJourneySection() {
 
         {/* LEFT CONTENT */}
         <div className="lg:col-span-7">
-          <span className="inline-block mb-1 mt-5 text-sm font-semibold tracking-widest text-[#C9A240] uppercase">
-            Our Journey
-          </span>
+         
 
-          <h2 className="text-2xl md:text-4xl font-bold text-[#0B1D3A] mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#0B1D3A] mb-6 mt-4">
             Our Journey So Far
           </h2>
 
